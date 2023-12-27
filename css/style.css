@@ -1,0 +1,841 @@
+/* inter-200 - latin */
+@font-face {
+  font-display: swap;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 200;
+  src: url("../fonts/inter-v13-latin-200.woff2") format("woff2");
+}
+/* inter-300 - latin */
+@font-face {
+  font-display: swap;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 300;
+  src: url("../fonts/inter-v13-latin-300.woff2") format("woff2");
+}
+/* inter-regular - latin */
+@font-face {
+  font-display: swap;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/inter-v13-latin-regular.woff2") format("woff2");
+}
+/* inter-500 - latin */
+@font-face {
+  font-display: swap;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+  src: url("../fonts/inter-v13-latin-500.woff2") format("woff2");
+}
+/* inter-600 - latin */
+@font-face {
+  font-display: swap;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  src: url("../fonts/inter-v13-latin-600.woff2") format("woff2");
+}
+/* inter-700 - latin */
+@font-face {
+  font-display: swap;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+  src: url("../fonts/inter-v13-latin-700.woff2") format("woff2");
+}
+/* open-sans-300 - latin */
+@font-face {
+  font-display: swap;
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 300;
+  src: url("../fonts/open-sans-v40-latin-300.woff2") format("woff2");
+}
+/* open-sans-regular - latin */
+@font-face {
+  font-display: swap;
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/open-sans-v40-latin-regular.woff2") format("woff2");
+}
+*:active, *:focus, *:focus-within, *:target, *:hover, *:visited, *:focus-visible {
+  outline: none !important;
+}
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  vertical-align: baseline;
+  outline: none;
+}
+
+a {
+  text-decoration: none;
+  color: #110D0E;
+}
+a:hover {
+  text-decoration: none;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  position: relative;
+  color: #110D0E;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+label, button {
+  cursor: pointer;
+}
+
+.container {
+  max-width: 1377px;
+  width: 100%;
+  padding: 0 15px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0 auto;
+}
+
+.header {
+  background: #fff;
+  padding: 24px 0 28px 0;
+}
+.header__top {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding-bottom: 12px;
+  margin-bottom: 23px;
+  border-bottom: 1px solid #AFAFAF;
+}
+.header__phone {
+  display: block;
+  font-size: 25px;
+  font-weight: 700;
+}
+.header__contacts {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 25px;
+}
+.header__contacts-label {
+  font-size: 14px;
+}
+.header__social {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 20px;
+}
+.header__social-item_mobile {
+  display: none;
+}
+.header__social-link {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.header__social-modal {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 98px;
+  height: 55px;
+  border-radius: 6.53px;
+  background: #D74535;
+  border: none;
+  padding: 0;
+}
+.header__social-burger {
+  background: transparent;
+  border: none;
+  padding: 0;
+}
+.header__modal {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 18px 26px;
+  background: #D74535;
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  border: none;
+  border-radius: 10px;
+  color: #fff;
+}
+.header__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.header__list-link {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+@media (max-width: 990px) {
+  .header {
+    padding: 22px 0 18px 0;
+  }
+  .header__phone {
+    font-size: 16.324px;
+  }
+  .header__contatcs {
+    gap: 15px;
+  }
+  .header__contatcs-label {
+    font-size: 9.141px;
+  }
+  .header__social {
+    gap: 13px;
+  }
+  .header__social-link svg {
+    width: 20px;
+    height: 20px;
+  }
+  .header__social-link svg path {
+    fill: #110D0E;
+  }
+  .header__modal {
+    padding: 12px 17px;
+    border-radius: 6.53px;
+    font-size: 10.447px;
+  }
+  .header__top {
+    padding-bottom: 7.84px;
+    margin-bottom: 20px;
+  }
+  .header__list-link {
+    font-size: 14px;
+  }
+}
+@media (max-width: 606px) {
+  .header__contacts-label {
+    display: none;
+  }
+}
+@media (max-width: 475px) {
+  .header {
+    padding: 17px 0 23px 0;
+  }
+  .header__nav {
+    display: none;
+  }
+  .header__top {
+    padding-bottom: 0;
+    margin-bottom: 0;
+    border-bottom: none;
+  }
+  .header__phone {
+    display: none;
+  }
+  .header__contacts {
+    width: 100%;
+  }
+  .header__social {
+    width: 100%;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .header__social-link svg {
+    width: 40px;
+    height: 40px;
+  }
+  .header__social-item_mobile {
+    display: initial;
+  }
+  .header__modal {
+    display: none;
+  }
+}
+.hero {
+  padding: 100px 0 130px 0;
+  position: relative;
+  overflow-x: hidden;
+}
+.hero__background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.hero__filter {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.7;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.25)), to(#FFF));
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.25) 0%, #FFF 100%);
+}
+.hero__wrapper {
+  position: relative;
+  z-index: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 20px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.hero__wrapper-left {
+  padding-top: 83px;
+}
+.hero__logo {
+  position: relative;
+  max-width: 433px;
+  width: 100%;
+  margin-bottom: 53px;
+}
+.hero__logo img {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 744px;
+  position: relative;
+  z-index: 1;
+}
+.hero__logo-filter {
+  position: absolute;
+  opacity: 0.25;
+  background: #969696;
+  -webkit-filter: blur(50px);
+          filter: blur(50px);
+  left: 50%;
+  top: 50%;
+  width: 744px;
+  height: 203px;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+.hero__tagline {
+  font-size: 35px;
+  font-style: normal;
+  font-weight: 400;
+  margin-bottom: 33px;
+  max-width: 720px;
+}
+.hero__description {
+  font-size: 25px;
+  font-style: normal;
+  font-weight: 300;
+  max-width: 640px;
+}
+.hero__calc {
+  border-radius: 25px;
+  background: rgba(8, 8, 8, 0.2);
+  -webkit-backdrop-filter: blur(50px);
+          backdrop-filter: blur(50px);
+  padding: 40px 45px 28px 45px;
+  width: 580px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+.hero__calc-title {
+  font-size: 35px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+  color: #fff;
+}
+.hero__calc-label {
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-bottom: 15px;
+  color: #fff;
+}
+.hero__calc-input {
+  border-radius: 10px 10px 0px 0px;
+  border: 1px solid #E1E7EF;
+  background: rgba(255, 255, 255, 0.5);
+  font-family: "Inter", sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  height: 78px;
+  width: 100%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 0 27px;
+  line-height: 78px;
+}
+.hero__calc-slider {
+  border: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  height: 5px;
+  margin-bottom: 14px;
+}
+.hero__calc-slider .noUi-handle {
+  width: 23px;
+  height: 23px;
+  border: 7px solid #D74535;
+  border-radius: 50%;
+  background: #fff;
+  top: -10px;
+}
+.hero__calc-slider .noUi-handle::after, .hero__calc-slider .noUi-handle::before {
+  display: none;
+}
+.hero__calc-slider .noUi-connect {
+  background: #D74535;
+}
+.hero__calc-linear {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-bottom: 25px;
+}
+.hero__calc-linear span {
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  color: #fff;
+}
+.hero__calc-counter {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-bottom: 22px;
+}
+.hero__calc-counter .label {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 17px;
+  color: #fff;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.hero__calc-counter .counter {
+  width: 240px;
+  height: 60px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  border-radius: 10px;
+  border: 1px solid #494949;
+  overflow: hidden;
+}
+.hero__calc-counter .counter button {
+  width: 65px;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  color: #fff;
+  background: rgba(17, 13, 14, 0.5);
+  font-family: "Inter", sans-serif;
+  border: none;
+}
+.hero__calc-counter .counter span {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background: transparent;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  color: #fff;
+}
+.hero__calc-gift {
+  border-radius: 10px 10px 0 0;
+  background: rgba(17, 13, 14, 0.5);
+  padding: 13px 31px 24px 35px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+.hero__calc-price {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 2px;
+}
+.hero__calc-price .label {
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  color: #fff;
+}
+.hero__calc-price .summ {
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  color: #fff;
+}
+.hero__calc-price .summ .valuta {
+  font-size: 30px;
+}
+.hero__calc-prize .prize {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  gap: 17px;
+  margin-bottom: 8px;
+}
+.hero__calc-prize .prize .label {
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  color: #fff;
+  max-width: 155px;
+}
+.hero__calc-prize .text {
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  color: #fff;
+}
+.hero__calc-form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 14px;
+}
+.hero__calc-form .input {
+  border-radius: 0px 0px 0px 10px;
+  border-left: 1px solid #E1E7EF;
+  border-bottom: 1px solid #E1E7EF;
+  width: 258px;
+  background: #FFF;
+  height: 67px;
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  padding-left: 22px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  line-height: 66px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  color: #110D0E;
+  border-top: none;
+  border-right: none;
+}
+.hero__calc-form .input::-webkit-input-placeholder {
+  color: #AFAFAF;
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  line-height: 66px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+.hero__calc-form .input::-moz-placeholder {
+  color: #AFAFAF;
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  line-height: 66px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+.hero__calc-form .input:-ms-input-placeholder {
+  color: #AFAFAF;
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  line-height: 66px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+.hero__calc-form .input::-ms-input-placeholder {
+  color: #AFAFAF;
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  line-height: 66px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+.hero__calc-form .input::placeholder {
+  color: #AFAFAF;
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  line-height: 66px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+.hero__calc-form .button {
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 67px;
+  border: none;
+  padding: 0;
+  background: #D74535;
+  color: #fff;
+  border-radius: 0px 0px 10px 0px;
+  width: 100%;
+}
+.hero__calc-policy {
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 25px; /* 208.333% */
+  color: #fff;
+}
+
+@media (max-width: 1200px) {
+  .hero__tagline {
+    font-size: 30px;
+  }
+}
+@media (max-width: 990px) {
+  .hero {
+    padding: 66px 0 110px 0;
+  }
+  .hero__tagline {
+    font-size: 22px;
+  }
+  .hero__description {
+    font-size: 18px;
+  }
+  .hero__logo {
+    max-width: 273px;
+    margin-bottom: 40px;
+  }
+  .hero__logo-filter {
+    width: 520px;
+    height: 165px;
+    border-radius: 520px;
+    background: #110D0E;
+  }
+  .hero__calc {
+    width: 455px;
+    border-radius: 16px;
+    padding: 34px 30px 20px 30px;
+  }
+  .hero__calc-title {
+    font-size: 22px;
+    margin-bottom: 7px;
+  }
+  .hero__calc-label {
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+  .hero__calc-input {
+    height: 50px;
+    line-height: 50px;
+    padding: 0 20px;
+    font-size: 14px;
+  }
+  .hero__calc-slider {
+    margin-bottom: 9px;
+  }
+  .hero__calc-liner {
+    font-size: 14px;
+    margin-bottom: 18px;
+  }
+  .hero__calc-counter {
+    margin-bottom: 10px;
+  }
+  .hero__calc-counter .label {
+    font-size: 14px;
+    color: #110D0E;
+    gap: 11px;
+  }
+  .hero__calc-counter .label img {
+    width: 17px;
+    height: 17px;
+  }
+  .hero__calc-counter .counter {
+    width: 203px;
+    height: 50px;
+  }
+  .hero__calc-counter .counter button {
+    width: 55px;
+  }
+  .hero__calc-gift {
+    padding: 14px 30px 25px;
+    border-radius: 6.378px 6.378px 0 0;
+  }
+  .hero__calc-price {
+    gap: 5px;
+  }
+  .hero__calc-price .label {
+    font-size: 12px;
+  }
+  .hero__calc-price .summ {
+    font-size: 25px;
+  }
+  .hero__calc-price .summ .valuta {
+    font-size: 20px;
+  }
+  .hero__calc-prize .prize {
+    gap: 11px;
+  }
+  .hero__calc-prize .prize img {
+    width: 33px;
+    height: 40px;
+  }
+  .hero__calc-prize .prize .label {
+    font-size: 14px;
+  }
+  .hero__calc-prize .text {
+    font-size: 12px;
+  }
+  .hero__calc-form {
+    margin-bottom: 12px;
+  }
+  .hero__calc-form .input {
+    width: 190px;
+    height: 55px;
+    line-height: 54px;
+    padding-left: 16px;
+    font-size: 14px;
+    border-radius: 0px 0px 0px 6.378px;
+  }
+  .hero__calc-form .input::-webkit-input-placeholder {
+    font-size: 14px;
+  }
+  .hero__calc-form .input::-moz-placeholder {
+    font-size: 14px;
+  }
+  .hero__calc-form .input:-ms-input-placeholder {
+    font-size: 14px;
+  }
+  .hero__calc-form .input::-ms-input-placeholder {
+    font-size: 14px;
+  }
+  .hero__calc-form .input::placeholder {
+    font-size: 14px;
+  }
+  .hero__calc-form .button {
+    height: 55px;
+    border-radius: 0px 0px 6.378px 0;
+    font-size: 12px;
+  }
+  .hero__calc-policy {
+    font-size: 12px;
+    line-height: 15.944px; /* 132.871% */
+    text-align: center;
+  }
+}/*# sourceMappingURL=style.css.map */

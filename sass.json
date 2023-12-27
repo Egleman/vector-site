@@ -1,0 +1,19 @@
+{
+    "workbench.colorTheme": "Night Wolf (dark blue)",
+    "workbench.iconTheme": "material-icon-theme",
+    "explorer.confirmDelete": false,
+    "liveSassCompile.settings.formats": [{
+        "format": "expanded",
+        "extensionName": ".css",
+        "savePath": "/css",
+    }
+    ],
+    "liveSassCompile.settings.generateMap": true,
+    "liveSassCompile.settings.autoprefix": [
+        "> 5%",
+        "last 5 versions"
+    ],
+    "liveSassCompile.settings.includeItems": [
+        
+    ]
+}

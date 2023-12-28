@@ -301,18 +301,19 @@
         }
     }
 }
-@media (max-width: 1200px) {
+@media (max-width: 1230px) {
     .hero {
         &__tagline {
             font-size: 30px;
         }
     }
 }
-@media (max-width: 990px) {
+@media (max-width: 1022px) {
     .hero {
         padding: 66px 0 110px 0;
         &__tagline {
             font-size: 22px;
+            font-weight: 300;
         }
         &__description {
             font-size: 18px;
@@ -425,6 +426,111 @@
                 font-size: 12px;
                 line-height: 15.944px; /* 132.871% */
                 text-align: center;
+            }
+        }
+    }
+}
+@media (max-width: 798px) {
+    .hero {
+        padding: 50px 0 50px 0;
+        &__wrapper {
+            flex-direction: column;
+            &-left {
+                padding-top: 0;
+            }
+        }
+        &__logo {
+            max-width: 234px;
+            margin-bottom: 33px;
+        }
+        &__description {
+            margin-bottom: 40px;
+        }
+        &__calc {
+            margin: 0 auto;
+        }
+    }
+}
+@media (max-width: 606px) {
+    .hero {
+        &__background, &__filter {
+            height: 45%;
+        }
+        &__tagline {
+            margin-bottom: 25px;
+        }
+        &__calc {
+            width: 100%;
+            max-width: 455px;
+        }
+    }
+}
+@media (max-width: 475px) {
+    .hero {
+        &__background, &__filter {
+            height: 50%;
+        }
+        &__calc {
+            padding: 25px 20px;
+            border-radius: 16px;
+            &-title {
+                margin-bottom: 19px;
+            }
+            &-label {
+                color: $BASE_COLOR;
+            }
+            &-linear {
+                font-size: 12px;
+            }
+            &-counter {
+                gap: 15px;
+                margin-bottom: 16px;
+                .counter {
+                    height: 36px;
+                    width: 148px;
+                    border-radius: 6.218px;
+                    button {
+                        height: 36px;
+                        width: 40px;
+                        font-size: 12px;
+                    }
+                    span {
+                        font-size: 12px;
+                    }
+                }
+            }
+            &-gift {
+                padding: 9px 12px 12px 12px;
+                align-items: flex-start;
+                gap: 10px;
+            }
+            &-prize {
+                .text {
+                    max-width: 114px;
+                }
+            }
+            &-form {
+                flex-direction: column;
+                .input {
+                    border-radius: 0;
+                    width: 100%;
+                }
+                .button {
+                    border-radius: 0px 0px 7px 7px;
+                }
+            }
+        }
+    }
+}
+@media (max-width: 375px) {
+    .hero {
+        &__calc {
+            &-counter {
+                .counter {
+                    button {
+                        width: 35px;
+                    }
+                }
             }
         }
     }

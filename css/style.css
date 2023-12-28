@@ -703,17 +703,18 @@ label, button {
   color: #fff;
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1230px) {
   .hero__tagline {
     font-size: 30px;
   }
 }
-@media (max-width: 990px) {
+@media (max-width: 1022px) {
   .hero {
     padding: 66px 0 110px 0;
   }
   .hero__tagline {
     font-size: 22px;
+    font-weight: 300;
   }
   .hero__description {
     font-size: 18px;
@@ -837,5 +838,235 @@ label, button {
     font-size: 12px;
     line-height: 15.944px; /* 132.871% */
     text-align: center;
+  }
+}
+@media (max-width: 798px) {
+  .hero {
+    padding: 50px 0 50px 0;
+  }
+  .hero__wrapper {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .hero__wrapper-left {
+    padding-top: 0;
+  }
+  .hero__logo {
+    max-width: 234px;
+    margin-bottom: 33px;
+  }
+  .hero__description {
+    margin-bottom: 40px;
+  }
+  .hero__calc {
+    margin: 0 auto;
+  }
+}
+@media (max-width: 606px) {
+  .hero__background, .hero__filter {
+    height: 45%;
+  }
+  .hero__tagline {
+    margin-bottom: 25px;
+  }
+  .hero__calc {
+    width: 100%;
+    max-width: 455px;
+  }
+}
+@media (max-width: 475px) {
+  .hero__background, .hero__filter {
+    height: 50%;
+  }
+  .hero__calc {
+    padding: 25px 20px;
+    border-radius: 16px;
+  }
+  .hero__calc-title {
+    margin-bottom: 19px;
+  }
+  .hero__calc-label {
+    color: #110D0E;
+  }
+  .hero__calc-linear {
+    font-size: 12px;
+  }
+  .hero__calc-counter {
+    gap: 15px;
+    margin-bottom: 16px;
+  }
+  .hero__calc-counter .counter {
+    height: 36px;
+    width: 148px;
+    border-radius: 6.218px;
+  }
+  .hero__calc-counter .counter button {
+    height: 36px;
+    width: 40px;
+    font-size: 12px;
+  }
+  .hero__calc-counter .counter span {
+    font-size: 12px;
+  }
+  .hero__calc-gift {
+    padding: 9px 12px 12px 12px;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    gap: 10px;
+  }
+  .hero__calc-prize .text {
+    max-width: 114px;
+  }
+  .hero__calc-form {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .hero__calc-form .input {
+    border-radius: 0;
+    width: 100%;
+  }
+  .hero__calc-form .button {
+    border-radius: 0px 0px 7px 7px;
+  }
+}
+@media (max-width: 375px) {
+  .hero__calc-counter .counter button {
+    width: 35px;
+  }
+}
+.advantages {
+  padding: 0 0 42px 0;
+}
+.advantages__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+.advantages__card {
+  position: relative;
+  border-radius: 0 0 25px 25px;
+  background: #EAEAEA;
+  padding: 45px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-transition: 0.3s all;
+  transition: 0.3s all;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+.advantages__card-icon {
+  position: absolute;
+  top: -85px;
+  left: 0;
+  padding: 45px 0 0 45px;
+  border-radius: 25px 25px 0 0;
+  background: #EAEAEA;
+  width: 100%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-transition: 0.3s all;
+  transition: 0.3s all;
+}
+.advantages__card-icon svg {
+  -webkit-transition: 0.3s all;
+  transition: 0.3s all;
+}
+.advantages__card-icon svg path {
+  -webkit-transition: 0.3s all;
+  transition: 0.3s all;
+}
+.advantages__card-title {
+  font-size: 25px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  margin-bottom: 24px;
+  -webkit-transition: 0.3s all;
+  transition: 0.3s all;
+}
+.advantages__card-description {
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+  -webkit-transition: 0.3s all;
+  transition: 0.3s all;
+  margin-top: auto;
+}
+.advantages__card:hover {
+  background: #D74535;
+  -webkit-box-shadow: -14px 26px 49px 0px rgba(164, 34, 19, 0.53);
+          box-shadow: -14px 26px 49px 0px rgba(164, 34, 19, 0.53);
+}
+.advantages__card:hover .advantages__card-icon {
+  background: #D74535;
+}
+.advantages__card:hover .advantages__card-icon svg path {
+  fill: #fff;
+}
+.advantages__card:hover .advantages__card-title {
+  color: #fff;
+}
+.advantages__card:hover .advantages__card-description {
+  color: #fff;
+}
+
+@media (max-width: 1230px) {
+  .advantages__card-title {
+    font-size: 16.324px;
+    margin-bottom: 10px;
+  }
+  .advantages__card-description {
+    font-size: 14px;
+  }
+}
+@media (max-width: 1022px) {
+  .advantages__card {
+    padding: 34px 25px 20px 25px;
+  }
+  .advantages__card-icon {
+    top: -60px;
+    padding: 35px 0 0 25px;
+  }
+  .advantages__card-icon svg {
+    width: 33px;
+    max-height: 34px;
+  }
+  .advantages__card-title {
+    font-size: 16.324px;
+    margin-bottom: 10px;
+  }
+  .advantages__card-description {
+    font-size: 14px;
+  }
+}
+@media (max-width: 798px) {
+  .advantages {
+    padding: 26px 0 22px 0;
+  }
+  .advantages__card {
+    border-radius: 16.324px;
+  }
+  .advantages__card-icon {
+    background: transparent;
+    width: -webkit-max-content;
+    width: -moz-max-content;
+    width: max-content;
+    border-radius: 0;
+    position: static;
+    padding: 0;
+  }
+  .advantages__card:hover .advantages__card-icon {
+    background: transparent;
   }
 }/*# sourceMappingURL=style.css.map */

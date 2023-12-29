@@ -43,3 +43,20 @@ minusButtons.forEach((btn, index) => {
     })
 })
 // End counters
+
+// Start sliders
+const advantagesSlider = new Swiper('.advantages-slider', {
+    loop: true,
+  
+    pagination: {
+      el: '.advantages__pagination',
+    },
+  
+    // Navigation arrows
+    navigation: {
+      nextEl: '.advantages__button.next',
+      prevEl: '.advantages__button.prev',
+    },
+  });
+
+// End sliders

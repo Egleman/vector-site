@@ -1,0 +1,260 @@
+.dignity {
+    padding: 50px 0 50px 0;
+    &__title {
+        display: flex;
+        align-items: center;
+        gap: 37px;
+        font-size: 30px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+        margin-bottom: 50px;
+    }
+    &__grid {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 3px;
+    }
+    &__card {
+        background: #EAEAEA;
+        padding: 30px 20px 25px 20px;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        transition: .3s all;
+        height: 270px;
+        &-icon {
+            margin-bottom: 40px;
+            transition: .3s all;
+            svg {
+                transition: .3s all;
+                path {
+                    transition: .3s all;
+                } 
+            }
+            img {
+                transition: .3s all;
+            }
+        }
+        &-subtitle {
+            color: #AFAFAF;
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal;
+            margin-bottom: 23px;
+            transition: .3s all;
+        }
+        &-description {
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal;
+            margin-top: auto;
+            transition: .3s all;
+        }
+        &:hover {
+            background: $RED_COLOR;
+            border-radius: 25px;
+            transform: scale(1.08);
+            box-shadow: -14px 26px 49px 0px rgba(164, 34, 19, 0.53);
+            .dignity__card-icon {
+                svg {
+                    path {
+                        fill: $WHITE_COLOR;
+                    }
+                }
+                img {
+                    filter: brightness(10);
+                }
+            }
+            .dignity__card-description {
+                color: #fff;
+            }
+        }
+    }
+    &__card.small {
+        grid-column: span 1;
+    }
+    &__card.big {
+        grid-column: span 2;
+    }
+    &__card.rounded-top-left {
+        border-radius: 25px 0px 0px 0px;
+        &:hover {
+            border-radius: 25px;
+        }
+    }
+    &__card.rounded-top-right {
+        border-radius: 0px 25px 0px 0px;
+        &:hover {
+            border-radius: 25px;
+        }
+    }
+    &__card.rounded-bottom-left {
+        border-radius: 0px 0px 0px 25px;
+        &:hover {
+            border-radius: 25px;
+        }
+    }
+    &__card.rounded-bottom-right {
+        border-radius: 0px 0px 25px 0px;
+        &:hover {
+            border-radius: 25px;
+        }
+    }
+    &__slider {
+        display: none;
+    }
+    &__buttons {
+        display: none;
+    }
+}
+@media (max-width: 1230px) {
+    .dignity {
+        padding: 25px 0 35px 0;
+        &__title {
+            svg {
+                width: 32px;
+                height: 32px;
+                display: flex;
+                flex-shrink: 0;
+            }
+            gap: 24px;
+            font-size: 20px;
+            margin-bottom: 30px;
+        }
+        &__card {
+            padding: 20px 15px 15px 15px;
+            height: 175px;
+            &-icon {
+                margin-bottom: 18px;
+            }
+            &-subtitle {
+                margin-bottom: 14px;
+                font-size: 10px;
+            }
+            &-description {
+                font-size: 12px;
+            }
+        }
+        &__img {
+            &_1 {
+                width: 42px;
+                height: 42px;
+            }
+            &_2 {
+                width: 37px;
+                height: 37px; 
+            }
+            &_3 {
+                width: 38px;
+                height: 38px; 
+            }
+            &_4 {
+                width: 50px;
+                height: 50px; 
+            }
+            &_5 {
+                width: 40px;
+                height: 40px; 
+            }
+            &_6 {
+                width: 46px;
+                height: 46px; 
+            }
+            &_7 {
+                width: 40px;
+                height: 40px; 
+            }
+            &_8 {
+                width: 39px;
+                height: 39px; 
+            }
+            &_9 {
+                width: 42px;
+                height: 25px; 
+            }
+        }
+    }
+}
+@media (max-width: 798px) {
+    .dignity {
+        padding: 15px 0 38px 0;
+        border-bottom: 1px solid #AFAFAF;
+        margin-bottom: 15px;
+        &__grid {
+            display: none;
+        }
+        &__slider {
+            display: block;
+            margin-bottom: 15px;
+        }
+        &__card {
+            border-radius: 16px;
+            &:hover {
+                background: #EAEAEA;
+                box-shadow: none;
+                transform: none;
+                border-radius: 16px;
+                .dignity__card-icon {
+                    svg {
+                        path {
+                            fill: $RED_COLOR;
+                        }
+                    }
+                    img {
+                        filter: none;
+                    }
+                }
+                .dignity__card-description {
+                    color: $BASE_COLOR;
+                }
+            }
+        }
+        &__buttons {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 15px;
+            .buttons {
+                display: flex;
+                align-items: center;
+                gap: 15px;
+            }
+        }
+        &__button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 41px;
+            height: 41px;
+            border-radius: 50%;
+            padding: 0;
+            background: transparent;
+            border: 1px solid #AFAFAF;
+        }
+        #dignity__pagination {
+            width: max-content;
+            left: 0;
+            top: 100%;
+            position: static;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            span {
+                margin: 0;
+            }
+            .swiper-pagination-bullet {
+                width: 5px;
+                height: 5px;
+                background: #AFAFAF;
+            }
+            .swiper-pagination-bullet-active {
+                width: 10px;
+                height: 10px;
+                background:#D74535;
+            }
+        }
+    }
+}

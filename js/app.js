@@ -45,18 +45,114 @@ minusButtons.forEach((btn, index) => {
 // End counters
 
 // Start sliders
+
+//helpers function to sliders
+const num = (e) => {
+    return (e % 1) === 0 ? e.toFixed(0) : e.toFixed(1);
+}
+const changeProgress = (self) => {
+    const firstStep = self.realIndex + 1;
+    const allStep = self.slides.length;
+    const startPercent = firstStep / allStep * 100;
+    document.querySelector('.examples__progress > .progressbar').style.width = `${num(startPercent)}%`;
+}
+//end helpers function to sliders
+
 const advantagesSlider = new Swiper('.advantages-slider', {
     loop: true,
-  
     pagination: {
       el: '.advantages__pagination',
     },
-  
-    // Navigation arrows
     navigation: {
       nextEl: '.advantages__button.next',
       prevEl: '.advantages__button.prev',
     },
-  });
-
+});
+const examplesThumbsSlider = new Swiper(".examples__thumbs", {
+    spaceBetween: 26,
+    slidesPerView: 'auto',
+    freeMode: true,
+    watchSlidesProgress: true,
+    autoScrollOffset: 1,
+    allowTouchMove: true,
+    breakpoints: {
+        0: {
+          spaceBetween: 15
+        },
+        1200: {
+          spaceBetween: 26
+        },
+    }
+});
+const examplesSlider = new Swiper('.examples__slider', {
+    pagination: {
+      el: '.examples__pagintation',
+    },
+    navigation: {
+      nextEl: '.examples__button.next',
+      prevEl: '.examples__button.prev',
+    },
+    thumbs: {
+        swiper: examplesThumbsSlider,
+    },
+    on: {
+        init: function () {
+            changeProgress(this)
+        },
+        slideChange: function() {
+            changeProgress(this)
+        }
+    },
+});
+const dignitySlider = new Swiper('.dignity__slider', {
+    loop: true,
+    pagination: {
+      el: '.dignity__pagination',
+    },
+    spaceBetween: 10,
+    slidesPerView: 3,
+    navigation: {
+      nextEl: '.dignity__button.next',
+      prevEl: '.dignity__button.prev',
+    },
+    breakpoints: {
+        0: {
+            spaceBetween: 10,
+            slidesPerView: 1,
+        },
+        475: {
+            spaceBetween: 10,
+            slidesPerView: 2,
+        },
+        606: {
+            spaceBetween: 10,
+            slidesPerView: 3,
+        },
+    }
+});
 // End sliders
+
+// Start tabs
+const tabsPanel = document.querySelector('.services__tabs');
+const tabItems = document.querySelectorAll('.services__tabs-item');
+const tabImages = document.querySelectorAll('.services__image');
+
+tabsPanel.addEventListener('click', (e) => {
+    if (e.target.closest('.services__tabs-item')) {
+        const btn = e.target.closest('.services__tabs-item')
+        tabItems.forEach((tab, index) => {
+            if (tab === btn) {
+                tab.classList.add('active');
+                tabImages[index].classList.add('active');
+            } else {
+                if (tab.classList.contains('active')) {
+                    tab.classList.remove('active');
+                }
+                if (tabImages[index].classList.contains('active')) {
+                    tabImages[index].classList.remove('active');
+                }
+            }
+        })
+    }
+})
+// End tabs

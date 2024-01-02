@@ -1,7 +1,8 @@
-// Start Hero-section slider
-const heroSlider = document.getElementById('hero-slider');
-const heroInput = document.querySelector('.hero__calc-input');
-noUiSlider.create(heroSlider, {
+// Start range-sliders
+const rangeSliders = document.querySelectorAll('[data-block="calc-slider"]');
+const rangeInputs = document.querySelectorAll('[data-input="calc-slider"]');
+const hiddenSquareInputs = document.querySelectorAll('[data-input="square"]');
+const rangeSliderOptions = {
     start: [25],
     padding: [1, 3],
     connect: 'lower',
@@ -9,44 +10,50 @@ noUiSlider.create(heroSlider, {
         'min': [0],
         'max': [83]
     }
-});
-heroSlider.noUiSlider.on('update', function (values, handle) {
-    heroInput.value = `${Math.round(values[handle])} м2`
-});
-heroSlider.noUiSlider.on('set', function (values, handle) {
-    heroInput.value = `${Math.round(values[handle])} м2`
-});
-heroInput.addEventListener('change', () => {
-    if (+heroInput.value > 0 && +heroInput.value < 80) {
-        heroSlider.noUiSlider.set(+heroInput.value);
-    } else {
-        heroSlider.noUiSlider.set(80);
-    }
+}
+rangeSliders.forEach((slider, index) => {
+    noUiSlider.create(slider, rangeSliderOptions);
+    slider.noUiSlider.on('update', function (values, handle) {
+        rangeInputs[index].value = `${Math.round(values[handle])} м2`;
+        hiddenSquareInputs[index].value = `${Math.round(values[handle])}`;
+    });
+    slider.noUiSlider.on('set', function (values, handle) {
+        rangeInputs[index].value = `${Math.round(values[handle])} м2`;
+    });
+    rangeInputs[index].addEventListener('change', () => {
+        if (+rangeInputs[index].value > 0 && +rangeInputs[index].value < 80) {
+            slider.noUiSlider.set(+rangeInputs[index].value);
+        } else {
+            slider.noUiSlider.set(80);
+        }
+    })
 })
-// End Hero-section slider
+// End range-sliders
 
 // Start counters
 const plusButtons = document.querySelectorAll('[data-button="count+"]');
 const minusButtons = document.querySelectorAll('[data-button="count-"]');
 const counters = document.querySelectorAll('[data-block="result"]');
+const hiddenCountInputs = document.querySelectorAll('[data-input="count"]');
 
 plusButtons.forEach((btn, index) => {
     btn.addEventListener('click', () => {
         counters[index].textContent = Number(counters[index].textContent) + 1;
+        hiddenCountInputs[index].value = `${Number(counters[index].textContent)}`;
     })
 })
 minusButtons.forEach((btn, index) => {
     btn.addEventListener('click', () => {
         if (Number(counters[index].textContent) !== 1) {
             counters[index].textContent = Number(counters[index].textContent) - 1;
+            hiddenCountInputs[index].value = `${Number(counters[index].textContent)}`;
         }
     })
 })
 // End counters
 
 // Start sliders
-
-//helpers function to sliders
+// helpers function for sliders
 const num = (e) => {
     return (e % 1) === 0 ? e.toFixed(0) : e.toFixed(1);
 }
@@ -56,10 +63,10 @@ const changeProgress = (self) => {
     const startPercent = firstStep / allStep * 100;
     document.querySelector('.examples__progress > .progressbar').style.width = `${num(startPercent)}%`;
 }
-//end helpers function to sliders
+// end helpers function for sliders
 
 const advantagesSlider = new Swiper('.advantages-slider', {
-    loop: true,
+    // loop: true,
     pagination: {
       el: '.advantages__pagination',
     },
@@ -105,7 +112,7 @@ const examplesSlider = new Swiper('.examples__slider', {
     },
 });
 const dignitySlider = new Swiper('.dignity__slider', {
-    loop: true,
+    // loop: true,
     pagination: {
       el: '.dignity__pagination',
     },
@@ -130,29 +137,104 @@ const dignitySlider = new Swiper('.dignity__slider', {
         },
     }
 });
+const servicesSlider = new Swiper('.services__swiper', {
+    // loop: true,
+    autoHeight: true,
+    pagination: {
+      el: '.services__pagination',
+    },
+    navigation: {
+      nextEl: '.services__button.next',
+      prevEl: '.services__button.prev',
+    },
+});
+const implementationTabsSlider = new Swiper(".implementation__tabs", {
+    slidesPerView: 'auto',
+    freeMode: true,
+    watchSlidesProgress: true,
+    autoScrollOffset: 1,
+    allowTouchMove: true,
+    breakpoints: {
+        798: {
+          spaceBetween: 10
+        },
+        1230: {
+          spaceBetween: 45
+        },
+    }
+});
+const implementationSliders = document.querySelectorAll('.implementation__slider');
+const implementationPaginations = document.querySelectorAll('.implementation__pagintaion');
+const implementationNextButtons = document.querySelectorAll('.implementation__button.next');
+const implementationPrevButtons = document.querySelectorAll('.implementation__button.prev');
+implementationSliders.forEach((slider, index) => {
+    slider.classList.add(`implementation__slider_${index}`);
+    implementationPaginations[index].classList.add(`implementation__pagintaion_${index}`);
+    implementationNextButtons[index].classList.add(`implementation__button_${index}`);
+    implementationPrevButtons[index].classList.add(`implementation__button_${index}`);
+    new Swiper(`.implementation__slider_${index}`, {
+        autoHeight: true,
+        pagination: {
+          el: `.implementation__pagintaion_${index}`,
+        },
+        navigation: {
+          nextEl: `.implementation__button_${index}.next`,
+          prevEl: `.implementation__button_${index}.prev`,
+        },
+    });
+})
 // End sliders
 
 // Start tabs
-const tabsPanel = document.querySelector('.services__tabs');
-const tabItems = document.querySelectorAll('.services__tabs-item');
-const tabImages = document.querySelectorAll('.services__image');
+const tabsPanelServices = document.querySelector('.services__tabs');
+const tabItemsServices = document.querySelectorAll('.services__tabs-item');
+const tabImagesServices = document.querySelectorAll('.services__image');
 
-tabsPanel.addEventListener('click', (e) => {
-    if (e.target.closest('.services__tabs-item')) {
-        const btn = e.target.closest('.services__tabs-item')
-        tabItems.forEach((tab, index) => {
-            if (tab === btn) {
-                tab.classList.add('active');
-                tabImages[index].classList.add('active');
-            } else {
-                if (tab.classList.contains('active')) {
-                    tab.classList.remove('active');
+const tabsPanelImplementations = document.querySelector('.implementation__tabs');
+const tabItemsImplementations = document.querySelectorAll('.implementation__tab');
+const tabContentsImplementations = document.querySelectorAll('.implementation__content');
+
+const tabs = (tabsPanel, tabsButtons, tabsContent, tabSelector) => {
+    tabsPanel.addEventListener('click', (e) => {
+        e.preventDefault();
+        if (e.target.closest(`.${tabSelector}`)) {
+            const btn = e.target.closest(`.${tabSelector}`);
+            tabsButtons.forEach((tab, index) => {
+                if (tab === btn) {
+                    tab.classList.add('active');
+                    tabsContent[index].classList.add('active');
+                } else {
+                    if (tab.classList.contains('active')) {
+                        tab.classList.remove('active');
+                    }
+                    if (tabsContent[index].classList.contains('active')) {
+                        tabsContent[index].classList.remove('active');
+                    }
                 }
-                if (tabImages[index].classList.contains('active')) {
-                    tabImages[index].classList.remove('active');
-                }
-            }
-        })
-    }
-})
+            })
+        }
+    })
+}
+tabs(tabsPanelServices, tabItemsServices, tabImagesServices, 'services__tabs-item');
+tabs(tabsPanelImplementations, tabItemsImplementations, tabContentsImplementations, 'implementation__tab');
 // End tabs
+
+// Start Slider modals
+const modalImplementationLinks = document.querySelectorAll('.implementation__content-more');
+const modalsImplementations = document.querySelectorAll('.implementation__modal');
+const modalImplementationsCloseButtons = document.querySelectorAll('.implementation__modal-close');
+modalImplementationLinks.forEach((link, index) => {
+    link.addEventListener('click', (e) => {
+        e.preventDefault();
+        modalsImplementations[index].classList.add('active');
+    })
+})
+modalImplementationsCloseButtons.forEach((btn, index) => {
+    btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        if (modalsImplementations[index].classList.contains('active')) {
+            modalsImplementations[index].classList.remove('active');
+        }
+    })
+})
+// End Slider modals

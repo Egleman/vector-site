@@ -3040,6 +3040,9 @@ label, button {
 }
 
 @media (max-width: 1230px) {
+  .calc {
+    padding: 20px 0 18px 0;
+  }
   .calc__wrapper {
     margin-left: -15px;
     margin-right: -15px;
@@ -3232,55 +3235,6 @@ label, button {
     width: -moz-max-content !important;
     width: max-content !important;
   }
-}
-@media (max-width: 700px) {
-  .calc__range {
-    padding: 20px 0 30px 0;
-    flex-direction: column;
-  }
-  .calc__range-label {
-    margin-right: 0;
-    padding-top: 0;
-    flex-direction: row;
-    align-self: flex-start;
-    align-items: center;
-    gap: 14px;
-    margin-bottom: 28px;
-  }
-  .calc__range-slider {
-    margin-bottom: 80px;
-    margin-right: 0;
-  }
-  .calc__range-counter {
-    width: 100%;
-    justify-content: space-between;
-  }
-  .calc__range-counter .counter {
-    width: 180px;
-    height: 51px;
-    border-radius: 10px;
-  }
-  .calc__range-counter .counter button {
-    width: 51px;
-    height: 51px;
-    font-size: 20px;
-  }
-  .calc__range-counter .counter span {
-    font-size: 16px;
-  }
-  .calc__counters {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0;
-    padding-top: 20px;
-  }
-  .calc__counters .calc__label {
-    position: static;
-    margin-bottom: 10px;
-  }
-  .calc__counters .calc__range-counter {
-    margin-bottom: 34px;
-  }
   .calc__form {
     padding: 30px 15px 20px 15px;
   }
@@ -3330,7 +3284,59 @@ label, button {
     text-align: center;
   }
 }
+@media (max-width: 700px) {
+  .calc__range {
+    padding: 20px 0 30px 0;
+    flex-direction: column;
+  }
+  .calc__range-label {
+    margin-right: 0;
+    padding-top: 0;
+    flex-direction: row;
+    align-self: flex-start;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 28px;
+  }
+  .calc__range-slider {
+    margin-bottom: 80px;
+    margin-right: 0;
+  }
+  .calc__range-counter {
+    width: 100%;
+    justify-content: space-between;
+  }
+  .calc__range-counter .counter {
+    width: 180px;
+    height: 51px;
+    border-radius: 10px;
+  }
+  .calc__range-counter .counter button {
+    width: 51px;
+    height: 51px;
+    font-size: 20px;
+  }
+  .calc__range-counter .counter span {
+    font-size: 16px;
+  }
+  .calc__counters {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+    padding-top: 20px;
+  }
+  .calc__counters .calc__label {
+    position: static;
+    margin-bottom: 10px;
+  }
+  .calc__counters .calc__range-counter {
+    margin-bottom: 34px;
+  }
+}
 @media (max-width: 606px) {
+  .calc {
+    padding: 25px 0 18px 0;
+  }
   .calc__form-inputs {
     flex-direction: column;
     display: flex;
@@ -3357,5 +3363,179 @@ label, button {
   }
   .calc__form-price {
     padding: 20px 20px 28px 20px;
+  }
+  .calc__range-counter .counter {
+    width: 160px;
+  }
+}
+.credit {
+  padding: 40px 0;
+  overflow-x: hidden;
+}
+.credit__top {
+  background: #EAEAEA;
+  padding: 55px 0 70px;
+}
+.credit__top-wrapper {
+  position: relative;
+}
+.credit__title {
+  font-size: 35px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  max-width: 786px;
+}
+.credit__title span {
+  color: #D04636;
+}
+.credit__subtitle {
+  position: absolute;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  max-width: 455px;
+  width: 100%;
+  left: 277px;
+  top: 53px;
+}
+.credit__bottom {
+  background: #D74535;
+}
+.credit__bottom-wrapper {
+  position: relative;
+  display: flex;
+  gap: 44px;
+  padding: 50px 0;
+}
+.credit__block-title {
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+  color: #fff;
+  max-width: 380px;
+  margin-bottom: 26px;
+}
+.credit__list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.credit__list-text {
+  display: flex;
+  align-items: center;
+  gap: 23px;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 20px;
+  color: #fff;
+}
+.credit__image {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  max-width: 515px;
+}
+
+@media (max-width: 1230px) {
+  .credit {
+    padding: 55px 0 26px 0;
+  }
+  .credit__top {
+    padding: 34px 0 40px 0;
+  }
+  .credit__title {
+    font-size: 22.309px;
+    max-width: 500px;
+  }
+  .credit__subtitle {
+    font-size: 13px;
+    max-width: 323px;
+    left: 172px;
+    top: 34px;
+  }
+  .credit__bottom-wrapper {
+    gap: 28px;
+    padding: 34px 0 32px 0;
+  }
+  .credit__icon svg {
+    width: 112px;
+    height: 95px;
+  }
+  .credit__block-title {
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 12.748px;
+    max-width: 353px;
+    margin-bottom: 16px;
+    position: relative;
+    z-index: 1;
+  }
+  .credit__list {
+    gap: 10px;
+  }
+  .credit__list-text {
+    gap: 15px;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 12.748px;
+  }
+  .credit__image {
+    max-width: 350px;
+  }
+}
+@media (max-width: 798px) {
+  .credit {
+    padding: 18px 0 22px 0;
+  }
+  .credit__top {
+    padding: 35px 0 27px 0;
+  }
+  .credit__top-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+  }
+  .credit__title {
+    max-width: 100%;
+  }
+  .credit__subtitle {
+    position: static;
+    max-width: 100%;
+  }
+  .credit__bottom-wrapper {
+    padding: 34px 0 18px 0;
+    flex-direction: column-reverse;
+  }
+  .credit__block-title {
+    max-width: 247px;
+    margin-bottom: 15px;
+  }
+  .credit__list {
+    gap: 15px;
+  }
+  .credit__list-text {
+    max-width: 154px;
+    align-items: flex-start;
+  }
+  .credit__list-text svg {
+    padding-top: 2px;
+    display: flex;
+    flex-shrink: 0;
+  }
+}
+@media (max-width: 606px) {
+  .credit__image {
+    max-width: 190px;
+    right: -15px;
+  }
+  .credit__list {
+    position: relative;
+    z-index: 1;
   }
 }/*# sourceMappingURL=style.css.map */

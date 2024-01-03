@@ -338,7 +338,15 @@ calcTabsValues(calcManufacturerTabPanel, calcManufacturerButtons, calcManufactur
 // End calc
 
 // Start masked inputs
-
-
-
+const phoneInputs = document.querySelectorAll('[data-input="masked"]');
+const im = new Inputmask({
+    mask: '+7 (999) 999-99-99',
+    showMaskOnHover: false,
+    showMaskOnFocus: false,
+    jitMasking: true,
+    inputmode: 'tel'
+})
+phoneInputs.forEach(input => {
+    im.mask(input);
+})
 // End masked inputs

@@ -28,6 +28,25 @@ rangeSliders.forEach((slider, index) => {
         }
     })
 })
+const calcSliderOptions = {
+    start: [45],
+    padding: [4, 2],
+    connect: 'lower',
+    tooltips: {
+        to: function(numericValue) {
+            return `${numericValue.toFixed(0)} кв.м2`;
+        }
+    },
+    range: {
+        'min': [-4],
+        'max': [82]
+    }
+}
+const calcSlider = document.getElementById('calc-slider');
+noUiSlider.create(calcSlider, calcSliderOptions);
+calcSlider.noUiSlider.on('update', function (values, handle) {
+    hiddenSquareInputs[2].value = `${Math.round(values[handle])}`;
+});
 // End range-sliders
 
 // Start counters
@@ -183,6 +202,54 @@ implementationSliders.forEach((slider, index) => {
         },
     });
 })
+
+const calcTypesSlider = new Swiper(".calc__types-slider", {
+    // slidesPerView: 'auto',
+    freeMode: true,
+    watchSlidesProgress: true,
+    autoScrollOffset: 1,
+    
+    breakpoints: {
+        0: {
+            allowTouchMove: true,
+            spaceBetween: 25,
+            slidesPerView: 'auto',
+        },
+        798: {
+            allowTouchMove: false,
+            spaceBetween: 25,
+            slidesPerView: 4,
+        },
+        1230: {
+            allowTouchMove: false,
+            spaceBetween: 32,
+            slidesPerView: 4,
+        }
+    }
+});
+const calcManufacturerSlider = new Swiper(".calc__manufacturer-slider", {
+    // slidesPerView: 'auto',
+    freeMode: true,
+    watchSlidesProgress: true,
+    autoScrollOffset: 1,
+    breakpoints: {
+        0: {
+            allowTouchMove: true,
+            spaceBetween: 40,
+            slidesPerView: 'auto',
+        },
+        798: {
+            allowTouchMove: false,
+            spaceBetween: 0,
+            slidesPerView: 7,
+        },
+        1230: {
+            allowTouchMove: false,
+            spaceBetween: 0,
+            slidesPerView: 7,
+        }
+    }
+});
 // End sliders
 
 // Start tabs
@@ -238,3 +305,40 @@ modalImplementationsCloseButtons.forEach((btn, index) => {
     })
 })
 // End Slider modals
+
+// Start calc
+const calcTypeButtons = document.querySelectorAll('.calc__types-slide');
+const calcTypeInput = document.querySelector('[data-input="calc-type"]');
+const calcTypeTabPanel = document.querySelector('.calc__types-slider');
+
+const calcManufacturerTabPanel = document.querySelector('.calc__manufacturer-slider');
+const calcManufacturerButtons = document.querySelectorAll('.calc__manufacturer-tab');
+const calcManufacturerInput = document.querySelector('[data-input="manufacturer"]');
+
+const calcTabsValues = (tabPanel, buttons, input, selector) => {
+    tabPanel.addEventListener('click', (e) => {
+        e.preventDefault();
+        if (e.target.closest(`.${selector}`)) {
+            const btn = e.target.closest(`.${selector}`);
+            buttons.forEach((tab, index) => {
+                if (tab === btn) {
+                    tab.classList.add('active');
+                    input.value = tab.dataset.calcButton;
+                } else {
+                    if (tab.classList.contains('active')) {
+                        tab.classList.remove('active');
+                    }
+                }
+            })
+        }
+    })
+}
+calcTabsValues(calcTypeTabPanel, calcTypeButtons, calcTypeInput, 'calc__types-slide');
+calcTabsValues(calcManufacturerTabPanel, calcManufacturerButtons, calcManufacturerInput, 'calc__manufacturer-tab');
+// End calc
+
+// Start masked inputs
+
+
+
+// End masked inputs

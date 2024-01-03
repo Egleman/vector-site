@@ -121,7 +121,7 @@
                             <form action="#" class="hero__calc-form">
                                 <input type="hidden" name="square" value="25" data-input="square">
                                 <input type="hidden" name="count" value="1" data-input="count">
-                                <input type="text" class="input" name="phone" placeholder="Введите номер">
+                                <input type="text" class="input" name="phone" placeholder="Введите номер" data-input="masked">
                                 <button type="submit" class="button">Получить расчет</button>
                             </form>
                             <div class="hero__calc-policy">Нажимая на кнопку, вы даете согласие на обработку своих персональных данных</div>
@@ -964,7 +964,7 @@
                         <form action="#" class="sale__calc-form">
                             <input type="hidden" name="square" value="25" data-input="square">
                             <input type="hidden" name="count" value="1" data-input="count">
-                            <input type="text" class="input" name="phone" placeholder="Введите номер">
+                            <input type="text" class="input" name="phone" placeholder="Введите номер" data-input="masked">
                             <button type="submit" class="button">Получить расчет</button>
                         </form>
                         <div class="sale__calc-policy">Нажимая на кнопку, вы даете согласие на обработку своих персональных данных</div>
@@ -1629,10 +1629,185 @@
                     </div>
                 </div>
             </div>
+            <div class="implementation__background"></div>
+        </section>
+        <section class="calc">
+            <div class="container">
+                <div class="calc__wrapper">
+                    <div class="calc__title">
+                        <div class="calc__title-icon">
+                            <svg width="82" height="82" viewBox="0 0 82 82" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <g clip-path="url(#clip0_462_290)">
+                                <path d="M6.82426 0H71.0309C73.2592 0.203932 75.0156 1.13124 76.3 2.78191C77.3363 4.11281 77.8359 5.64711 77.8359 7.33516C77.8359 19.4697 77.8359 31.4712 77.8359 43.3399C77.836 43.3994 77.8532 43.4573 77.8856 43.5064C80.4107 47.3587 81.7822 51.6023 82 56.2373V57.9477C81.4795 71.1398 71.0549 81.5452 57.8516 82H56.2853C51.6152 81.7875 47.3491 80.4128 43.4872 77.876C43.4453 77.8488 43.3964 77.8343 43.3463 77.8343C31.278 77.8375 19.2807 77.8365 7.35437 77.8311C3.39371 77.8295 0.299492 74.9579 0 71.0165V6.78902C0.291484 3.05258 3.09102 0.317109 6.82426 0ZM6.43668 4.94082C5.48215 5.26594 4.80469 6.17883 4.80469 7.20223C4.80469 16.8938 4.80469 26.6089 4.80469 36.3475C4.80469 36.3921 4.8224 36.4348 4.85394 36.4664C4.88548 36.4979 4.92825 36.5156 4.97285 36.5156H36.3555C36.3979 36.5156 36.4387 36.4988 36.4687 36.4687C36.4988 36.4387 36.5156 36.3979 36.5156 36.3555V4.92961C36.5156 4.89648 36.5026 4.8647 36.4795 4.84128C36.4564 4.81785 36.425 4.80469 36.3923 4.80469C26.9527 4.81216 17.472 4.80896 7.95016 4.79508C7.22839 4.79401 6.72389 4.84259 6.43668 4.94082ZM53.8766 32.5758C60.7168 31.6517 67.6228 33.6296 72.9608 38.0371C72.9671 38.0423 72.9748 38.0455 72.9829 38.0465C72.991 38.0474 72.9993 38.0461 73.0066 38.0425C73.014 38.039 73.0202 38.0335 73.0246 38.0266C73.029 38.0197 73.0313 38.0116 73.0312 38.0035C73.0323 27.9232 73.0323 17.8345 73.0312 7.73715C73.0312 7.04954 72.9619 6.55039 72.8231 6.23969C72.5743 5.68555 72.1579 5.27234 71.5738 5.00008C71.2802 4.86341 70.7437 4.79508 69.9643 4.79508C60.4168 4.80255 50.895 4.80629 41.3988 4.80629C41.378 4.80629 41.358 4.81456 41.3433 4.82927C41.3286 4.84399 41.3203 4.86395 41.3203 4.88477V37.9891C41.3203 38.0542 41.3454 38.0659 41.3956 38.0243C45.1027 35.0144 49.263 33.1983 53.8766 32.5758ZM77.1889 57.1742C77.1889 51.8664 75.0804 46.776 71.3272 43.0228C67.574 39.2696 62.4836 37.1611 57.1758 37.1611C51.868 37.1611 46.7775 39.2696 43.0244 43.0228C39.2712 46.776 37.1627 51.8664 37.1627 57.1742C37.1627 62.482 39.2712 67.5724 43.0244 71.3256C46.7775 75.0788 51.868 77.1873 57.1758 77.1873C62.4836 77.1873 67.574 75.0788 71.3272 71.3256C75.0804 67.5724 77.1889 62.482 77.1889 57.1742ZM38.0435 72.9688C31.128 64.5702 30.4233 52.6273 36.4564 43.5257C36.4959 43.4669 36.5156 43.4023 36.5156 43.3319V41.4404C36.5156 41.4086 36.503 41.378 36.4804 41.3555C36.4579 41.333 36.4274 41.3203 36.3955 41.3203H4.85113C4.84482 41.3203 4.83858 41.3216 4.83275 41.324C4.82692 41.3264 4.82162 41.3299 4.81716 41.3344C4.8127 41.3388 4.80916 41.3441 4.80674 41.35C4.80433 41.3558 4.80309 41.362 4.80309 41.3684C4.80949 50.8496 4.80682 60.4019 4.79508 70.0251C4.79401 70.6807 4.85327 71.1708 4.97285 71.4954C5.18426 72.0719 5.61828 72.5214 6.27492 72.8439C6.54719 72.9763 7.20703 73.0419 8.25445 73.0409C17.9642 73.0259 27.8832 73.0243 38.0115 73.0361C38.0192 73.0359 38.0268 73.0336 38.0333 73.0294C38.0398 73.0252 38.045 73.0193 38.0483 73.0123C38.0516 73.0053 38.0529 72.9976 38.0521 72.9899C38.0512 72.9822 38.0483 72.9749 38.0435 72.9688Z" fill="#D74535"/>
+                                <path d="M23.0653 23.1569C23.0525 24.0976 23.0541 24.9976 23.0701 25.8571C23.0808 26.4059 23.0087 26.8587 22.8539 27.2153C22.0275 29.1195 19.276 29.1548 18.4592 27.2105C18.3033 26.84 18.2318 26.3819 18.2446 25.8363C18.267 24.9064 18.2686 24.0137 18.2494 23.1585C18.2486 23.136 18.2393 23.1146 18.2236 23.0989C18.2078 23.0831 18.1866 23.074 18.1645 23.0736C17.3659 23.0491 16.572 23.0485 15.783 23.072C15.0185 23.0955 14.4542 23.0224 14.0901 22.8526C11.6766 21.7299 12.4982 18.277 15.1376 18.2593C16.1102 18.2529 17.1171 18.254 18.1581 18.2625C18.219 18.2625 18.2499 18.2321 18.251 18.1712C18.2692 17.4014 18.2676 16.6161 18.2462 15.8153C18.2248 15.0007 18.3033 14.4134 18.4816 14.0536C19.1367 12.7323 20.6822 12.2391 21.9522 13.043C22.7546 13.5491 23.0861 14.3803 23.0717 15.3269C23.0557 16.2889 23.0546 17.2349 23.0685 18.1648C23.0689 18.186 23.0775 18.2061 23.0924 18.221C23.1073 18.2359 23.1275 18.2445 23.1486 18.2449C23.9237 18.2695 24.6989 18.27 25.4741 18.2465C26.2471 18.2241 26.8023 18.2839 27.1397 18.4259C28.5715 19.0297 29.1 20.6633 28.256 21.983C27.7371 22.7966 26.893 23.0864 25.9033 23.072C24.9188 23.0571 24.0038 23.0544 23.1582 23.064C23.0973 23.0651 23.0664 23.0961 23.0653 23.1569Z" fill="#D74535"/>
+                                <path d="M62.0477 18.2673H52.3038C51.0266 18.2673 49.9912 19.3027 49.9912 20.58V20.7401C49.9912 22.0174 51.0266 23.0528 52.3038 23.0528H62.0477C63.325 23.0528 64.3604 22.0174 64.3604 20.7401V20.58C64.3604 19.3027 63.325 18.2673 62.0477 18.2673Z" fill="#D74535"/>
+                                <path d="M24.1452 57.2527C24.7473 57.8752 25.3437 58.4694 25.9341 59.0352C26.4359 59.5157 26.7557 59.9364 26.8934 60.2973C27.8368 62.7701 24.7794 64.6872 22.9168 62.8261C22.1928 62.1033 21.4583 61.3687 20.713 60.6224C20.7014 60.6108 20.6858 60.6042 20.6696 60.6039C20.6535 60.6036 20.638 60.6097 20.6265 60.6208C20.0169 61.1984 19.4371 61.7793 18.8872 62.3633C18.3363 62.9473 17.8489 63.3088 17.425 63.4476C15.5255 64.0674 13.6533 62.2304 14.4253 60.3021C14.5641 59.9561 14.8064 59.615 15.1524 59.2787C15.8955 58.5558 16.582 57.8704 17.212 57.2223C17.2235 57.2106 17.23 57.1949 17.2303 57.1786C17.2306 57.1622 17.2246 57.1463 17.2136 57.1342C16.6605 56.5523 16.0904 55.9843 15.5031 55.4301C14.9789 54.9358 14.6351 54.5071 14.4717 54.1441C13.5973 52.211 15.4951 50.2026 17.4987 50.9265C17.851 51.0547 18.2215 51.3184 18.6102 51.7177C19.2679 52.3914 19.9389 53.0641 20.6233 53.7357C20.6521 53.7634 20.6804 53.7629 20.7082 53.7341C21.4748 52.9664 22.2265 52.2147 22.9632 51.4791C24.1884 50.2571 26.2384 50.6975 26.879 52.2654C27.2266 53.1159 27.0536 54.1521 26.413 54.8103C25.6709 55.5716 24.9155 56.3291 24.1468 57.0829C24.0902 57.1395 24.0896 57.1961 24.1452 57.2527Z" fill="#D74535"/>
+                                <path d="M62.8402 50.7776H51.5107C50.2282 50.7776 49.1885 51.8173 49.1885 53.0999V53.244C49.1885 54.5266 50.2282 55.5663 51.5107 55.5663H62.8402C64.1227 55.5663 65.1625 54.5266 65.1625 53.244V53.0999C65.1625 51.8173 64.1227 50.7776 62.8402 50.7776Z" fill="#D74535"/>
+                                <path d="M62.8386 58.7822H51.5123C50.2289 58.7822 49.1885 59.8227 49.1885 61.1061V61.2502C49.1885 62.5337 50.2289 63.5741 51.5123 63.5741H62.8386C64.122 63.5741 65.1625 62.5337 65.1625 61.2502V61.1061C65.1625 59.8227 64.122 58.7822 62.8386 58.7822Z" fill="#D74535"/>
+                                </g>
+                                <defs>
+                                <clipPath id="clip0_462_290">
+                                <rect width="82" height="82" fill="white"/>
+                                </clipPath>
+                                </defs>
+                            </svg>
+                        </div>
+                        <p class="calc__title-text">
+                            Цены на натяжные потолки
+                        </p>
+                        <span class="calc__title-description">
+                            Ознакомьтесь с калькулятором стоимости различных видов натяжных потолков. Цена зависит от материала, сложности конструкции и дополнительных услуг.
+                        </span>
+                    </div>
+                    <div class="calc__types">
+                        <p class="calc__label">Выберите вид потолка</p>
+                        <div>
+                            <div class="swiper calc__types-slider">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide">
+                                        <div class="calc__types-slide" data-calc-button="Глянцевый потолок">
+                                            <img src="./img/sections/calc-section/type-1.jpg" alt="type-1">
+                                            <p class="calc__types-text">Глянцевый потолок</p>
+                                            <div class="calc__types-blur"></div>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="calc__types-slide" data-calc-button="Тканевый потолок">
+                                            <img src="./img/sections/calc-section/type-2.jpg" alt="type-2">
+                                            <p class="calc__types-text">Тканевый потолок</p>
+                                            <div class="calc__types-blur"></div>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="calc__types-slide" data-calc-button="Матовый потолок">
+                                            <img src="./img/sections/calc-section/type-3.jpg" alt="type-3">
+                                            <p class="calc__types-text">Матовый потолок</p>
+                                            <div class="calc__types-blur"></div>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="calc__types-slide" data-calc-button="Сатиновый потолок">
+                                            <img src="./img/sections/calc-section/type-4.jpg" alt="type-4">
+                                            <p class="calc__types-text">Сатиновый потолок</p>
+                                            <div class="calc__types-blur"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <svg class="calc__border" width="100%" height="1" viewBox="0 0 1115 1" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <line x1="4.37114e-08" y1="0.5" x2="1115" y2="0.500097" stroke="#AFAFAF" stroke-dasharray="5 5"/>
+                    </svg>
+                    <div class="calc__manufacturer">
+                        <p class="calc__label">Производитель</p>
+                        <div class="slider">
+                            <div class="swiper calc__manufacturer-slider">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide">
+                                        <a href="#" class="calc__manufacturer-tab" data-calc-button="Classic">Classic</a>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <a href="#" class="calc__manufacturer-tab" data-calc-button="Premium">Premium</a>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <a href="#" class="calc__manufacturer-tab" data-calc-button="Evolution">Evolution</a>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <a href="#" class="calc__manufacturer-tab" data-calc-button="Cold Stretch">Cold Stretch</a>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <a href="#" class="calc__manufacturer-tab" data-calc-button="Teqtum KM2">Teqtum KM2</a>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <a href="#" class="calc__manufacturer-tab" data-calc-button="Teqtum EURO">Teqtum EURO</a>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <a href="#" class="calc__manufacturer-tab" data-calc-button="LumferBauf">LumferBauf</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <svg class="calc__border" width="100%" height="1" viewBox="0 0 1115 1" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <line x1="4.37114e-08" y1="0.5" x2="1115" y2="0.500097" stroke="#AFAFAF" stroke-dasharray="5 5"/>
+                    </svg>
+                    <div class="calc__range">
+                        <div class="calc__range-label">
+                            <p class="calc__label">Помещение</p>
+                            <span>Площадь, м²</span>
+                        </div>
+                        <div id="calc-slider" class="calc__range-slider"></div>
+                        <div class="calc__range-counter">
+                            <div class="label">Углы, шт</div>
+                            <div class="counter">
+                                <button class="plus" data-button="count+">+</button>
+                                <span class="count" data-block="result">1</span>
+                                <button class="minus" data-button="count-">-</button>
+                            </div>
+                        </div>
+                    </div>
+                    <svg class="calc__border" width="100%" height="1" viewBox="0 0 1115 1" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <line x1="4.37114e-08" y1="0.5" x2="1115" y2="0.500097" stroke="#AFAFAF" stroke-dasharray="5 5"/>
+                    </svg>
+                    <div class="calc__counters">
+                        <p class="calc__label">Освещение</p>
+                        <div class="calc__range-counter">
+                            <div class="label">Светильники, шт</div>
+                            <div class="counter">
+                                <button class="plus" data-button="count+">+</button>
+                                <span class="count" data-block="result">1</span>
+                                <button class="minus" data-button="count-">-</button>
+                            </div>
+                        </div>
+                        <div class="calc__range-counter">
+                            <div class="label">Люстры, шт</div>
+                            <div class="counter">
+                                <button class="plus" data-button="count+">+</button>
+                                <span class="count" data-block="result">1</span>
+                                <button class="minus" data-button="count-">-</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <form action="#" class="calc__form">
+                    <div class="calc__form-top">
+                        <div class="calc__form-title">Если введенные размеры верны</div>
+                        <div class="calc__form-subtitle">
+                            то вы получаете окончательную стоимость полотен, включая установку! 
+                            Материал, цвет, фактуру и дополнительные элементы можно выбрать по
+                            вашему желанию, согласно образцам замерщика.
+                        </div>
+                    </div>
+                    <div class="calc__form-bottom">
+                        <div class="calc__form-price">
+                            <div class="label">
+                                Итоговая<br>стоимость:
+                            </div>
+                            <div class="sum">500000</div>
+                            <div class="valuta">рублей</div>
+                        </div>
+                        <div class="calc__form-controls">
+                            <div class="calc__form-inputs">
+                                <input type="hidden" value="1" name="Углы" data-input="count">
+                                <input type="hidden" value="1" name="Светильники" data-input="count">
+                                <input type="hidden" value="1" name="Люстры" data-input="count">
+                                <input type="hidden" name="Вид потолка" data-input="calc-type">
+                                <input type="hidden" name="Производитель" data-input="manufacturer">
+                                <input type="hidden" name="square" value="45" data-input="square">
+                                <input type="text" placeholder="Введите ваш номер" name="phone" class="input" data-input="masked">
+                                <button type="submit" class="button">Вызвать замерщика</button>
+                            </div>
+                            <p class="calc__form-policy">Нажимая на кнопку, вы даете согласие на обработку своих персональных данных</p>
+                        </div>
+                    </div>
+                </form>
+            </div>
         </section>
     </main>
     <script src="./js/nouislider.min.js"></script>
     <script src="./js/swiper-bundle.min.js"></script>
+    <script src="./js/inputmask.min.js"></script>
     <script src="./js/app.js"></script>
 </body>
 </html>

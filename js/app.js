@@ -250,6 +250,68 @@ const calcManufacturerSlider = new Swiper(".calc__manufacturer-slider", {
         }
     }
 });
+const priceSliders = document.querySelectorAll('.price__swiper');
+const priceNextButtons = document.querySelectorAll('.price__button.next');
+const pricePrevButtons = document.querySelectorAll('.price__button.prev');
+const pricePaginations = document.querySelectorAll('.price__pagintaion');
+priceSliders.forEach((slider, index) => {
+    slider.classList.add(`price__swiper_${index}`);
+    priceNextButtons[index].classList.add(`price__button_${index}`);
+    pricePrevButtons[index].classList.add(`price__button_${index}`);
+    pricePaginations[index].classList.add(`price__pagintaion_${index}`);
+    new Swiper(`.price__swiper_${index}`, {
+        // loop: true,
+        pagination: {
+          el: `.price__pagintaion_${index}`,
+        },
+        spaceBetween: 25,
+        slidesPerView: 4,
+        navigation: {
+          nextEl: `.price__button_${index}.next`,
+          prevEl: `.price__button_${index}.prev`,
+        },
+        breakpoints: {
+            0: {
+                spaceBetween: 17,
+                slidesPerView: 'auto',
+            },
+            798: {
+                spaceBetween: 30,
+                slidesPerView: 3,
+            },
+            1230: {
+                spaceBetween: 25,
+                slidesPerView: 4,
+            },
+        }
+    });
+})
+// const priceTopSlider = new Swiper('.price__swiper', {
+//     // loop: true,
+//     pagination: {
+//       el: '.price__pagintaion',
+//     },
+//     spaceBetween: 25,
+//     slidesPerView: 4,
+//     navigation: {
+//       nextEl: '.price__button.next',
+//       prevEl: '.price__button.prev',
+//     },
+//     breakpoints: {
+//         0: {
+//             spaceBetween: 17,
+//             slidesPerView: 'auto',
+//         },
+//         798: {
+//             spaceBetween: 30,
+//             slidesPerView: 3,
+//         },
+//         1230: {
+//             spaceBetween: 25,
+//             slidesPerView: 4,
+//         },
+//     }
+// });
 // End sliders
 
 // Start tabs

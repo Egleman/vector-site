@@ -2598,10 +2598,694 @@
                 <div class="price__border"></div>
             </div>
         </section>
+        <section class="reviews">
+            <div class="container">
+                <div class="reviews__wrapper">
+                    <div class="reviews__title">Отзывы клиентов</div>
+                    <div class="reviews__controls active">
+                        <div class="reviews__buttons">
+                            <button class="reviews__button prev">
+                                <svg width="20" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M0.292893 7.29289C-0.0976314 7.68342 -0.0976315 8.31658 0.292892 8.70711L6.65685 15.0711C7.04738 15.4616 7.68054 15.4616 8.07107 15.0711C8.46159 14.6805 8.46159 14.0474 8.07107 13.6569L2.41421 8L8.07107 2.34314C8.46159 1.95262 8.46159 1.31946 8.07107 0.928931C7.68054 0.538407 7.04738 0.538407 6.65686 0.928931L0.292893 7.29289ZM20 7L1 7L1 9L20 9L20 7Z" fill="#D74535"/>
+                                </svg>                                
+                            </button>
+                            <button class="reviews__button next">
+                                <svg width="20" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M19.7071 8.70711C20.0976 8.31658 20.0976 7.68342 19.7071 7.29289L13.3431 0.928932C12.9526 0.538408 12.3195 0.538408 11.9289 0.928932C11.5384 1.31946 11.5384 1.95262 11.9289 2.34315L17.5858 8L11.9289 13.6569C11.5384 14.0474 11.5384 14.6805 11.9289 15.0711C12.3195 15.4616 12.9526 15.4616 13.3431 15.0711L19.7071 8.70711ZM0 9H19V7H0V9Z" fill="#D74535"/>
+                                </svg>                                                                   
+                            </button>
+                        </div>
+                        <div class="swiper-pagination reviews__pagination pc" id="reviews__pagination"></div>
+                    </div>
+                    <div class="reviews__controls">
+                        <div class="reviews__buttons">
+                            <button class="reviews__button prev">
+                                <svg width="20" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M0.292893 7.29289C-0.0976314 7.68342 -0.0976315 8.31658 0.292892 8.70711L6.65685 15.0711C7.04738 15.4616 7.68054 15.4616 8.07107 15.0711C8.46159 14.6805 8.46159 14.0474 8.07107 13.6569L2.41421 8L8.07107 2.34314C8.46159 1.95262 8.46159 1.31946 8.07107 0.928931C7.68054 0.538407 7.04738 0.538407 6.65686 0.928931L0.292893 7.29289ZM20 7L1 7L1 9L20 9L20 7Z" fill="#D74535"/>
+                                </svg>                                
+                            </button>
+                            <button class="reviews__button next">
+                                <svg width="20" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M19.7071 8.70711C20.0976 8.31658 20.0976 7.68342 19.7071 7.29289L13.3431 0.928932C12.9526 0.538408 12.3195 0.538408 11.9289 0.928932C11.5384 1.31946 11.5384 1.95262 11.9289 2.34315L17.5858 8L11.9289 13.6569C11.5384 14.0474 11.5384 14.6805 11.9289 15.0711C12.3195 15.4616 12.9526 15.4616 13.3431 15.0711L19.7071 8.70711ZM0 9H19V7H0V9Z" fill="#D74535"/>
+                                </svg>                                                                   
+                            </button>
+                        </div>
+                        <div class="swiper-pagination reviews__pagination pc" id="reviews__pagination"></div>
+                    </div>
+                    <div class="reviews__controls">
+                        <div class="reviews__buttons">
+                            <button class="reviews__button prev">
+                                <svg width="20" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M0.292893 7.29289C-0.0976314 7.68342 -0.0976315 8.31658 0.292892 8.70711L6.65685 15.0711C7.04738 15.4616 7.68054 15.4616 8.07107 15.0711C8.46159 14.6805 8.46159 14.0474 8.07107 13.6569L2.41421 8L8.07107 2.34314C8.46159 1.95262 8.46159 1.31946 8.07107 0.928931C7.68054 0.538407 7.04738 0.538407 6.65686 0.928931L0.292893 7.29289ZM20 7L1 7L1 9L20 9L20 7Z" fill="#D74535"/>
+                                </svg>                                
+                            </button>
+                            <button class="reviews__button next">
+                                <svg width="20" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M19.7071 8.70711C20.0976 8.31658 20.0976 7.68342 19.7071 7.29289L13.3431 0.928932C12.9526 0.538408 12.3195 0.538408 11.9289 0.928932C11.5384 1.31946 11.5384 1.95262 11.9289 2.34315L17.5858 8L11.9289 13.6569C11.5384 14.0474 11.5384 14.6805 11.9289 15.0711C12.3195 15.4616 12.9526 15.4616 13.3431 15.0711L19.7071 8.70711ZM0 9H19V7H0V9Z" fill="#D74535"/>
+                                </svg>                                                                   
+                            </button>
+                        </div>
+                        <div class="swiper-pagination reviews__pagination pc" id="reviews__pagination"></div>
+                    </div>
+                </div>
+                <ul class="reviews__tabs">
+                    <li class="reviews__tabs-label">Вид отзыва:</li>
+                    <li class="reviews__tabs-item"><a href="#" class="reviews__tabs-link active">Текстовый</a></li>
+                    <li class="reviews__tabs-item"><a href="#" class="reviews__tabs-link">Аудио</a></li>
+                    <li class="reviews__tabs-item"><a href="#" class="reviews__tabs-link">Видео</a></li>
+                </ul>
+            </div>
+            <div class="reviews__container active">
+                <div class="reviews__slider">
+                    <div class="swiper reviews__swiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <div class="reviews__text">
+                                    <div class="reviews__text-title">
+                                        <div class="name">Петров Иван</div>
+                                        <div class="star">
+                                            <svg width="24" height="21" viewBox="0 0 24 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M12 0L14.6942 7.9463H23.4127L16.3593 12.8574L19.0534 20.8037L12 15.8926L4.94658 20.8037L7.64074 12.8574L0.587322 7.9463H9.30583L12 0Z" fill="#FFB444"/>
+                                            </svg>
+                                            <svg width="24" height="21" viewBox="0 0 24 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M12 0L14.6942 7.9463H23.4127L16.3593 12.8574L19.0534 20.8037L12 15.8926L4.94658 20.8037L7.64074 12.8574L0.587322 7.9463H9.30583L12 0Z" fill="#FFB444"/>
+                                            </svg> 
+                                            <svg width="24" height="21" viewBox="0 0 24 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M12 0L14.6942 7.9463H23.4127L16.3593 12.8574L19.0534 20.8037L12 15.8926L4.94658 20.8037L7.64074 12.8574L0.587322 7.9463H9.30583L12 0Z" fill="#FFB444"/>
+                                            </svg> 
+                                            <svg width="24" height="21" viewBox="0 0 24 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M12 0L14.6942 7.9463H23.4127L16.3593 12.8574L19.0534 20.8037L12 15.8926L4.94658 20.8037L7.64074 12.8574L0.587322 7.9463H9.30583L12 0Z" fill="#FFB444"/>
+                                            </svg> 
+                                            <svg width="24" height="21" viewBox="0 0 24 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M12 0L14.6942 7.9463H23.4127L16.3593 12.8574L19.0534 20.8037L12 15.8926L4.94658 20.8037L7.64074 12.8574L0.587322 7.9463H9.30583L12 0Z" fill="#FFB444"/>
+                                            </svg>                                                 
+                                        </div>
+                                    </div>
+                                    <div class="reviews__text-description">
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="reviews__text">
+                                    <div class="reviews__text-title">
+                                        <div class="name">Петров Иван</div>
+                                        <div class="star">
+                                            <svg width="24" height="21" viewBox="0 0 24 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M12 0L14.6942 7.9463H23.4127L16.3593 12.8574L19.0534 20.8037L12 15.8926L4.94658 20.8037L7.64074 12.8574L0.587322 7.9463H9.30583L12 0Z" fill="#FFB444"/>
+                                            </svg>
+                                            <svg width="24" height="21" viewBox="0 0 24 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M12 0L14.6942 7.9463H23.4127L16.3593 12.8574L19.0534 20.8037L12 15.8926L4.94658 20.8037L7.64074 12.8574L0.587322 7.9463H9.30583L12 0Z" fill="#FFB444"/>
+                                            </svg> 
+                                            <svg width="24" height="21" viewBox="0 0 24 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M12 0L14.6942 7.9463H23.4127L16.3593 12.8574L19.0534 20.8037L12 15.8926L4.94658 20.8037L7.64074 12.8574L0.587322 7.9463H9.30583L12 0Z" fill="#FFB444"/>
+                                            </svg> 
+                                            <svg width="24" height="21" viewBox="0 0 24 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M12 0L14.6942 7.9463H23.4127L16.3593 12.8574L19.0534 20.8037L12 15.8926L4.94658 20.8037L7.64074 12.8574L0.587322 7.9463H9.30583L12 0Z" fill="#FFB444"/>
+                                            </svg> 
+                                            <svg width="24" height="21" viewBox="0 0 24 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M12 0L14.6942 7.9463H23.4127L16.3593 12.8574L19.0534 20.8037L12 15.8926L4.94658 20.8037L7.64074 12.8574L0.587322 7.9463H9.30583L12 0Z" fill="#FFB444"/>
+                                            </svg>                                                 
+                                        </div>
+                                    </div>
+                                    <div class="reviews__text-description">
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="reviews__text">
+                                    <div class="reviews__text-title">
+                                        <div class="name">Петров Иван</div>
+                                        <div class="star">
+                                            <svg width="24" height="21" viewBox="0 0 24 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M12 0L14.6942 7.9463H23.4127L16.3593 12.8574L19.0534 20.8037L12 15.8926L4.94658 20.8037L7.64074 12.8574L0.587322 7.9463H9.30583L12 0Z" fill="#FFB444"/>
+                                            </svg>
+                                            <svg width="24" height="21" viewBox="0 0 24 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M12 0L14.6942 7.9463H23.4127L16.3593 12.8574L19.0534 20.8037L12 15.8926L4.94658 20.8037L7.64074 12.8574L0.587322 7.9463H9.30583L12 0Z" fill="#FFB444"/>
+                                            </svg> 
+                                            <svg width="24" height="21" viewBox="0 0 24 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M12 0L14.6942 7.9463H23.4127L16.3593 12.8574L19.0534 20.8037L12 15.8926L4.94658 20.8037L7.64074 12.8574L0.587322 7.9463H9.30583L12 0Z" fill="#FFB444"/>
+                                            </svg> 
+                                            <svg width="24" height="21" viewBox="0 0 24 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M12 0L14.6942 7.9463H23.4127L16.3593 12.8574L19.0534 20.8037L12 15.8926L4.94658 20.8037L7.64074 12.8574L0.587322 7.9463H9.30583L12 0Z" fill="#FFB444"/>
+                                            </svg> 
+                                            <svg width="24" height="21" viewBox="0 0 24 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M12 0L14.6942 7.9463H23.4127L16.3593 12.8574L19.0534 20.8037L12 15.8926L4.94658 20.8037L7.64074 12.8574L0.587322 7.9463H9.30583L12 0Z" fill="#FFB444"/>
+                                            </svg>                                                 
+                                        </div>
+                                    </div>
+                                    <div class="reviews__text-description">
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="reviews__text">
+                                    <div class="reviews__text-title">
+                                        <div class="name">Петров Иван</div>
+                                        <div class="star">
+                                            <svg width="24" height="21" viewBox="0 0 24 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M12 0L14.6942 7.9463H23.4127L16.3593 12.8574L19.0534 20.8037L12 15.8926L4.94658 20.8037L7.64074 12.8574L0.587322 7.9463H9.30583L12 0Z" fill="#FFB444"/>
+                                            </svg>
+                                            <svg width="24" height="21" viewBox="0 0 24 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M12 0L14.6942 7.9463H23.4127L16.3593 12.8574L19.0534 20.8037L12 15.8926L4.94658 20.8037L7.64074 12.8574L0.587322 7.9463H9.30583L12 0Z" fill="#FFB444"/>
+                                            </svg> 
+                                            <svg width="24" height="21" viewBox="0 0 24 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M12 0L14.6942 7.9463H23.4127L16.3593 12.8574L19.0534 20.8037L12 15.8926L4.94658 20.8037L7.64074 12.8574L0.587322 7.9463H9.30583L12 0Z" fill="#FFB444"/>
+                                            </svg> 
+                                            <svg width="24" height="21" viewBox="0 0 24 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M12 0L14.6942 7.9463H23.4127L16.3593 12.8574L19.0534 20.8037L12 15.8926L4.94658 20.8037L7.64074 12.8574L0.587322 7.9463H9.30583L12 0Z" fill="#FFB444"/>
+                                            </svg> 
+                                            <svg width="24" height="21" viewBox="0 0 24 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M12 0L14.6942 7.9463H23.4127L16.3593 12.8574L19.0534 20.8037L12 15.8926L4.94658 20.8037L7.64074 12.8574L0.587322 7.9463H9.30583L12 0Z" fill="#FFB444"/>
+                                            </svg>                                                 
+                                        </div>
+                                    </div>
+                                    <div class="reviews__text-description">
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="reviews__text">
+                                    <div class="reviews__text-title">
+                                        <div class="name">Петров Иван</div>
+                                        <div class="star">
+                                            <svg width="24" height="21" viewBox="0 0 24 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M12 0L14.6942 7.9463H23.4127L16.3593 12.8574L19.0534 20.8037L12 15.8926L4.94658 20.8037L7.64074 12.8574L0.587322 7.9463H9.30583L12 0Z" fill="#FFB444"/>
+                                            </svg>
+                                            <svg width="24" height="21" viewBox="0 0 24 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M12 0L14.6942 7.9463H23.4127L16.3593 12.8574L19.0534 20.8037L12 15.8926L4.94658 20.8037L7.64074 12.8574L0.587322 7.9463H9.30583L12 0Z" fill="#FFB444"/>
+                                            </svg> 
+                                            <svg width="24" height="21" viewBox="0 0 24 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M12 0L14.6942 7.9463H23.4127L16.3593 12.8574L19.0534 20.8037L12 15.8926L4.94658 20.8037L7.64074 12.8574L0.587322 7.9463H9.30583L12 0Z" fill="#FFB444"/>
+                                            </svg> 
+                                            <svg width="24" height="21" viewBox="0 0 24 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M12 0L14.6942 7.9463H23.4127L16.3593 12.8574L19.0534 20.8037L12 15.8926L4.94658 20.8037L7.64074 12.8574L0.587322 7.9463H9.30583L12 0Z" fill="#FFB444"/>
+                                            </svg> 
+                                            <svg width="24" height="21" viewBox="0 0 24 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M12 0L14.6942 7.9463H23.4127L16.3593 12.8574L19.0534 20.8037L12 15.8926L4.94658 20.8037L7.64074 12.8574L0.587322 7.9463H9.30583L12 0Z" fill="#FFB444"/>
+                                            </svg>                                                 
+                                        </div>
+                                    </div>
+                                    <div class="reviews__text-description">
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="reviews__text">
+                                    <div class="reviews__text-title">
+                                        <div class="name">Петров Иван</div>
+                                        <div class="star">
+                                            <svg width="24" height="21" viewBox="0 0 24 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M12 0L14.6942 7.9463H23.4127L16.3593 12.8574L19.0534 20.8037L12 15.8926L4.94658 20.8037L7.64074 12.8574L0.587322 7.9463H9.30583L12 0Z" fill="#FFB444"/>
+                                            </svg>
+                                            <svg width="24" height="21" viewBox="0 0 24 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M12 0L14.6942 7.9463H23.4127L16.3593 12.8574L19.0534 20.8037L12 15.8926L4.94658 20.8037L7.64074 12.8574L0.587322 7.9463H9.30583L12 0Z" fill="#FFB444"/>
+                                            </svg> 
+                                            <svg width="24" height="21" viewBox="0 0 24 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M12 0L14.6942 7.9463H23.4127L16.3593 12.8574L19.0534 20.8037L12 15.8926L4.94658 20.8037L7.64074 12.8574L0.587322 7.9463H9.30583L12 0Z" fill="#FFB444"/>
+                                            </svg> 
+                                            <svg width="24" height="21" viewBox="0 0 24 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M12 0L14.6942 7.9463H23.4127L16.3593 12.8574L19.0534 20.8037L12 15.8926L4.94658 20.8037L7.64074 12.8574L0.587322 7.9463H9.30583L12 0Z" fill="#FFB444"/>
+                                            </svg> 
+                                            <svg width="24" height="21" viewBox="0 0 24 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M12 0L14.6942 7.9463H23.4127L16.3593 12.8574L19.0534 20.8037L12 15.8926L4.94658 20.8037L7.64074 12.8574L0.587322 7.9463H9.30583L12 0Z" fill="#FFB444"/>
+                                            </svg>                                                 
+                                        </div>
+                                    </div>
+                                    <div class="reviews__text-description">
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="reviews__text">
+                                    <div class="reviews__text-title">
+                                        <div class="name">Петров Иван</div>
+                                        <div class="star">
+                                            <svg width="24" height="21" viewBox="0 0 24 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M12 0L14.6942 7.9463H23.4127L16.3593 12.8574L19.0534 20.8037L12 15.8926L4.94658 20.8037L7.64074 12.8574L0.587322 7.9463H9.30583L12 0Z" fill="#FFB444"/>
+                                            </svg>
+                                            <svg width="24" height="21" viewBox="0 0 24 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M12 0L14.6942 7.9463H23.4127L16.3593 12.8574L19.0534 20.8037L12 15.8926L4.94658 20.8037L7.64074 12.8574L0.587322 7.9463H9.30583L12 0Z" fill="#FFB444"/>
+                                            </svg> 
+                                            <svg width="24" height="21" viewBox="0 0 24 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M12 0L14.6942 7.9463H23.4127L16.3593 12.8574L19.0534 20.8037L12 15.8926L4.94658 20.8037L7.64074 12.8574L0.587322 7.9463H9.30583L12 0Z" fill="#FFB444"/>
+                                            </svg> 
+                                            <svg width="24" height="21" viewBox="0 0 24 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M12 0L14.6942 7.9463H23.4127L16.3593 12.8574L19.0534 20.8037L12 15.8926L4.94658 20.8037L7.64074 12.8574L0.587322 7.9463H9.30583L12 0Z" fill="#FFB444"/>
+                                            </svg> 
+                                            <svg width="24" height="21" viewBox="0 0 24 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M12 0L14.6942 7.9463H23.4127L16.3593 12.8574L19.0534 20.8037L12 15.8926L4.94658 20.8037L7.64074 12.8574L0.587322 7.9463H9.30583L12 0Z" fill="#FFB444"/>
+                                            </svg>                                                 
+                                        </div>
+                                    </div>
+                                    <div class="reviews__text-description">
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="reviews__text">
+                                    <div class="reviews__text-title">
+                                        <div class="name">Петров Иван</div>
+                                        <div class="star">
+                                            <svg width="24" height="21" viewBox="0 0 24 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M12 0L14.6942 7.9463H23.4127L16.3593 12.8574L19.0534 20.8037L12 15.8926L4.94658 20.8037L7.64074 12.8574L0.587322 7.9463H9.30583L12 0Z" fill="#FFB444"/>
+                                            </svg>
+                                            <svg width="24" height="21" viewBox="0 0 24 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M12 0L14.6942 7.9463H23.4127L16.3593 12.8574L19.0534 20.8037L12 15.8926L4.94658 20.8037L7.64074 12.8574L0.587322 7.9463H9.30583L12 0Z" fill="#FFB444"/>
+                                            </svg> 
+                                            <svg width="24" height="21" viewBox="0 0 24 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M12 0L14.6942 7.9463H23.4127L16.3593 12.8574L19.0534 20.8037L12 15.8926L4.94658 20.8037L7.64074 12.8574L0.587322 7.9463H9.30583L12 0Z" fill="#FFB444"/>
+                                            </svg> 
+                                            <svg width="24" height="21" viewBox="0 0 24 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M12 0L14.6942 7.9463H23.4127L16.3593 12.8574L19.0534 20.8037L12 15.8926L4.94658 20.8037L7.64074 12.8574L0.587322 7.9463H9.30583L12 0Z" fill="#FFB444"/>
+                                            </svg> 
+                                            <svg width="24" height="21" viewBox="0 0 24 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M12 0L14.6942 7.9463H23.4127L16.3593 12.8574L19.0534 20.8037L12 15.8926L4.94658 20.8037L7.64074 12.8574L0.587322 7.9463H9.30583L12 0Z" fill="#FFB444"/>
+                                            </svg>                                                 
+                                        </div>
+                                    </div>
+                                    <div class="reviews__text-description">
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="reviews__slider-controls">
+                    <div class="swiper-pagination reviews__pagination mobile" id="reviews__pagination"></div>
+                    <div class="reviews__buttons">
+                        <button class="reviews__button prev mobile">
+                            <svg width="20" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M0.292893 7.29289C-0.0976314 7.68342 -0.0976315 8.31658 0.292892 8.70711L6.65685 15.0711C7.04738 15.4616 7.68054 15.4616 8.07107 15.0711C8.46159 14.6805 8.46159 14.0474 8.07107 13.6569L2.41421 8L8.07107 2.34314C8.46159 1.95262 8.46159 1.31946 8.07107 0.928931C7.68054 0.538407 7.04738 0.538407 6.65686 0.928931L0.292893 7.29289ZM20 7L1 7L1 9L20 9L20 7Z" fill="#D74535"/>
+                            </svg>                                
+                        </button>
+                        <button class="reviews__button next mobile">
+                            <svg width="20" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M19.7071 8.70711C20.0976 8.31658 20.0976 7.68342 19.7071 7.29289L13.3431 0.928932C12.9526 0.538408 12.3195 0.538408 11.9289 0.928932C11.5384 1.31946 11.5384 1.95262 11.9289 2.34315L17.5858 8L11.9289 13.6569C11.5384 14.0474 11.5384 14.6805 11.9289 15.0711C12.3195 15.4616 12.9526 15.4616 13.3431 15.0711L19.7071 8.70711ZM0 9H19V7H0V9Z" fill="#D74535"/>
+                            </svg>                                                                   
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="reviews__container">
+                <div class="reviews__slider">
+                    <div class="swiper reviews__swiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <div class="reviews__text">
+                                    <div class="reviews__text-title">
+                                        <div class="name">Петров Иван</div>
+                                        <div class="star">
+                                            <svg width="24" height="21" viewBox="0 0 24 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M12 0L14.6942 7.9463H23.4127L16.3593 12.8574L19.0534 20.8037L12 15.8926L4.94658 20.8037L7.64074 12.8574L0.587322 7.9463H9.30583L12 0Z" fill="#FFB444"/>
+                                            </svg>
+                                            <svg width="24" height="21" viewBox="0 0 24 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M12 0L14.6942 7.9463H23.4127L16.3593 12.8574L19.0534 20.8037L12 15.8926L4.94658 20.8037L7.64074 12.8574L0.587322 7.9463H9.30583L12 0Z" fill="#FFB444"/>
+                                            </svg> 
+                                            <svg width="24" height="21" viewBox="0 0 24 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M12 0L14.6942 7.9463H23.4127L16.3593 12.8574L19.0534 20.8037L12 15.8926L4.94658 20.8037L7.64074 12.8574L0.587322 7.9463H9.30583L12 0Z" fill="#FFB444"/>
+                                            </svg> 
+                                            <svg width="24" height="21" viewBox="0 0 24 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M12 0L14.6942 7.9463H23.4127L16.3593 12.8574L19.0534 20.8037L12 15.8926L4.94658 20.8037L7.64074 12.8574L0.587322 7.9463H9.30583L12 0Z" fill="#FFB444"/>
+                                            </svg> 
+                                            <svg width="24" height="21" viewBox="0 0 24 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M12 0L14.6942 7.9463H23.4127L16.3593 12.8574L19.0534 20.8037L12 15.8926L4.94658 20.8037L7.64074 12.8574L0.587322 7.9463H9.30583L12 0Z" fill="#FFB444"/>
+                                            </svg>                                                 
+                                        </div>
+                                    </div>
+                                    <div class="reviews__text-audio" data-music-url="./audio/test.wav">
+                                        <button class="play waiting">
+                                            <svg class="pl" width="23" height="26" viewBox="0 0 23 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M23 13L0.500001 25.9904L0.500002 0.00961778L23 13Z" fill="white"/>
+                                            </svg>
+                                            <svg class="st" width="23" height="40" viewBox="0 0 23 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <line x1="1" y1="4.37113e-08" x2="0.999998" y2="40" stroke="white" stroke-width="2"/>
+                                                <line x1="22" y1="4.37113e-08" x2="22" y2="40" stroke="white" stroke-width="2"/>
+                                            </svg>                                                
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="reviews__text">
+                                    <div class="reviews__text-title">
+                                        <div class="name">Петров Иван</div>
+                                        <div class="star">
+                                            <svg width="24" height="21" viewBox="0 0 24 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M12 0L14.6942 7.9463H23.4127L16.3593 12.8574L19.0534 20.8037L12 15.8926L4.94658 20.8037L7.64074 12.8574L0.587322 7.9463H9.30583L12 0Z" fill="#FFB444"/>
+                                            </svg>
+                                            <svg width="24" height="21" viewBox="0 0 24 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M12 0L14.6942 7.9463H23.4127L16.3593 12.8574L19.0534 20.8037L12 15.8926L4.94658 20.8037L7.64074 12.8574L0.587322 7.9463H9.30583L12 0Z" fill="#FFB444"/>
+                                            </svg> 
+                                            <svg width="24" height="21" viewBox="0 0 24 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M12 0L14.6942 7.9463H23.4127L16.3593 12.8574L19.0534 20.8037L12 15.8926L4.94658 20.8037L7.64074 12.8574L0.587322 7.9463H9.30583L12 0Z" fill="#FFB444"/>
+                                            </svg> 
+                                            <svg width="24" height="21" viewBox="0 0 24 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M12 0L14.6942 7.9463H23.4127L16.3593 12.8574L19.0534 20.8037L12 15.8926L4.94658 20.8037L7.64074 12.8574L0.587322 7.9463H9.30583L12 0Z" fill="#FFB444"/>
+                                            </svg> 
+                                            <svg width="24" height="21" viewBox="0 0 24 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M12 0L14.6942 7.9463H23.4127L16.3593 12.8574L19.0534 20.8037L12 15.8926L4.94658 20.8037L7.64074 12.8574L0.587322 7.9463H9.30583L12 0Z" fill="#FFB444"/>
+                                            </svg>                                                 
+                                        </div>
+                                    </div>
+                                    <div class="reviews__text-audio" data-music-url="./audio/test.wav">
+                                        <button class="play waiting">
+                                            <svg class="pl" width="23" height="26" viewBox="0 0 23 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M23 13L0.500001 25.9904L0.500002 0.00961778L23 13Z" fill="white"/>
+                                            </svg>
+                                            <svg class="st" width="23" height="40" viewBox="0 0 23 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <line x1="1" y1="4.37113e-08" x2="0.999998" y2="40" stroke="white" stroke-width="2"/>
+                                                <line x1="22" y1="4.37113e-08" x2="22" y2="40" stroke="white" stroke-width="2"/>
+                                            </svg>                                                
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="reviews__text">
+                                    <div class="reviews__text-title">
+                                        <div class="name">Петров Иван</div>
+                                        <div class="star">
+                                            <svg width="24" height="21" viewBox="0 0 24 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M12 0L14.6942 7.9463H23.4127L16.3593 12.8574L19.0534 20.8037L12 15.8926L4.94658 20.8037L7.64074 12.8574L0.587322 7.9463H9.30583L12 0Z" fill="#FFB444"/>
+                                            </svg>
+                                            <svg width="24" height="21" viewBox="0 0 24 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M12 0L14.6942 7.9463H23.4127L16.3593 12.8574L19.0534 20.8037L12 15.8926L4.94658 20.8037L7.64074 12.8574L0.587322 7.9463H9.30583L12 0Z" fill="#FFB444"/>
+                                            </svg> 
+                                            <svg width="24" height="21" viewBox="0 0 24 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M12 0L14.6942 7.9463H23.4127L16.3593 12.8574L19.0534 20.8037L12 15.8926L4.94658 20.8037L7.64074 12.8574L0.587322 7.9463H9.30583L12 0Z" fill="#FFB444"/>
+                                            </svg> 
+                                            <svg width="24" height="21" viewBox="0 0 24 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M12 0L14.6942 7.9463H23.4127L16.3593 12.8574L19.0534 20.8037L12 15.8926L4.94658 20.8037L7.64074 12.8574L0.587322 7.9463H9.30583L12 0Z" fill="#FFB444"/>
+                                            </svg> 
+                                            <svg width="24" height="21" viewBox="0 0 24 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M12 0L14.6942 7.9463H23.4127L16.3593 12.8574L19.0534 20.8037L12 15.8926L4.94658 20.8037L7.64074 12.8574L0.587322 7.9463H9.30583L12 0Z" fill="#FFB444"/>
+                                            </svg>                                                 
+                                        </div>
+                                    </div>
+                                    <div class="reviews__text-audio" data-music-url="./audio/test.wav">
+                                        <button class="play waiting">
+                                            <svg class="pl" width="23" height="26" viewBox="0 0 23 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M23 13L0.500001 25.9904L0.500002 0.00961778L23 13Z" fill="white"/>
+                                            </svg>
+                                            <svg class="st" width="23" height="40" viewBox="0 0 23 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <line x1="1" y1="4.37113e-08" x2="0.999998" y2="40" stroke="white" stroke-width="2"/>
+                                                <line x1="22" y1="4.37113e-08" x2="22" y2="40" stroke="white" stroke-width="2"/>
+                                            </svg>                                                
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="reviews__text">
+                                    <div class="reviews__text-title">
+                                        <div class="name">Петров Иван</div>
+                                        <div class="star">
+                                            <svg width="24" height="21" viewBox="0 0 24 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M12 0L14.6942 7.9463H23.4127L16.3593 12.8574L19.0534 20.8037L12 15.8926L4.94658 20.8037L7.64074 12.8574L0.587322 7.9463H9.30583L12 0Z" fill="#FFB444"/>
+                                            </svg>
+                                            <svg width="24" height="21" viewBox="0 0 24 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M12 0L14.6942 7.9463H23.4127L16.3593 12.8574L19.0534 20.8037L12 15.8926L4.94658 20.8037L7.64074 12.8574L0.587322 7.9463H9.30583L12 0Z" fill="#FFB444"/>
+                                            </svg> 
+                                            <svg width="24" height="21" viewBox="0 0 24 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M12 0L14.6942 7.9463H23.4127L16.3593 12.8574L19.0534 20.8037L12 15.8926L4.94658 20.8037L7.64074 12.8574L0.587322 7.9463H9.30583L12 0Z" fill="#FFB444"/>
+                                            </svg> 
+                                            <svg width="24" height="21" viewBox="0 0 24 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M12 0L14.6942 7.9463H23.4127L16.3593 12.8574L19.0534 20.8037L12 15.8926L4.94658 20.8037L7.64074 12.8574L0.587322 7.9463H9.30583L12 0Z" fill="#FFB444"/>
+                                            </svg> 
+                                            <svg width="24" height="21" viewBox="0 0 24 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M12 0L14.6942 7.9463H23.4127L16.3593 12.8574L19.0534 20.8037L12 15.8926L4.94658 20.8037L7.64074 12.8574L0.587322 7.9463H9.30583L12 0Z" fill="#FFB444"/>
+                                            </svg>                                                 
+                                        </div>
+                                    </div>
+                                    <div class="reviews__text-audio" data-music-url="./audio/test.wav">
+                                        <button class="play waiting">
+                                            <svg class="pl" width="23" height="26" viewBox="0 0 23 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M23 13L0.500001 25.9904L0.500002 0.00961778L23 13Z" fill="white"/>
+                                            </svg>
+                                            <svg class="st" width="23" height="40" viewBox="0 0 23 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <line x1="1" y1="4.37113e-08" x2="0.999998" y2="40" stroke="white" stroke-width="2"/>
+                                                <line x1="22" y1="4.37113e-08" x2="22" y2="40" stroke="white" stroke-width="2"/>
+                                            </svg>                                                
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="reviews__text">
+                                    <div class="reviews__text-title">
+                                        <div class="name">Петров Иван</div>
+                                        <div class="star">
+                                            <svg width="24" height="21" viewBox="0 0 24 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M12 0L14.6942 7.9463H23.4127L16.3593 12.8574L19.0534 20.8037L12 15.8926L4.94658 20.8037L7.64074 12.8574L0.587322 7.9463H9.30583L12 0Z" fill="#FFB444"/>
+                                            </svg>
+                                            <svg width="24" height="21" viewBox="0 0 24 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M12 0L14.6942 7.9463H23.4127L16.3593 12.8574L19.0534 20.8037L12 15.8926L4.94658 20.8037L7.64074 12.8574L0.587322 7.9463H9.30583L12 0Z" fill="#FFB444"/>
+                                            </svg> 
+                                            <svg width="24" height="21" viewBox="0 0 24 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M12 0L14.6942 7.9463H23.4127L16.3593 12.8574L19.0534 20.8037L12 15.8926L4.94658 20.8037L7.64074 12.8574L0.587322 7.9463H9.30583L12 0Z" fill="#FFB444"/>
+                                            </svg> 
+                                            <svg width="24" height="21" viewBox="0 0 24 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M12 0L14.6942 7.9463H23.4127L16.3593 12.8574L19.0534 20.8037L12 15.8926L4.94658 20.8037L7.64074 12.8574L0.587322 7.9463H9.30583L12 0Z" fill="#FFB444"/>
+                                            </svg> 
+                                            <svg width="24" height="21" viewBox="0 0 24 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M12 0L14.6942 7.9463H23.4127L16.3593 12.8574L19.0534 20.8037L12 15.8926L4.94658 20.8037L7.64074 12.8574L0.587322 7.9463H9.30583L12 0Z" fill="#FFB444"/>
+                                            </svg>                                                 
+                                        </div>
+                                    </div>
+                                    <div class="reviews__text-audio" data-music-url="./audio/test.wav">
+                                        <button class="play waiting">
+                                            <svg class="pl" width="23" height="26" viewBox="0 0 23 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M23 13L0.500001 25.9904L0.500002 0.00961778L23 13Z" fill="white"/>
+                                            </svg>
+                                            <svg class="st" width="23" height="40" viewBox="0 0 23 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <line x1="1" y1="4.37113e-08" x2="0.999998" y2="40" stroke="white" stroke-width="2"/>
+                                                <line x1="22" y1="4.37113e-08" x2="22" y2="40" stroke="white" stroke-width="2"/>
+                                            </svg>                                                
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="reviews__text">
+                                    <div class="reviews__text-title">
+                                        <div class="name">Петров Иван</div>
+                                        <div class="star">
+                                            <svg width="24" height="21" viewBox="0 0 24 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M12 0L14.6942 7.9463H23.4127L16.3593 12.8574L19.0534 20.8037L12 15.8926L4.94658 20.8037L7.64074 12.8574L0.587322 7.9463H9.30583L12 0Z" fill="#FFB444"/>
+                                            </svg>
+                                            <svg width="24" height="21" viewBox="0 0 24 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M12 0L14.6942 7.9463H23.4127L16.3593 12.8574L19.0534 20.8037L12 15.8926L4.94658 20.8037L7.64074 12.8574L0.587322 7.9463H9.30583L12 0Z" fill="#FFB444"/>
+                                            </svg> 
+                                            <svg width="24" height="21" viewBox="0 0 24 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M12 0L14.6942 7.9463H23.4127L16.3593 12.8574L19.0534 20.8037L12 15.8926L4.94658 20.8037L7.64074 12.8574L0.587322 7.9463H9.30583L12 0Z" fill="#FFB444"/>
+                                            </svg> 
+                                            <svg width="24" height="21" viewBox="0 0 24 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M12 0L14.6942 7.9463H23.4127L16.3593 12.8574L19.0534 20.8037L12 15.8926L4.94658 20.8037L7.64074 12.8574L0.587322 7.9463H9.30583L12 0Z" fill="#FFB444"/>
+                                            </svg> 
+                                            <svg width="24" height="21" viewBox="0 0 24 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M12 0L14.6942 7.9463H23.4127L16.3593 12.8574L19.0534 20.8037L12 15.8926L4.94658 20.8037L7.64074 12.8574L0.587322 7.9463H9.30583L12 0Z" fill="#FFB444"/>
+                                            </svg>                                                 
+                                        </div>
+                                    </div>
+                                    <div class="reviews__text-audio" data-music-url="./audio/test.wav">
+                                        <button class="play waiting">
+                                            <svg class="pl" width="23" height="26" viewBox="0 0 23 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M23 13L0.500001 25.9904L0.500002 0.00961778L23 13Z" fill="white"/>
+                                            </svg>
+                                            <svg class="st" width="23" height="40" viewBox="0 0 23 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <line x1="1" y1="4.37113e-08" x2="0.999998" y2="40" stroke="white" stroke-width="2"/>
+                                                <line x1="22" y1="4.37113e-08" x2="22" y2="40" stroke="white" stroke-width="2"/>
+                                            </svg>                                                
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="reviews__text">
+                                    <div class="reviews__text-title">
+                                        <div class="name">Петров Иван</div>
+                                        <div class="star">
+                                            <svg width="24" height="21" viewBox="0 0 24 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M12 0L14.6942 7.9463H23.4127L16.3593 12.8574L19.0534 20.8037L12 15.8926L4.94658 20.8037L7.64074 12.8574L0.587322 7.9463H9.30583L12 0Z" fill="#FFB444"/>
+                                            </svg>
+                                            <svg width="24" height="21" viewBox="0 0 24 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M12 0L14.6942 7.9463H23.4127L16.3593 12.8574L19.0534 20.8037L12 15.8926L4.94658 20.8037L7.64074 12.8574L0.587322 7.9463H9.30583L12 0Z" fill="#FFB444"/>
+                                            </svg> 
+                                            <svg width="24" height="21" viewBox="0 0 24 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M12 0L14.6942 7.9463H23.4127L16.3593 12.8574L19.0534 20.8037L12 15.8926L4.94658 20.8037L7.64074 12.8574L0.587322 7.9463H9.30583L12 0Z" fill="#FFB444"/>
+                                            </svg> 
+                                            <svg width="24" height="21" viewBox="0 0 24 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M12 0L14.6942 7.9463H23.4127L16.3593 12.8574L19.0534 20.8037L12 15.8926L4.94658 20.8037L7.64074 12.8574L0.587322 7.9463H9.30583L12 0Z" fill="#FFB444"/>
+                                            </svg> 
+                                            <svg width="24" height="21" viewBox="0 0 24 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M12 0L14.6942 7.9463H23.4127L16.3593 12.8574L19.0534 20.8037L12 15.8926L4.94658 20.8037L7.64074 12.8574L0.587322 7.9463H9.30583L12 0Z" fill="#FFB444"/>
+                                            </svg>                                                 
+                                        </div>
+                                    </div>
+                                    <div class="reviews__text-audio" data-music-url="./audio/test.wav">
+                                        <button class="play waiting">
+                                            <svg class="pl" width="23" height="26" viewBox="0 0 23 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M23 13L0.500001 25.9904L0.500002 0.00961778L23 13Z" fill="white"/>
+                                            </svg>
+                                            <svg class="st" width="23" height="40" viewBox="0 0 23 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <line x1="1" y1="4.37113e-08" x2="0.999998" y2="40" stroke="white" stroke-width="2"/>
+                                                <line x1="22" y1="4.37113e-08" x2="22" y2="40" stroke="white" stroke-width="2"/>
+                                            </svg>                                                
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="reviews__text">
+                                    <div class="reviews__text-title">
+                                        <div class="name">Петров Иван</div>
+                                        <div class="star">
+                                            <svg width="24" height="21" viewBox="0 0 24 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M12 0L14.6942 7.9463H23.4127L16.3593 12.8574L19.0534 20.8037L12 15.8926L4.94658 20.8037L7.64074 12.8574L0.587322 7.9463H9.30583L12 0Z" fill="#FFB444"/>
+                                            </svg>
+                                            <svg width="24" height="21" viewBox="0 0 24 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M12 0L14.6942 7.9463H23.4127L16.3593 12.8574L19.0534 20.8037L12 15.8926L4.94658 20.8037L7.64074 12.8574L0.587322 7.9463H9.30583L12 0Z" fill="#FFB444"/>
+                                            </svg> 
+                                            <svg width="24" height="21" viewBox="0 0 24 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M12 0L14.6942 7.9463H23.4127L16.3593 12.8574L19.0534 20.8037L12 15.8926L4.94658 20.8037L7.64074 12.8574L0.587322 7.9463H9.30583L12 0Z" fill="#FFB444"/>
+                                            </svg> 
+                                            <svg width="24" height="21" viewBox="0 0 24 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M12 0L14.6942 7.9463H23.4127L16.3593 12.8574L19.0534 20.8037L12 15.8926L4.94658 20.8037L7.64074 12.8574L0.587322 7.9463H9.30583L12 0Z" fill="#FFB444"/>
+                                            </svg> 
+                                            <svg width="24" height="21" viewBox="0 0 24 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M12 0L14.6942 7.9463H23.4127L16.3593 12.8574L19.0534 20.8037L12 15.8926L4.94658 20.8037L7.64074 12.8574L0.587322 7.9463H9.30583L12 0Z" fill="#FFB444"/>
+                                            </svg>                                                 
+                                        </div>
+                                    </div>
+                                    <div class="reviews__text-audio" data-music-url="./audio/test.wav">
+                                        <button class="play waiting">
+                                            <svg class="pl" width="23" height="26" viewBox="0 0 23 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M23 13L0.500001 25.9904L0.500002 0.00961778L23 13Z" fill="white"/>
+                                            </svg>
+                                            <svg class="st" width="23" height="40" viewBox="0 0 23 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <line x1="1" y1="4.37113e-08" x2="0.999998" y2="40" stroke="white" stroke-width="2"/>
+                                                <line x1="22" y1="4.37113e-08" x2="22" y2="40" stroke="white" stroke-width="2"/>
+                                            </svg>                                                
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="reviews__slider-controls">
+                    <div class="swiper-pagination reviews__pagination mobile" id="reviews__pagination"></div>
+                    <div class="reviews__buttons">
+                        <button class="reviews__button prev mobile">
+                            <svg width="20" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M0.292893 7.29289C-0.0976314 7.68342 -0.0976315 8.31658 0.292892 8.70711L6.65685 15.0711C7.04738 15.4616 7.68054 15.4616 8.07107 15.0711C8.46159 14.6805 8.46159 14.0474 8.07107 13.6569L2.41421 8L8.07107 2.34314C8.46159 1.95262 8.46159 1.31946 8.07107 0.928931C7.68054 0.538407 7.04738 0.538407 6.65686 0.928931L0.292893 7.29289ZM20 7L1 7L1 9L20 9L20 7Z" fill="#D74535"/>
+                            </svg>                                
+                        </button>
+                        <button class="reviews__button next mobile">
+                            <svg width="20" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M19.7071 8.70711C20.0976 8.31658 20.0976 7.68342 19.7071 7.29289L13.3431 0.928932C12.9526 0.538408 12.3195 0.538408 11.9289 0.928932C11.5384 1.31946 11.5384 1.95262 11.9289 2.34315L17.5858 8L11.9289 13.6569C11.5384 14.0474 11.5384 14.6805 11.9289 15.0711C12.3195 15.4616 12.9526 15.4616 13.3431 15.0711L19.7071 8.70711ZM0 9H19V7H0V9Z" fill="#D74535"/>
+                            </svg>                                                                   
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="reviews__container">
+                <div class="reviews__slider">
+                    <div class="swiper reviews__swiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <div class="reviews__video">
+                                    <a href="#" class="reviews__video-play">
+                                        <button class="play-video">
+                                            <svg width="23" height="26" viewBox="0 0 23 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M23 13L0.500001 25.9904L0.500002 0.00961778L23 13Z" fill="white"/>
+                                            </svg>                                            
+                                        </button>
+                                    </a>
+                                    <iframe width="100%" height="100%" src="https://www.youtube.com/embed/Km8n0zmJ0r0?si=e4FqVUF-cArg-n4n&amp;controls=0&enablejsapi=1&wmode=transparent" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="reviews__video">
+                                    <a href="#" class="reviews__video-play">
+                                        <button class="play-video">
+                                            <svg width="23" height="26" viewBox="0 0 23 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M23 13L0.500001 25.9904L0.500002 0.00961778L23 13Z" fill="white"/>
+                                            </svg>                                            
+                                        </button>
+                                    </a>
+                                    <iframe width="100%" height="100%" src="https://www.youtube.com/embed/Km8n0zmJ0r0?si=e4FqVUF-cArg-n4n&amp;controls=0&enablejsapi=1&wmode=transparent" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="reviews__video">
+                                    <a href="#" class="reviews__video-play">
+                                        <button class="play-video">
+                                            <svg width="23" height="26" viewBox="0 0 23 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M23 13L0.500001 25.9904L0.500002 0.00961778L23 13Z" fill="white"/>
+                                            </svg>                                            
+                                        </button>
+                                    </a>
+                                    <iframe width="100%" height="100%" src="https://www.youtube.com/embed/Km8n0zmJ0r0?si=e4FqVUF-cArg-n4n&amp;controls=0&enablejsapi=1&wmode=transparent" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="reviews__video">
+                                    <a href="#" class="reviews__video-play">
+                                        <button class="play-video">
+                                            <svg width="23" height="26" viewBox="0 0 23 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M23 13L0.500001 25.9904L0.500002 0.00961778L23 13Z" fill="white"/>
+                                            </svg>                                            
+                                        </button>
+                                    </a>
+                                    <iframe width="100%" height="100%" src="https://www.youtube.com/embed/Km8n0zmJ0r0?si=e4FqVUF-cArg-n4n&amp;controls=0&enablejsapi=1&wmode=transparent" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="reviews__video">
+                                    <a href="#" class="reviews__video-play">
+                                        <button class="play-video">
+                                            <svg width="23" height="26" viewBox="0 0 23 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M23 13L0.500001 25.9904L0.500002 0.00961778L23 13Z" fill="white"/>
+                                            </svg>                                            
+                                        </button>
+                                    </a>
+                                    <iframe width="100%" height="100%" src="https://www.youtube.com/embed/Km8n0zmJ0r0?si=e4FqVUF-cArg-n4n&amp;controls=0&enablejsapi=1&wmode=transparent" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="reviews__slider-controls">
+                    <div class="swiper-pagination reviews__pagination mobile" id="reviews__pagination"></div>
+                    <div class="reviews__buttons">
+                        <button class="reviews__button prev mobile">
+                            <svg width="20" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M0.292893 7.29289C-0.0976314 7.68342 -0.0976315 8.31658 0.292892 8.70711L6.65685 15.0711C7.04738 15.4616 7.68054 15.4616 8.07107 15.0711C8.46159 14.6805 8.46159 14.0474 8.07107 13.6569L2.41421 8L8.07107 2.34314C8.46159 1.95262 8.46159 1.31946 8.07107 0.928931C7.68054 0.538407 7.04738 0.538407 6.65686 0.928931L0.292893 7.29289ZM20 7L1 7L1 9L20 9L20 7Z" fill="#D74535"/>
+                            </svg>                                
+                        </button>
+                        <button class="reviews__button next mobile">
+                            <svg width="20" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M19.7071 8.70711C20.0976 8.31658 20.0976 7.68342 19.7071 7.29289L13.3431 0.928932C12.9526 0.538408 12.3195 0.538408 11.9289 0.928932C11.5384 1.31946 11.5384 1.95262 11.9289 2.34315L17.5858 8L11.9289 13.6569C11.5384 14.0474 11.5384 14.6805 11.9289 15.0711C12.3195 15.4616 12.9526 15.4616 13.3431 15.0711L19.7071 8.70711ZM0 9H19V7H0V9Z" fill="#D74535"/>
+                            </svg>                                                                   
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
     <script src="./js/nouislider.min.js"></script>
     <script src="./js/swiper-bundle.min.js"></script>
     <script src="./js/inputmask.min.js"></script>
+    <script src="./js/wavesurfer.min.js"></script>
     <script src="./js/app.js"></script>
 </body>
 </html>

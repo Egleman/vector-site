@@ -1,3 +1,16 @@
+// Helper func
+const debounce = (callee, timeoutMs) => {
+    return function perform(...args) {
+      let previousCall = this.lastCall
+      this.lastCall = Date.now()
+      if (previousCall && this.lastCall - previousCall <= timeoutMs) {
+        clearTimeout(this.lastCallTimer)
+      }
+      this.lastCallTimer = setTimeout(() => callee(...args), timeoutMs)
+    }
+}
+//
+
 // Start range-sliders
 const rangeSliders = document.querySelectorAll('[data-block="calc-slider"]');
 const rangeInputs = document.querySelectorAll('[data-input="calc-slider"]');
@@ -286,32 +299,77 @@ priceSliders.forEach((slider, index) => {
         }
     });
 })
-// const priceTopSlider = new Swiper('.price__swiper', {
-//     // loop: true,
-//     pagination: {
-//       el: '.price__pagintaion',
-//     },
-//     spaceBetween: 25,
-//     slidesPerView: 4,
-//     navigation: {
-//       nextEl: '.price__button.next',
-//       prevEl: '.price__button.prev',
-//     },
-//     breakpoints: {
-//         0: {
-//             spaceBetween: 17,
-//             slidesPerView: 'auto',
-//         },
-//         798: {
-//             spaceBetween: 30,
-//             slidesPerView: 3,
-//         },
-//         1230: {
-//             spaceBetween: 25,
-//             slidesPerView: 4,
-//         },
-//     }
-// });
+
+
+const reviewsSliders = document.querySelectorAll('.reviews__swiper');
+const reviewsNextButtons = document.querySelectorAll('.reviews__button.next');
+const reviewsPrevButtons = document.querySelectorAll('.reviews__button.prev');
+const reviewsNextButtonsMobile = document.querySelectorAll('.reviews__button.next.mobile');
+const reviewsPrevButtonsMobile = document.querySelectorAll('.reviews__button.prev.mobile');
+const reviewsPaginations = document.querySelectorAll('.reviews__pagination.pc');
+const reviewsPaginationsMobile = document.querySelectorAll('.reviews__pagination.mobile');
+reviewsSliders.forEach((slider, index) => {
+    slider.classList.add(`reviews__swiper_${index}`);
+    reviewsNextButtons[index].classList.add(`reviews__button_${index}`);
+    reviewsPrevButtons[index].classList.add(`reviews__button_${index}`);
+    reviewsPaginations[index].classList.add(`reviews__pagination_${index}`);
+    reviewsPaginationsMobile[index].classList.add(`reviews__pagination_${index}`);
+    reviewsPrevButtonsMobile[index].classList.add(`reviews__button_${index}`);
+    reviewsNextButtonsMobile[index].classList.add(`reviews__button_${index}`);
+    const reviewsSlider = new Swiper(`.reviews__swiper_${index}`, {
+        on: {
+            slideChange: function() {
+                document.querySelector(`.reviews__pagination_${index}.mobile`).innerHTML = `
+                ${this.slides.map((dot, i) => {
+                    return `<span class="swiper-pagination-bullet ${i === this.realIndex? 'swiper-pagination-bullet-active' : ''}"></span>`
+                }).join('')}
+                `
+            },
+            resize: function() {
+                document.querySelector(`.reviews__pagination_${index}.mobile`).innerHTML = `
+                ${this.slides.map((dot, i) => {
+                    return `<span class="swiper-pagination-bullet ${i === this.realIndex? 'swiper-pagination-bullet-active' : ''}"></span>`
+                }).join('')}
+                `
+            }
+        },
+        breakpoints: {
+            0: {
+                spaceBetween: 0,
+                slidesPerView: 1,
+                navigation: {
+                    nextEl: `.reviews__button_${index}.next.mobile`,
+                    prevEl: `.reviews__button_${index}.prev.mobile`,
+                },
+                pagination: {
+                    el: `.reviews__pagination_${index}.mobile`,
+                },
+            },
+            606: {
+                spaceBetween: 15,
+                slidesPerView: 'auto',
+                navigation: {
+                    nextEl: `.reviews__button_${index}.next`,
+                    prevEl: `.reviews__button_${index}.prev`,
+                },
+                pagination: {
+                    el: `.reviews__pagination_${index}.pc`,
+                },
+            },
+            1022: {
+                spaceBetween: 25,
+                slidesPerView: 'auto',
+                navigation: {
+                    nextEl: `.reviews__button_${index}.next`,
+                    prevEl: `.reviews__button_${index}.prev`,
+                },
+                pagination: {
+                    el: `.reviews__pagination_${index}.pc`,
+                },
+            },
+        }
+    });
+})
 // End sliders
 
 // Start tabs
@@ -323,7 +381,31 @@ const tabsPanelImplementations = document.querySelector('.implementation__tabs')
 const tabItemsImplementations = document.querySelectorAll('.implementation__tab');
 const tabContentsImplementations = document.querySelectorAll('.implementation__content');
 
-const tabs = (tabsPanel, tabsButtons, tabsContent, tabSelector) => {
+const tabsPanelReviews = document.querySelector('.reviews__tabs');
+const tabItemsReviews = document.querySelectorAll('.reviews__tabs-link');
+const tabContentsReviews = document.querySelectorAll('.reviews__container');
+const tabContents2Reviews = document.querySelectorAll('.reviews__controls');
+
+const pausePlayerReviews = () => {
+    const audios = document.querySelectorAll(`.reviews__text-audio`);
+    const videos = document.querySelectorAll('.reviews__video > iframe');
+    audios.forEach(audioBlock => {
+        const audio = audioBlock.querySelector('div').shadowRoot.querySelector('audio');
+        const button = audioBlock.querySelector('.play')
+        audio.pause();
+        if (button.classList.contains('proccessed')) {
+            button.classList.remove('proccessed');
+        }
+        button.classList.add('waiting');
+        videos.forEach((video, i) => {
+            video.contentWindow.postMessage('{"event":"command","func":"stopVideo","args":""}', '*');
+            document.querySelectorAll('.reviews__video-play')[i].style.display = 'flex';
+        })
+    })
+    
+}
+
+const tabs = (tabsPanel, tabsButtons, tabsContent, tabSelector, func = null) => {
     tabsPanel.addEventListener('click', (e) => {
         e.preventDefault();
         if (e.target.closest(`.${tabSelector}`)) {
@@ -339,6 +421,9 @@ const tabs = (tabsPanel, tabsButtons, tabsContent, tabSelector) => {
                     if (tabsContent[index].classList.contains('active')) {
                         tabsContent[index].classList.remove('active');
                     }
+                    if (func !== null) {
+                        func()
+                    }
                 }
             })
         }
@@ -346,6 +431,8 @@ const tabs = (tabsPanel, tabsButtons, tabsContent, tabSelector) => {
 }
 tabs(tabsPanelServices, tabItemsServices, tabImagesServices, 'services__tabs-item');
 tabs(tabsPanelImplementations, tabItemsImplementations, tabContentsImplementations, 'implementation__tab');
+tabs(tabsPanelReviews, tabItemsReviews, tabContentsReviews, 'reviews__tabs-link', pausePlayerReviews);
+tabs(tabsPanelReviews, tabItemsReviews, tabContents2Reviews, 'reviews__tabs-link', pausePlayerReviews);
 // End tabs
 
 // Start Slider modals
@@ -412,3 +499,79 @@ phoneInputs.forEach(input => {
     im.mask(input);
 })
 // End masked inputs
+
+// Start wave players
+const waveContainers = document.querySelectorAll('.reviews__text-audio');
+const playVoiceMessageButtons = document.querySelectorAll('.play');
+
+waveContainers.forEach((block, index) => {
+    block.classList.add(`reviews__text-audio_${index}`);
+    const waveOptions = {
+        "container": `.reviews__text-audio_${index}`,
+        "height": 76,
+        "width": "",
+        "splitChannels": false,
+        "normalize": false,
+        "waveColor": "rgba(175, 175, 175, .5)",
+        "progressColor": "rgb(215, 69, 53, 1)",
+        "cursorColor": "#ddd5e9",
+        "cursorWidth": 0,
+        "barWidth": 3,
+        "barGap": 5,
+        "barRadius": null,
+        "barHeight": null,
+        "barAlign": "",
+        "minPxPerSec": 1,
+        "fillParent": true,
+        "url": block.dataset.musicUrl,
+        "mediaControls": false,
+        "autoplay": false,
+        "interact": true,
+        "dragToSeek": false,
+        "hideScrollbar": true,
+        "audioRate": 1,
+        "autoScroll": true,
+        "autoCenter": true,
+        "sampleRate": 8000
+    }
+    const wavesurfer = WaveSurfer.create(waveOptions)
+    playVoiceMessageButtons[index].addEventListener('click', () => {
+        const audio = document.querySelector(`.reviews__text-audio_${index} > div`).shadowRoot.querySelector("audio");
+        playVoiceMessageButtons.forEach((btn, i) => {
+            if (i !== index) {
+                document.querySelector(`.reviews__text-audio_${i} > div`).shadowRoot.querySelector("audio").pause();
+                if (playVoiceMessageButtons[i].classList.contains('proccessed')) {
+                    playVoiceMessageButtons[i].classList.remove('proccessed');
+                }
+                playVoiceMessageButtons[i].classList.add('waiting');
+            }
+        })
+        if (audio.paused) {
+            audio.play();
+            if (playVoiceMessageButtons[index].classList.contains('waiting')) {
+                playVoiceMessageButtons[index].classList.remove('waiting');
+            }
+            playVoiceMessageButtons[index].classList.add('proccessed');
+        } else {
+            audio.pause();
+            if (playVoiceMessageButtons[index].classList.contains('proccessed')) {
+                playVoiceMessageButtons[index].classList.remove('proccessed');
+            }
+            playVoiceMessageButtons[index].classList.add('waiting');
+        }
+    })
+})
+const playVideoReviewButtons = document.querySelectorAll('.reviews__video-play');
+const videoReviews = document.querySelectorAll('.reviews__video > iframe');
+playVideoReviewButtons.forEach((btn, index) => {
+    btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        videoReviews.forEach((video, i) => {
+            video.contentWindow.postMessage('{"event":"command","func":"stopVideo","args":""}', '*');
+            playVideoReviewButtons[i].style.display = 'flex';
+        })
+        btn.style.display = 'none';
+        videoReviews[index].contentWindow.postMessage('{"event":"command","func":"playVideo","args":""}', '*');
+    })
+})
+// End wave players

@@ -1,4 +1,4 @@
-.price {
+.prices {
     padding: 30px 0;
     &__title {
         display: grid;
@@ -52,7 +52,7 @@
             margin-right: 35px;
         }
     }
-    #price__pagintaion {
+    #prices__pagintaion {
         width: max-content;
         position: static;
         display: flex;
@@ -205,7 +205,7 @@
     }
 }
 @media (max-width: 1230px) {
-    .price {
+    .prices {
         padding: 55px 0;
         &__title {
             grid-template-columns: 46px 1fr;
@@ -238,7 +238,7 @@
     }
 }
 @media (max-width: 1022px) {
-    .price {
+    .prices {
         &__label {
             font-size: 13px;
             margin-right: 21px;
@@ -308,7 +308,7 @@
     }
 }
 @media (max-width: 798px) {
-    .price {
+    .prices {
         padding: 24px 0 20px 0;
         &__title {
             grid-template-rows: 46px auto;
@@ -373,7 +373,7 @@
     }
 }
 @media (max-width: 606px) {
-    .price {
+    .prices {
         &__slide {
             max-width: 273px;
         }

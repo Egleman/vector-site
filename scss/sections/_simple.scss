@@ -1,0 +1,131 @@
+.simple {
+    padding: 25px 0;
+    &__more {
+        display: none;
+        color: #D74535;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+        margin-bottom: 15px;
+        padding-left: 15px;
+    }
+    &__gray {
+        background: #EAEAEA;
+        padding: 60px 0;
+        margin-bottom: 40px;
+    }
+    &__gray.hidden {
+        display: none;
+    }
+    &__white.hidden {
+        display: none;
+    }
+    &__wrapper {
+        display: flex;
+        justify-content: space-between;
+        gap: 15px;
+        p {
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 300;
+            line-height: normal;
+        }
+        .first {
+            max-width: 318px;
+            width: 100%;
+        }
+        .second {
+            max-width: 548px;
+            width: 100%;
+        }
+        .thrid {
+            max-width: 445px;
+            width: 100%;
+        }
+    }
+    &__text {
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+        padding-bottom: 40px;
+        border-bottom: 1px solid #AFAFAF;
+        p {
+            font-size: 20px;
+            font-style: normal;
+            font-weight: 300;
+            line-height: normal;
+        }
+        span {
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 300;
+            line-height: normal;
+        }
+    }
+}
+@media (max-width: 1022px) {
+    .simple {
+        padding: 25px 0 35px 0;
+        &__gray {
+            padding: 25px 0;
+            margin-bottom: 35px;
+        }
+        &__wrapper {
+            p {
+                font-size: 10px;
+            }
+            .first {
+                max-width: 100%;
+            }
+            .second {
+                max-width: 100%;
+            }
+            .thrid {
+                max-width: 100%;
+            }
+        }
+        &__text {
+            gap: 15px;
+            padding-bottom: 25px;
+            p {
+                font-size: 13px;
+            }
+            span {
+                font-size: 10px;
+            }
+        }
+    }
+}
+@media (max-width: 606px) {
+    .simple {
+        padding: 13px 0 20px 0;
+        &__more {
+            display: flex;
+        }
+        &__gray {
+            background: #fff;
+            padding: 0;
+            margin-bottom: 15px;
+            display: none;
+        }
+        &__white {
+            display: none;
+        }
+        &__wrapper {
+            flex-direction: column;
+            gap: 10px;
+            p {
+                font-size: 13px;
+            }
+        }
+        &__text {
+            gap: 15px;
+            padding-bottom: 0;
+            border-bottom: 0;
+            p, span {
+                font-size: 13px;
+            }
+        }
+    }
+}

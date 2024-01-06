@@ -1,16 +1,3 @@
-// Helper func
-const debounce = (callee, timeoutMs) => {
-    return function perform(...args) {
-      let previousCall = this.lastCall
-      this.lastCall = Date.now()
-      if (previousCall && this.lastCall - previousCall <= timeoutMs) {
-        clearTimeout(this.lastCallTimer)
-      }
-      this.lastCallTimer = setTimeout(() => callee(...args), timeoutMs)
-    }
-}
-//
-
 // Start range-sliders
 const rangeSliders = document.querySelectorAll('[data-block="calc-slider"]');
 const rangeInputs = document.querySelectorAll('[data-input="calc-slider"]');
@@ -46,7 +33,7 @@ const calcSliderOptions = {
     padding: [4, 2],
     connect: 'lower',
     tooltips: {
-        to: function(numericValue) {
+        to: function (numericValue) {
             return `${numericValue.toFixed(0)} кв.м2`;
         }
     },
@@ -100,11 +87,11 @@ const changeProgress = (self) => {
 const advantagesSlider = new Swiper('.advantages-slider', {
     // loop: true,
     pagination: {
-      el: '.advantages__pagination',
+        el: '.advantages__pagination',
     },
     navigation: {
-      nextEl: '.advantages__button.next',
-      prevEl: '.advantages__button.prev',
+        nextEl: '.advantages__button.next',
+        prevEl: '.advantages__button.prev',
     },
 });
 const examplesThumbsSlider = new Swiper(".examples__thumbs", {
@@ -116,20 +103,20 @@ const examplesThumbsSlider = new Swiper(".examples__thumbs", {
     allowTouchMove: true,
     breakpoints: {
         0: {
-          spaceBetween: 15
+            spaceBetween: 15
         },
         1200: {
-          spaceBetween: 26
+            spaceBetween: 26
         },
     }
 });
 const examplesSlider = new Swiper('.examples__slider', {
     pagination: {
-      el: '.examples__pagintation',
+        el: '.examples__pagintation',
     },
     navigation: {
-      nextEl: '.examples__button.next',
-      prevEl: '.examples__button.prev',
+        nextEl: '.examples__button.next',
+        prevEl: '.examples__button.prev',
     },
     thumbs: {
         swiper: examplesThumbsSlider,
@@ -138,7 +125,7 @@ const examplesSlider = new Swiper('.examples__slider', {
         init: function () {
             changeProgress(this)
         },
-        slideChange: function() {
+        slideChange: function () {
             changeProgress(this)
         }
     },
@@ -146,13 +133,13 @@ const examplesSlider = new Swiper('.examples__slider', {
 const dignitySlider = new Swiper('.dignity__slider', {
     // loop: true,
     pagination: {
-      el: '.dignity__pagination',
+        el: '.dignity__pagination',
     },
     spaceBetween: 10,
     slidesPerView: 3,
     navigation: {
-      nextEl: '.dignity__button.next',
-      prevEl: '.dignity__button.prev',
+        nextEl: '.dignity__button.next',
+        prevEl: '.dignity__button.prev',
     },
     breakpoints: {
         0: {
@@ -173,11 +160,11 @@ const servicesSlider = new Swiper('.services__swiper', {
     // loop: true,
     autoHeight: true,
     pagination: {
-      el: '.services__pagination',
+        el: '.services__pagination',
     },
     navigation: {
-      nextEl: '.services__button.next',
-      prevEl: '.services__button.prev',
+        nextEl: '.services__button.next',
+        prevEl: '.services__button.prev',
     },
 });
 const implementationTabsSlider = new Swiper(".implementation__tabs", {
@@ -188,10 +175,10 @@ const implementationTabsSlider = new Swiper(".implementation__tabs", {
     allowTouchMove: true,
     breakpoints: {
         798: {
-          spaceBetween: 10
+            spaceBetween: 10
         },
         1230: {
-          spaceBetween: 45
+            spaceBetween: 45
         },
     }
 });
@@ -207,11 +194,11 @@ implementationSliders.forEach((slider, index) => {
     new Swiper(`.implementation__slider_${index}`, {
         autoHeight: true,
         pagination: {
-          el: `.implementation__pagintaion_${index}`,
+            el: `.implementation__pagintaion_${index}`,
         },
         navigation: {
-          nextEl: `.implementation__button_${index}.next`,
-          prevEl: `.implementation__button_${index}.prev`,
+            nextEl: `.implementation__button_${index}.next`,
+            prevEl: `.implementation__button_${index}.prev`,
         },
     });
 })
@@ -221,7 +208,7 @@ const calcTypesSlider = new Swiper(".calc__types-slider", {
     freeMode: true,
     watchSlidesProgress: true,
     autoScrollOffset: 1,
-    
+
     breakpoints: {
         0: {
             allowTouchMove: true,
@@ -263,25 +250,25 @@ const calcManufacturerSlider = new Swiper(".calc__manufacturer-slider", {
         }
     }
 });
-const priceSliders = document.querySelectorAll('.price__swiper');
-const priceNextButtons = document.querySelectorAll('.price__button.next');
-const pricePrevButtons = document.querySelectorAll('.price__button.prev');
-const pricePaginations = document.querySelectorAll('.price__pagintaion');
+const priceSliders = document.querySelectorAll('.prices__swiper');
+const priceNextButtons = document.querySelectorAll('.prices__button.next');
+const pricePrevButtons = document.querySelectorAll('.prices__button.prev');
+const pricePaginations = document.querySelectorAll('.prices__pagintaion');
 priceSliders.forEach((slider, index) => {
-    slider.classList.add(`price__swiper_${index}`);
-    priceNextButtons[index].classList.add(`price__button_${index}`);
-    pricePrevButtons[index].classList.add(`price__button_${index}`);
-    pricePaginations[index].classList.add(`price__pagintaion_${index}`);
-    new Swiper(`.price__swiper_${index}`, {
+    slider.classList.add(`prices__swiper_${index}`);
+    priceNextButtons[index].classList.add(`prices__button_${index}`);
+    pricePrevButtons[index].classList.add(`prices__button_${index}`);
+    pricePaginations[index].classList.add(`prices__pagintaion_${index}`);
+    new Swiper(`.prices__swiper_${index}`, {
         // loop: true,
         pagination: {
-          el: `.price__pagintaion_${index}`,
+            el: `.prices__pagintaion_${index}`,
         },
         spaceBetween: 25,
         slidesPerView: 4,
         navigation: {
-          nextEl: `.price__button_${index}.next`,
-          prevEl: `.price__button_${index}.prev`,
+            nextEl: `.prices__button_${index}.next`,
+            prevEl: `.prices__button_${index}.prev`,
         },
         breakpoints: {
             0: {
@@ -300,10 +287,9 @@ priceSliders.forEach((slider, index) => {
     });
 })
 
-
 const reviewsSliders = document.querySelectorAll('.reviews__swiper');
-const reviewsNextButtons = document.querySelectorAll('.reviews__button.next');
-const reviewsPrevButtons = document.querySelectorAll('.reviews__button.prev');
+const reviewsNextButtons = document.querySelectorAll('.reviews__button.next.pc');
+const reviewsPrevButtons = document.querySelectorAll('.reviews__button.prev.pc');
 const reviewsNextButtonsMobile = document.querySelectorAll('.reviews__button.next.mobile');
 const reviewsPrevButtonsMobile = document.querySelectorAll('.reviews__button.prev.mobile');
 const reviewsPaginations = document.querySelectorAll('.reviews__pagination.pc');
@@ -318,17 +304,27 @@ reviewsSliders.forEach((slider, index) => {
     reviewsNextButtonsMobile[index].classList.add(`reviews__button_${index}`);
     const reviewsSlider = new Swiper(`.reviews__swiper_${index}`, {
         on: {
-            slideChange: function() {
+            slideChange: function () {
                 document.querySelector(`.reviews__pagination_${index}.mobile`).innerHTML = `
                 ${this.slides.map((dot, i) => {
-                    return `<span class="swiper-pagination-bullet ${i === this.realIndex? 'swiper-pagination-bullet-active' : ''}"></span>`
+                    return `<span class="swiper-pagination-bullet ${i === this.realIndex ? 'swiper-pagination-bullet-active' : ''}"></span>`
+                }).join('')}
+                `
+                document.querySelector(`.reviews__pagination_${index}.pc`).innerHTML = `
+                ${this.slides.map((dot, i) => {
+                    return `<span class="swiper-pagination-bullet ${i === this.realIndex ? 'swiper-pagination-bullet-active' : ''}"></span>`
                 }).join('')}
                 `
             },
-            resize: function() {
+            resize: function () {
                 document.querySelector(`.reviews__pagination_${index}.mobile`).innerHTML = `
                 ${this.slides.map((dot, i) => {
-                    return `<span class="swiper-pagination-bullet ${i === this.realIndex? 'swiper-pagination-bullet-active' : ''}"></span>`
+                    return `<span class="swiper-pagination-bullet ${i === this.realIndex ? 'swiper-pagination-bullet-active' : ''}"></span>`
+                }).join('')}
+                `
+                document.querySelector(`.reviews__pagination_${index}.pc`).innerHTML = `
+                ${this.slides.map((dot, i) => {
+                    return `<span class="swiper-pagination-bullet ${i === this.realIndex ? 'swiper-pagination-bullet-active' : ''}"></span>`
                 }).join('')}
                 `
             }
@@ -337,10 +333,10 @@ reviewsSliders.forEach((slider, index) => {
             0: {
                 spaceBetween: 0,
                 slidesPerView: 1,
-                navigation: {
-                    nextEl: `.reviews__button_${index}.next.mobile`,
-                    prevEl: `.reviews__button_${index}.prev.mobile`,
-                },
+                // navigation: {
+                //     nextEl: `.reviews__button_${index}.next.mobile`,
+                //     prevEl: `.reviews__button_${index}.prev.mobile`,
+                // },
                 pagination: {
                     el: `.reviews__pagination_${index}.mobile`,
                 },
@@ -348,10 +344,10 @@ reviewsSliders.forEach((slider, index) => {
             606: {
                 spaceBetween: 15,
                 slidesPerView: 'auto',
-                navigation: {
-                    nextEl: `.reviews__button_${index}.next`,
-                    prevEl: `.reviews__button_${index}.prev`,
-                },
+                // navigation: {
+                //     nextEl: `.reviews__button_${index}.next.pc`,
+                //     prevEl: `.reviews__button_${index}.prev.pc`,
+                // },
                 pagination: {
                     el: `.reviews__pagination_${index}.pc`,
                 },
@@ -359,14 +355,74 @@ reviewsSliders.forEach((slider, index) => {
             1022: {
                 spaceBetween: 25,
                 slidesPerView: 'auto',
-                navigation: {
-                    nextEl: `.reviews__button_${index}.next`,
-                    prevEl: `.reviews__button_${index}.prev`,
-                },
+                // navigation: {
+                //     nextEl: `.reviews__button_${index}.next.pc`,
+                //     prevEl: `.reviews__button_${index}.prev.pc`,
+                // },
                 pagination: {
                     el: `.reviews__pagination_${index}.pc`,
                 },
             },
+        }
+    });
+    reviewsNextButtons[index].addEventListener('click', () => {
+        reviewsSlider.slideNext();
+    })
+    reviewsPrevButtons[index].addEventListener('click', () => {
+        reviewsSlider.slidePrev();
+    })
+    reviewsNextButtonsMobile[index].addEventListener('click', () => {
+        reviewsSlider.slideNext();
+    })
+    reviewsPrevButtonsMobile[index].addEventListener('click', () => {
+        reviewsSlider.slidePrev();
+    })
+})
+
+const certificatesSliders = document.querySelectorAll('.certificates__swiper');
+const certificatesButtonNext = document.querySelectorAll('.certificates__button.next');
+const certificatesButtonPrev = document.querySelectorAll('.certificates__button.prev');
+const certificatePaginations = document.querySelectorAll('.certificates__pagination');
+const certificateScrollbars = document.querySelectorAll('.certificates__scrollbar-bar');
+
+certificatesSliders.forEach((slider, index) => {
+    slider.classList.add(`certificates__swiper_${index}`);
+    certificatesButtonNext[index].classList.add(`certificates__button_${index}`);
+    certificatesButtonPrev[index].classList.add(`certificates__button_${index}`);
+    certificatePaginations[index].classList.add(`certificates__pagination_${index}`);
+    certificateScrollbars[index].classList.add(`certificates__scrollbar-bar_${index}`);
+    new Swiper(`.certificates__swiper_${index}`, {
+
+        pagination: {
+            el: `.certificates__pagination_${index}`,
+        },
+        allowTouchMove: true,
+        spaceBetween: 15,
+        navigation: {
+            nextEl: `.certificates__button_${index}.next`,
+            prevEl: `.certificates__button_${index}.prev`,
+        },
+        scrollbar: {
+            el: `.certificates__scrollbar-bar_${index}`,
+            draggable: true,
+            dragSize: 309
+        },
+        breakpoints: {
+            0: {
+                slidesPerView: 'auto',
+                scrollbar: {
+                    dragSize: 191
+                },
+            },
+            606: {
+                slidesPerView: 'auto',
+            },
+            1022: {
+                slidesPerView: 'auto',
+                scrollbar: {
+                    dragSize: 309
+                },
+            }
         }
     });
 })
@@ -386,6 +442,15 @@ const tabItemsReviews = document.querySelectorAll('.reviews__tabs-link');
 const tabContentsReviews = document.querySelectorAll('.reviews__container');
 const tabContents2Reviews = document.querySelectorAll('.reviews__controls');
 
+const tabsPanelCertificates = document.querySelector('.certificates__tabs');
+const tabItemsCertificates = document.querySelectorAll('.certificates__tabs-link');
+const tabsContentsCertificates = document.querySelectorAll('.certificates__title > .buttons');
+const tabsContents2Certificates = document.querySelectorAll('.certificates__pagination');
+const tabsContents3Certificates = document.querySelectorAll('.certificates__slider');
+const tabsContents4Certificates = document.querySelectorAll('.certificates__scrollbar');
+const tabsPanelCertificatesMobile = document.querySelector('.certificates__select-list');
+const tabItemsCertificatesMobile = document.querySelectorAll('.certificates__select-option');
+
 const pausePlayerReviews = () => {
     const audios = document.querySelectorAll(`.reviews__text-audio`);
     const videos = document.querySelectorAll('.reviews__video > iframe');
@@ -402,9 +467,8 @@ const pausePlayerReviews = () => {
             document.querySelectorAll('.reviews__video-play')[i].style.display = 'flex';
         })
     })
-    
-}
 
+}
 const tabs = (tabsPanel, tabsButtons, tabsContent, tabSelector, func = null) => {
     tabsPanel.addEventListener('click', (e) => {
         e.preventDefault();
@@ -433,6 +497,15 @@ tabs(tabsPanelServices, tabItemsServices, tabImagesServices, 'services__tabs-ite
 tabs(tabsPanelImplementations, tabItemsImplementations, tabContentsImplementations, 'implementation__tab');
 tabs(tabsPanelReviews, tabItemsReviews, tabContentsReviews, 'reviews__tabs-link', pausePlayerReviews);
 tabs(tabsPanelReviews, tabItemsReviews, tabContents2Reviews, 'reviews__tabs-link', pausePlayerReviews);
+tabs(tabsPanelCertificates, tabItemsCertificates, tabsContentsCertificates, 'certificates__tabs-link');
+tabs(tabsPanelCertificates, tabItemsCertificates, tabsContents2Certificates, 'certificates__tabs-link');
+tabs(tabsPanelCertificates, tabItemsCertificates, tabsContents3Certificates, 'certificates__tabs-link');
+tabs(tabsPanelCertificates, tabItemsCertificates, tabsContents4Certificates, 'certificates__tabs-link');
+
+tabs(tabsPanelCertificatesMobile, tabItemsCertificatesMobile, tabsContentsCertificates, 'certificates__select-option');
+tabs(tabsPanelCertificatesMobile, tabItemsCertificatesMobile, tabsContents2Certificates, 'certificates__select-option');
+tabs(tabsPanelCertificatesMobile, tabItemsCertificatesMobile, tabsContents3Certificates, 'certificates__select-option');
+tabs(tabsPanelCertificatesMobile, tabItemsCertificatesMobile, tabsContents4Certificates, 'certificates__select-option');
 // End tabs
 
 // Start Slider modals
@@ -575,3 +648,130 @@ playVideoReviewButtons.forEach((btn, index) => {
     })
 })
 // End wave players
+
+// Start fancybox
+Fancybox.bind("[data-fancybox]", {});
+// End fancybox
+
+// Start selects
+const select = document.querySelector('.certificates__select');
+const selectList = document.querySelector('.certificates__select-list');
+const selectValue = document.querySelector('.certificates__select-value > .value');
+const selectOptions = document.querySelectorAll('.certificates__select-option');
+selectList.addEventListener('click', (e) => {
+    e.preventDefault();
+    if (e.target.closest('.certificates__select-option')) {
+        const option = e.target.closest('.certificates__select-option');
+        selectOptions.forEach((btn, index) => {
+            if (btn === option) {
+                btn.classList.add('active');
+                selectValue.textContent = option.textContent;
+            } else {
+                if (btn.classList.contains('active')) {
+                    btn.classList.remove('active');
+                }
+            }
+        })
+    }
+})
+select.addEventListener('click', (e) => {
+    select.classList.toggle('active');
+})
+// End selects
+
+// Start accordion
+class Accordion {
+    constructor(target, config) {
+        this._el = typeof target === 'string' ? document.querySelector(target) : target;
+        const defaultConfig = {
+            alwaysOpen: true,
+            duration: 350
+        };
+        this._config = Object.assign(defaultConfig, config);
+        this.addEventListener();
+    }
+    addEventListener() {
+        this._el.addEventListener('click', (e) => {
+            const elHeader = e.target.closest('.accordion__header');
+            if (!elHeader) {
+                return;
+            }
+            this.toggle(elHeader.parentElement);
+        });
+    }
+    show(el) {
+        const elBody = el.querySelector('.accordion__body');
+        if (elBody.classList.contains('collapsing') || el.classList.contains('accordion__item_show')) {
+            return;
+        }
+        elBody.style.display = 'block';
+        const height = elBody.offsetHeight;
+        elBody.style.height = 0;
+        elBody.style.overflow = 'hidden';
+        elBody.style.transition = `height ${this._config.duration}ms ease`;
+        elBody.classList.add('collapsing');
+        el.classList.add('accordion__item_slidedown');
+        elBody.offsetHeight;
+        elBody.style.height = `${height}px`;
+        window.setTimeout(() => {
+            elBody.classList.remove('collapsing');
+            el.classList.remove('accordion__item_slidedown');
+            elBody.classList.add('collapse');
+            el.classList.add('accordion__item_show');
+            elBody.style.display = '';
+            elBody.style.height = '';
+            elBody.style.transition = '';
+            elBody.style.overflow = '';
+        }, this._config.duration);
+    }
+    hide(el) {
+        const elBody = el.querySelector('.accordion__body');
+        if (elBody.classList.contains('collapsing') || !el.classList.contains('accordion__item_show')) {
+            return;
+        }
+        elBody.style.height = `${elBody.offsetHeight}px`;
+        elBody.offsetHeight;
+        elBody.style.display = 'block';
+        elBody.style.height = 0;
+        elBody.style.overflow = 'hidden';
+        elBody.style.transition = `height ${this._config.duration}ms ease`;
+        elBody.classList.remove('collapse');
+        el.classList.remove('accordion__item_show');
+        elBody.classList.add('collapsing');
+        window.setTimeout(() => {
+            elBody.classList.remove('collapsing');
+            elBody.classList.add('collapse');
+            elBody.style.display = '';
+            elBody.style.height = '';
+            elBody.style.transition = '';
+            elBody.style.overflow = '';
+        }, this._config.duration);
+    }
+    toggle(el) {
+        el.classList.contains('accordion__item_show') ? this.hide(el) : this.show(el);
+    }
+}
+new Accordion(document.querySelector('.accordion'), {
+    alwaysOpen: false
+});
+
+const showMoreFaqButton = document.querySelector('.faq__more');
+showMoreFaqButton.addEventListener('click', (e) => {
+    showMoreFaqButton.style.display = 'none';
+    document.querySelectorAll('.faq__accordion-item.hidden').forEach(item => {
+        item.classList.remove('hidden');
+    })
+})
+// End accordion
+
+// Start about
+const showMoreAboutBtn = document.querySelector('.simple__more');
+const aboutGrayBlock = document.querySelector('.simple__gray');
+const aboutWhiteBlock = document.querySelector('.simple__white');
+showMoreAboutBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    aboutGrayBlock.style.display = 'block';
+    aboutWhiteBlock.style.display = 'block';
+    showMoreAboutBtn.style.display = 'none';
+})
+// End about

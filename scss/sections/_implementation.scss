@@ -48,6 +48,10 @@
         border-radius: 45px;
         border: 2px solid transparent;
         width: max-content;
+        transition: .3s all;
+        &:hover {
+            border: 2px solid #D74535;
+        }
     }
     &__tab.active {
         border: 2px solid #D74535;

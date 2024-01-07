@@ -1,6 +1,7 @@
 .calc {
     padding: 42px 0 40px 0;
     overflow-x: hidden;
+    position: relative;
     &__wrapper {
         padding: 70px 112px 40px 112px;
         border-radius: 25px 25px 0 0;
@@ -66,6 +67,15 @@
                 border-radius: 15px;
                 opacity: .3;
             }
+            transition: .3s all;
+            &:hover {
+                .calc__types-blur {
+                    display: block;
+                }
+                .calc__types-text {
+                    color: #fff;
+                }
+            }
         }
         &-slide.active {
             .calc__types-blur {
@@ -86,6 +96,7 @@
             transform: translate(-50%, -50%);
             white-space: nowrap;
             z-index: 2;
+            transition: .3s all;
         }
         &-blur {
             position: absolute;
@@ -96,6 +107,7 @@
             height: 100%;
             background: rgba(215, 69, 53, 0.80);
             display: none;
+            transition: .3s all;
         }
     }
     &__border {

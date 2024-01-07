@@ -1,0 +1,137 @@
+.hover-button {
+    transition: .3s all;
+}
+.range-block-hover {
+    transition: .3s all;
+}
+.calc-block-hover {
+    transition: .3s all;
+}
+.slider-button-hover {
+    transition: .3s all;
+}
+.director-button-hover {
+    transition: .3s all;
+}
+.header-link-hover {
+    transition: .3s all;
+}
+.footer-link-hover {
+    transition: .3s all;
+}
+.footer-svg-hover {
+    transition: .3s all;
+    path {
+        transition: .3s all;
+    }
+}
+.header-svg-hover {
+    transition: .3s all;
+    path {
+        transition: .3s all;
+    }
+}
+@media (hover: hover) {
+    .hover-button {
+        &:hover {
+            background: #A5000C;
+        }
+    }
+    .range-block-hover {
+        &:hover {
+            background: rgba(17, 13, 14, 0.7) !important;
+        }
+    }
+    .calc-block-hover {
+        &:hover {
+            background: rgba(73, 73, 73, 0.5) !important;
+        }
+    }
+    .slider-button-hover {
+        &:hover {
+            background: #DDDADA !important;
+        }
+    }
+    .director-button-hover {
+        &:hover {
+            background: #D74535;
+            color: #fff;
+        }
+    }
+    .header-link-hover {
+        &:hover {
+            color: #D74535;
+        }
+    }
+    .footer-link-hover {
+        &:hover {
+            color: #86868B;
+        }
+    }
+    .footer-svg-hover {
+        &:hover {
+            path {
+                fill: #86868B;
+            }
+        }
+    }
+    .header-svg-hover {
+        &:hover {
+            path {
+                fill: #A5000C;
+            }
+        }
+    }
+}
+@media (hover: none) {
+    .hover-button {
+        &:active {
+            background: #A5000C;
+        }
+    }
+    .range-block-hover {
+        &:active {
+            background: rgba(17, 13, 14, 0.7) !important;
+        }
+    }
+    .calc-block-hover {
+        &:active {
+            background: rgba(73, 73, 73, 0.5) !important;
+        }
+    }
+    .slider-button-hover {
+        &:active {
+            background: #DDDADA !important;
+        }
+    }
+    .director-button-hover {
+        &:active {
+            background: #D74535;
+            color: #fff;
+        }
+    }
+    .header-link-hover {
+        &:active {
+            color: #D74535;
+        }
+    }
+    .footer-link-hover {
+        &:active {
+            color: #86868B;
+        }
+    }
+    .footer-svg-hover {
+        &:active {
+            path {
+                fill: #86868B;
+            }
+        }
+    }
+    .header-svg-hover {
+        &:active {
+            path {
+                fill: #A5000C;
+            }
+        }
+    }
+}

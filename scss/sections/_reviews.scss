@@ -1,5 +1,6 @@
 .reviews {
     padding: 40px 0 33px 0;
+    position: relative;
     &__wrapper {
         display: flex;
         align-items: center;
@@ -72,6 +73,10 @@
             font-style: normal;
             font-weight: 700;
             line-height: normal;
+            transition: .3s all;
+            &:hover {
+                border: 2px solid #D74535;
+            }
         }
         &-link.active {
             border: 2px solid #D74535;

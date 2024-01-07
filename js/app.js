@@ -108,7 +108,7 @@ const examplesThumbsSlider = new Swiper(".examples__thumbs", {
         1200: {
             spaceBetween: 26
         },
-    }
+    },
 });
 const examplesSlider = new Swiper('.examples__slider', {
     pagination: {
@@ -121,14 +121,31 @@ const examplesSlider = new Swiper('.examples__slider', {
     thumbs: {
         swiper: examplesThumbsSlider,
     },
-    on: {
-        init: function () {
-            changeProgress(this)
-        },
-        slideChange: function () {
-            changeProgress(this)
-        }
+    scrollbar: {
+        el: `.examples__scrollbar`,
+        draggable: true,
+        dragSize: 414
     },
+    breakpoints: {
+        0: {
+            scrollbar: {
+                dragSize: 258
+            }
+        },
+        1022: {
+            scrollbar: {
+                dragSize: 414
+            }
+        }
+    }
+    // on: {
+    //     init: function () {
+    //         changeProgress(this)
+    //     },
+    //     slideChange: function () {
+    //         changeProgress(this)
+    //     }
+    // },
 });
 const dignitySlider = new Swiper('.dignity__slider', {
     // loop: true,
@@ -775,3 +792,68 @@ showMoreAboutBtn.addEventListener('click', (e) => {
     showMoreAboutBtn.style.display = 'none';
 })
 // End about
+
+//Start modal
+const modalLinks = document.querySelectorAll('[toggle]');
+modalLinks.forEach(link => {
+    link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const blockId = link.getAttribute('toggle');
+        document.querySelector(blockId).classList.toggle('active');
+    })
+})
+// End modals
+
+// Start scroll-links
+const scrollLinks = document.querySelectorAll('[scroll]');
+const mobileMenu = document.getElementById('mobile-menu');
+scrollLinks.forEach(link => {
+    link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const blockId = link.getAttribute('href');
+        if (mobileMenu.classList.contains('active')) {
+            mobileMenu.classList.remove('active');
+        }
+        document.querySelector(blockId).scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+        });
+    })
+})
+// End scroll-links
+
+// Start Forms
+const forms = document.querySelectorAll('form');
+forms.forEach((form, index) => {
+    form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const formData = new FormData(form);
+        const formBody = {};
+        for(const pair of formData.entries()) {
+            formBody[pair[0]] = pair[1] // где pair - это массив вида [name, value]
+        }
+        if (Object.values(formBody).every(item => item !== '')) {
+            const response = await fetch('/mail.php', {
+                method: 'POST',
+                body: JSON.stringify(formBody)
+            })
+            document.querySelectorAll('.overlay').forEach(modal => {
+                if (modal.classList.contains('active')) {
+                    modal.classList.remove('active');
+                }
+            })
+            document.getElementById('thanks').classList.add('active');
+            const result = await response.json();
+            
+        } else {
+            Toastify({
+                text: "Не все поля заполнены",
+                duration: 3000,
+                style: {
+                    background: "#D74535",
+                  },
+            }).showToast();
+        }
+    })
+})
+// End Forms

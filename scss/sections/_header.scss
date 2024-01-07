@@ -1,6 +1,9 @@
 .header {
     background: #fff;
     padding: 24px 0 28px 0;
+    position: sticky;
+    top: 0;
+    z-index: 98;
     &__top {
         display: flex;
         align-items: center;
@@ -76,7 +79,7 @@
         }
     }
 }
-@media (max-width: 990px) {
+@media (max-width: 1022px) {
     .header {
         padding: 22px 0 18px 0;
         &__phone {
@@ -116,7 +119,7 @@
         }
     }
 }
-@media (max-width: 606px) {
+@media (max-width: 798px) {
     .header {
         &__contacts {
             &-label {

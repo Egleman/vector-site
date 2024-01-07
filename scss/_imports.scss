@@ -1,6 +1,7 @@
 @import './components/container';
 @import './components/colors';
-@import './components/accordion';
+@import './components/modal';
+@import './components/anchor';
 
 @import './sections/header';
 @import './sections/hero';
@@ -22,3 +23,7 @@
 @import './sections/how-work';
 @import './sections/about';
 @import './sections/simple';
+@import './sections/contacts';
+@import './sections/footer';
+
+@import './components/button';

@@ -1,0 +1,213 @@
+.contacts {
+    padding: 25px 0 35px 0;
+    position: relative;
+    &__title {
+        font-size: 30px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+        margin-bottom: 40px;
+    }
+    &__wrapper {
+        border-radius: 25px;
+        overflow: hidden;
+    }
+    &__map {
+        height: 611px;
+        width: 100%;
+    }
+    &__bottom {
+        background: #EAEAEA;
+        padding: 70px 80px;
+        box-sizing: border-box;
+        position: relative;
+    }
+    &__icon {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+    }
+    &__grid {
+        display: grid;
+        grid-template-columns: minmax(190px, 318px) minmax(255px, 346px) 231px;
+        max-width: 856px;
+        width: 100%;
+        row-gap: 60px;
+    }
+    &__card {
+        display: grid;
+        grid-template-columns: 22px 1fr;
+        column-gap: 15px;
+        row-gap: 17px;
+        &-icon {
+            grid-column: 1 / span 1;
+            grid-row: 1 / span 1;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+        &-text {
+            grid-column: 2 / span 1;
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal;
+        }
+        &-description {
+            grid-column: 2 / span 1;
+            grid-row: 2 / span 1;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+        }
+    }
+    &__card.small {
+        grid-column: span 1;
+    }
+    &__card.big {
+        grid-column: span 3;
+    }
+}
+@media (max-width: 1022px) {
+    .contacts {
+        padding: 35px 0 45px 0;
+        &__title {
+            font-size: 20px;
+            margin-bottom: 25px;
+        }
+        &__wrapper {
+            border-radius: 16px;
+        }
+        &__map {
+            height: 400px;
+        }
+        &__bottom {
+            padding: 45px 50px 37px 50px;
+        }
+        &__grid {
+            grid-template-columns: minmax(163px, 204px) minmax(201px, 226px) 182px;
+            row-gap: 35px;
+        }
+        &__icon {
+            max-width: 223px;
+            width: 100%;
+        }
+        &__card {
+            column-gap: 10px;
+            row-gap: 6px;
+            grid-template-columns: 15px 1fr;
+            &-icon {
+                &_1 {
+                    svg {
+                        width: 11px;
+                        height: 16px;
+                    }
+                }
+                &_2 {
+                    svg {
+                        width: 11px;
+                        height: 11px;
+                    }
+                }
+                &_3 {
+                    svg {
+                        width: 15px;
+                        height: 11px;
+                    }
+                }
+                &_4 {
+                    svg {
+                        width: 15px;
+                        height: 14px;
+                    }
+                }
+            }
+            &-text {
+                font-size: 13px;
+            }
+            &-description {
+                font-size: 13px;
+            }
+        }
+    }
+}
+@media (max-width: 798px) {
+    .contacts {
+        padding: 30px 0;
+        &__map {
+            height: 356px;
+        }
+        &__grid {
+            grid-template-columns: 1fr;
+            row-gap: 25px;
+            column-gap: 0;
+        }
+        &__card {
+            row-gap: 9px;
+            column-gap: 15px;
+            grid-template-columns: 22px 1fr;
+            &-icon {
+                grid-row: 1 / span 2;
+                &_1 {
+                    svg {
+                        width: 16px;
+                        height: 24px;
+                    }
+                }
+                &_2 {
+                    svg {
+                        width: 16px;
+                        height: 16px;
+                    }
+                }
+                &_3 {
+                    svg {
+                        width: 22px;
+                        height: 17px;
+                    }
+                }
+                &_4 {
+                    svg {
+                        width: 22px;
+                        height: 21px;
+                    }
+                }
+            }
+            &-text {
+                font-size: 16px;
+            }
+            &-description {
+                font-size: 16px;
+            }
+        }
+        &__card.small {
+            grid-column: 1 / span 1;
+        }
+        &__card.big {
+            grid-column: 1 / span 1;
+        }
+    }
+}
+@media (max-width: 606px) {
+    .contacts {
+        &__bottom {
+            padding: 30px 30px 30px 20px;
+        }
+        &__icon {
+            display: none;
+        }
+    }
+}
+@media (max-width: 375px) {
+    .contacts {
+        &__bottom {
+            padding: 30px 15px;
+        }
+        &__card {
+            &-description {
+                font-size: 13px;
+            }
+        }
+    }
+}

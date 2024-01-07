@@ -1,5 +1,6 @@
 .advantages {
     padding: 0 0 42px 0;
+    position: relative;
     &__grid {
         display: grid;
         grid-template-columns: repeat(3, 1fr);

@@ -125,22 +125,35 @@
         }
     }
     &__progress {
-        display: flex;
-        height: 2px;
-        background: #AFAFAF;
+        // display: flex;
+        // height: 2px;
+        // background: #AFAFAF;
         position: relative;
         grid-column: 2 / span 1;
-        .progressbar {
-            transition: .3s all;
-            position: absolute;
-            height: 8px;
-            top: 50%;
-            left: 0;
-            width: 14.3%;
-            transform: translate(0, -50%);
-            border-radius: 45px;
-            background: #D74535;
+        #examples__scrollbar {
+            height: 2px;
+            background: #AFAFAF;
+            position: static;
+            .swiper-scrollbar-drag {
+                border-radius: 45px;
+                background: #D74535;
+                height: 8px;
+                top: -3px;
+                width: 414px !important;
+                cursor: pointer;
+            }
         }
+        // .progressbar {
+        //     transition: .3s all;
+        //     position: absolute;
+        //     height: 8px;
+        //     top: 50%;
+        //     left: 0;
+        //     width: 14.3%;
+        //     transform: translate(0, -50%);
+        //     border-radius: 45px;
+        //     background: #D74535;
+        // }
     }
 }
 @media (max-width: 1230px) {
@@ -184,6 +197,20 @@
             height: 1px;
             .progressbar {
                 height: 5px;
+            }
+        }
+    }
+}
+@media (max-width: 1022px) {
+    .examples {
+        &__progress {
+            #examples__scrollbar {
+                .swiper-scrollbar-drag {
+                    width: 258px !important;
+                    height: 5px;
+                    border-radius: 28.391px;
+                    top: -2px;
+                }
             }
         }
     }

@@ -1,0 +1,303 @@
+.footer {
+    padding: 40px 0 30px 0;
+    background: #372B2E;
+    &__top {
+        display: flex;
+        align-items: center;
+        padding-bottom: 15px;
+        border-bottom: 1px solid #DAE0EA;
+        margin-bottom: 25px;
+    }
+    &__logo {
+        display: flex;
+        margin-right: 107px;
+    }
+    &__pay {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        margin-right: 93px;
+        &-label {
+            color: #86868B;
+            font-size: 12px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: normal;
+        }
+        &-icons {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            svg {
+                display: flex;
+                flex-shrink: 0;
+            }
+        }
+    }
+    &__contacts {
+        display: flex;
+        align-items: center;
+        gap: 55px;
+        &-social {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            a {
+                display: flex;
+            }
+        }
+        &-phone {
+            font-size: 25px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+            color: #fff;
+            &_mobile {
+                display: none;
+            }
+        }
+    }
+    &__button {
+        width: 217px;
+        height: 55px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 10px;
+        background: #D74535;
+        color:#FFF;
+        text-align: center;
+        font-family: 'Inter', sans-serif;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+        padding: 0;
+        border: none;
+        margin-left: auto;
+        &_mobile {
+            display: none;
+        }
+    }
+    &__list {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 35px;
+        &-link {
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal;
+            text-transform: uppercase;
+            color: #fff;
+        }
+    }
+    &__bottom {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        &-year {
+            color: #86868B;
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: normal;
+        }
+        &-map {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            .label {
+                color: #86868B;
+                font-size: 12px;
+                font-style: normal;
+                font-weight: 500;
+                line-height: normal;
+            }
+            .link {
+                display: flex;
+            }
+        }
+    }
+}
+@media (max-width: 1360px) {
+    .footer {
+        &__logo {
+            margin-right: 50px;
+        }
+        &__pay {
+            margin-right: 50px;
+        }
+    }
+}
+@media (max-width: 1260px) {
+    .footer {
+        &__contacts {
+            gap: 25px;
+        }
+    }
+}
+@media (max-width: 1230px) {
+    .footer {
+        &__logo {
+            max-width: 140px;
+            margin-right: 70px;
+            svg {
+                width: 100%;
+            }
+        }
+        &__pay {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 10px;
+        }
+    }
+}
+@media (max-width: 1055px) {
+    .footer {
+        &__logo {
+            margin-right: 40px;
+        }
+    }
+}
+@media (max-width: 1022px) {
+    .footer {
+        &__top {
+            padding-bottom: 30px;
+        }
+        &__logo {
+            margin-right: 60px;
+        }
+        &__contacts {
+            gap: 35px;
+            &-social {
+                gap: 15px;
+                a {
+                    svg {
+                        width: 23px;
+                        height: 23px;
+                    }
+                }
+            }
+            &-phone {
+                font-size: 13px;
+            }
+        }
+        &__button {
+            height: 45px;
+            width: 180px;
+            font-size: 13px;
+        }
+    }
+}
+@media (max-width: 890px) {
+    .footer {
+        &__logo {
+            margin-right: 40px;
+        }
+        &__pay {
+            margin-right: 30px;
+        }
+        &__contacts {
+            gap: 20px;
+        }
+    }
+}
+@media (max-width: 820px) {
+    .footer {
+        &__logo {
+            margin-right: 25px;
+        }
+        &__pay {
+            margin-right: 25px;
+        }
+        &__contacts {
+            gap: 20px;
+        }
+    }
+}
+@media (max-width: 798px) {
+    .footer {
+        &__top {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            row-gap: 40px;
+            padding-bottom: 40px;
+            margin-bottom: 30px;
+        }
+        &__logo {
+            grid-column: 1 / span 1;
+            max-width: 160px;
+        }
+        &__button {
+            display: none;
+            &_mobile {
+                display: flex;
+                height: 55px;
+                width: 100%;
+                box-sizing: border-box;
+                margin-bottom: 40px;
+                font-size: 16px;
+            }
+        }
+        &__contacts {
+            grid-column: 2 / span 1;
+            justify-content: flex-end;
+            &-social {
+                gap: 20px;
+                a {
+                    svg {
+                        width: 30px;
+                        height: 30px;
+                    }
+                }
+            }
+            &-phone {
+                display: none;
+                &_mobile {
+                    display: flex;
+                    font-size: 25px;
+                    margin-bottom: 25px;
+                }
+            }
+        }
+        &__pay {
+            flex-direction: row;
+            gap: 15px;
+            margin-right: 0;
+            grid-column: 1 / span 2;
+            grid-row: 2 / span 1;
+        }
+        &__list {
+            flex-direction: column;
+            gap: 25px;
+            margin-bottom: 45px;
+            &-link {
+                font-size: 14px;
+            }
+        }
+    }
+}
+@media (max-width: 606px) {
+    .footer {
+        padding: 30px 0;
+        &__bottom {
+            align-items: flex-start;
+            flex-direction: column;
+            gap: 25px;
+        }
+        &__logo {
+            margin-right: 0;
+            flex-shrink: 0;
+            display: flex;
+        }
+    }
+}
+@media (max-width: 375px) {
+    .footer {
+        &__pay {
+            flex-direction: column;
+            gap: 10px;
+        }
+    }
+}

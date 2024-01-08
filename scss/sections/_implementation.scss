@@ -99,11 +99,18 @@
                 display: block;
                 margin-bottom: 14px;
             }
-            .price {
-                font-size: 45px;
-                font-style: normal;
-                font-weight: 300;
-                line-height: 25px;
+            .price-wrap {
+                display: flex;
+                gap: 10px;
+                align-items: flex-end;
+                .price {
+                    font-size: 45px;
+                    font-style: normal;
+                    font-weight: 300;
+                    line-height: 45px;
+                    word-spacing: 10px;
+                    
+                }
                 .valuta {
                     font-size: 16px;
                     font-style: normal;
@@ -111,6 +118,19 @@
                     line-height: 25px;
                 }
             }
+            // .price {
+            //     font-size: 45px;
+            //     font-style: normal;
+            //     font-weight: 300;
+            //     line-height: 25px;
+            //     word-spacing: 10px;
+            //     .valuta {
+            //         font-size: 16px;
+            //         font-style: normal;
+            //         font-weight: 400;
+            //         line-height: 25px;
+            //     }
+            // }
         }
     }
     &__content.active {
@@ -425,10 +445,13 @@
         }
         &__content {
             &-price {
-                padding: 30px 50px 25px 50px;
+                padding: 30px 10px 25px 10px;
                 flex-direction: row;
                 gap: 20px;
                 align-items: flex-end;
+                width: 100%;
+                justify-content: center;
+                flex-wrap: wrap;
                 .label {
                     margin-bottom: 0;
                 }
@@ -437,15 +460,19 @@
                 -webkit-line-clamp: 5;
             }
         }
+        &__info {
+            padding: 30px 0;
+        }
     }
 }
-@media (max-width: 475px) {
+@media (max-width: 415px) {
     .implementation {
         &__content {
             &-price {
-                padding: 30px 0;
-                justify-content: center;
+                padding: 30px 20px;
+                justify-content: flex-start;
                 width: 100%;
+                gap: 10px;
             }
         }
     }
@@ -457,7 +484,7 @@
                 gap: 8px;
                 flex-direction: column;
                 align-items: flex-start;
-                padding: 20px 15px 20px 30px;
+                padding: 20px 15px 20px 15px;
             }
         }
     }

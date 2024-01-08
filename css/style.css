@@ -1,51 +1,52 @@
 @charset "UTF-8";
-/* inter-200 - latin */
 @font-face {
-  font-display: swap;
   font-family: "Inter";
-  font-style: normal;
-  font-weight: 200;
-  src: url("../fonts/inter-v13-latin-200.woff2") format("woff2");
-}
-/* inter-300 - latin */
-@font-face {
-  font-display: swap;
-  font-family: "Inter";
-  font-style: normal;
+  src: url("../fonts/Inter-Light.woff2") format("woff2");
   font-weight: 300;
-  src: url("../fonts/inter-v13-latin-300.woff2") format("woff2");
-}
-/* inter-regular - latin */
-@font-face {
-  font-display: swap;
-  font-family: "Inter";
   font-style: normal;
-  font-weight: 400;
-  src: url("../fonts/inter-v13-latin-regular.woff2") format("woff2");
-}
-/* inter-500 - latin */
-@font-face {
   font-display: swap;
+}
+@font-face {
   font-family: "Inter";
-  font-style: normal;
+  src: url("../fonts/Inter-Medium.woff2") format("woff2");
   font-weight: 500;
-  src: url("../fonts/inter-v13-latin-500.woff2") format("woff2");
-}
-/* inter-600 - latin */
-@font-face {
-  font-display: swap;
-  font-family: "Inter";
   font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Inter";
+  src: url("../fonts/Inter-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Inter";
+  src: url("../fonts/Inter-SemiBold.woff2") format("woff2");
   font-weight: 600;
-  src: url("../fonts/inter-v13-latin-600.woff2") format("woff2");
-}
-/* inter-700 - latin */
-@font-face {
-  font-display: swap;
-  font-family: "Inter";
   font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Inter";
+  src: url("../fonts/Inter-Italic.woff2") format("woff2");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Inter";
+  src: url("../fonts/Inter-ExtraLight.woff2") format("woff2");
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Inter";
+  src: url("../fonts/Inter-Bold.woff2") format("woff2");
   font-weight: 700;
-  src: url("../fonts/inter-v13-latin-700.woff2") format("woff2");
+  font-style: normal;
+  font-display: swap;
 }
 /* open-sans-300 - latin */
 @font-face {
@@ -651,6 +652,7 @@ label, button {
   font-weight: 400;
   margin-bottom: 33px;
   max-width: 720px;
+  font-family: "Inter", sans-serif;
 }
 .hero__description {
   font-size: 25px;
@@ -897,6 +899,9 @@ label, button {
   font-style: normal;
   font-weight: 400;
   line-height: 25px; /* 208.333% */
+  color: #fff;
+}
+.hero__calc-policy a {
   color: #fff;
 }
 
@@ -1428,6 +1433,7 @@ label, button {
   border-radius: 25px;
   overflow: hidden;
   position: relative;
+  cursor: pointer;
 }
 .examples__thumb img {
   width: 100%;
@@ -1586,6 +1592,8 @@ label, button {
   flex-direction: column;
   transition: 0.3s all;
   height: 270px;
+  position: relative;
+  z-index: 0;
 }
 .dignity__card-icon {
   margin-bottom: 40px;
@@ -1622,12 +1630,16 @@ label, button {
   border-radius: 25px;
   transform: scale(1.08);
   box-shadow: -14px 26px 49px 0px rgba(164, 34, 19, 0.53);
+  z-index: 1;
 }
 .dignity__card:hover .dignity__card-icon svg path {
   fill: #fff;
 }
 .dignity__card:hover .dignity__card-icon img {
   filter: brightness(10);
+}
+.dignity__card:hover .dignity__card-subtitle {
+  color: #fff;
 }
 .dignity__card:hover .dignity__card-description {
   color: #fff;
@@ -2057,7 +2069,7 @@ label, button {
 .sale__grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 60px;
+  gap: 27px;
   width: -moz-max-content;
   width: max-content;
 }
@@ -2106,7 +2118,7 @@ label, button {
 }
 .sale__calc-input {
   border-radius: 10px 10px 0px 0px;
-  border: 1px solid #E1E7EF;
+  border: none;
   background: rgba(255, 255, 255, 0.5);
   font-family: "Inter", sans-serif;
   font-size: 20px;
@@ -2319,6 +2331,9 @@ label, button {
   line-height: 25px; /* 208.333% */
   color: #fff;
   text-align: center;
+}
+.sale__calc-policy a {
+  color: #fff;
 }
 
 @media (max-width: 1230px) {
@@ -2648,13 +2663,19 @@ label, button {
   display: block;
   margin-bottom: 14px;
 }
-.implementation__content-price .price {
+.implementation__content-price .price-wrap {
+  display: flex;
+  gap: 10px;
+  align-items: flex-end;
+}
+.implementation__content-price .price-wrap .price {
   font-size: 45px;
   font-style: normal;
   font-weight: 300;
-  line-height: 25px;
+  line-height: 45px;
+  word-spacing: 10px;
 }
-.implementation__content-price .price .valuta {
+.implementation__content-price .price-wrap .valuta {
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
@@ -2964,10 +2985,13 @@ label, button {
     height: 300px;
   }
   .implementation__content-price {
-    padding: 30px 50px 25px 50px;
+    padding: 30px 10px 25px 10px;
     flex-direction: row;
     gap: 20px;
     align-items: flex-end;
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
   }
   .implementation__content-price .label {
     margin-bottom: 0;
@@ -2975,12 +2999,16 @@ label, button {
   .implementation__content-subtitle {
     -webkit-line-clamp: 5;
   }
-}
-@media (max-width: 475px) {
-  .implementation__content-price {
+  .implementation__info {
     padding: 30px 0;
-    justify-content: center;
+  }
+}
+@media (max-width: 415px) {
+  .implementation__content-price {
+    padding: 30px 20px;
+    justify-content: flex-start;
     width: 100%;
+    gap: 10px;
   }
 }
 @media (max-width: 375px) {
@@ -2988,7 +3016,7 @@ label, button {
     gap: 8px;
     flex-direction: column;
     align-items: flex-start;
-    padding: 20px 15px 20px 30px;
+    padding: 20px 15px 20px 15px;
   }
 }
 .calc {
@@ -3067,13 +3095,13 @@ label, button {
   opacity: 0.3;
 }
 .calc__types-slide:hover .calc__types-blur {
-  display: block;
+  opacity: 1;
 }
 .calc__types-slide:hover .calc__types-text {
   color: #fff;
 }
 .calc__types-slide.active .calc__types-blur {
-  display: block;
+  opacity: 1;
 }
 .calc__types-slide.active .calc__types-text {
   color: #fff;
@@ -3099,7 +3127,8 @@ label, button {
   width: 100%;
   height: 100%;
   background: rgba(215, 69, 53, 0.8);
-  display: none;
+  display: block;
+  opacity: 0;
   transition: 0.3s all;
 }
 .calc__border {
@@ -3302,7 +3331,7 @@ label, button {
   max-width: 558px;
   width: 100%;
   justify-content: center;
-  padding: 24px 0 35px 0;
+  padding: 25px 0 25px 0;
 }
 .calc__form-price .label {
   font-size: 18px;
@@ -3345,7 +3374,7 @@ label, button {
   font-weight: 400;
   line-height: 67px;
   border: none;
-  padding: 0 28px;
+  padding: 3px 28px 0 28px;
   box-sizing: border-box;
   width: 100%;
 }
@@ -4567,6 +4596,12 @@ label, button {
   align-items: center;
   gap: 50px;
   margin-bottom: 20px;
+}
+.reviews__title {
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
 }
 .reviews__controls {
   display: none;

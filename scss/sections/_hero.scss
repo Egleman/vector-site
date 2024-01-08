@@ -59,6 +59,7 @@
         font-weight: 400;
         margin-bottom: 33px;
         max-width: 720px;
+        font-family: 'Inter', sans-serif;
     }
     &__description {
         font-size: 25px;
@@ -298,6 +299,9 @@
             font-weight: 400;
             line-height: 25px; /* 208.333% */
             color: $WHITE_COLOR;
+            a {
+                color: $WHITE_COLOR;
+            }
         }
     }
 }

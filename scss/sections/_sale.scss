@@ -29,7 +29,7 @@
     &__grid {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
-        gap: 60px;
+        gap: 27px;
         width: max-content;
     }
     &__card {
@@ -74,7 +74,8 @@
         }
         &-input {
             border-radius: 10px 10px 0px 0px;
-            border: 1px solid #E1E7EF;
+            // border: 0.653px solid rgba(225, 231, 239, .5);
+            border: none;
             // opacity: 0.5;
             background: rgba(255, 255, 255, 0.5);
             font-family: 'Inter', sans-serif;
@@ -281,6 +282,9 @@
             line-height: 25px; /* 208.333% */
             color: $WHITE_COLOR;
             text-align: center;
+            a {
+                color: $WHITE_COLOR;
+            }
         }
     }
 }

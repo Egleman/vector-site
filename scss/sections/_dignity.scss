@@ -265,3 +265,20 @@
         }
     }
 }
+@media (max-width: 606px) {
+    .dignity {
+        &__card {
+            height: 160px;
+            padding: 15px;
+            &-icon {
+                margin-bottom: 8px;
+            }
+            &-subtitle {
+                margin-bottom: 8px;
+            }
+            // &-description {
+            //     margin-top: 0;
+            // }
+        }
+    }
+}

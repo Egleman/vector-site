@@ -1,9 +1,9 @@
 .header {
-    background: #fff;
     padding: 24px 0 28px 0;
     position: sticky;
     top: 0;
     z-index: 98;
+    background: #F6F6F6;
     &__top {
         display: flex;
         align-items: center;
@@ -76,19 +76,21 @@
         &-link {
             font-size: 16px;
             font-weight: 700;
+            text-transform: uppercase;
         }
     }
 }
 @media (max-width: 1022px) {
     .header {
+        background: #fff;
         padding: 22px 0 18px 0;
         &__phone {
             font-size: 16.324px;
         }
-        &__contatcs {
+        &__contacts {
             gap: 15px;
             &-label {
-                font-size: 9.141px;
+                font-size: 10px;
             }
         }
         &__social {

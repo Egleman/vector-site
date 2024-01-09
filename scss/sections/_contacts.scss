@@ -28,9 +28,14 @@
         bottom: 0;
     }
     &__grid {
+        // display: grid;
+        // grid-template-columns: minmax(190px, 318px) minmax(255px, 346px) 231px;
+        // max-width: 856px;
+        // width: 100%;
+        // row-gap: 60px;
         display: grid;
-        grid-template-columns: minmax(190px, 318px) minmax(255px, 346px) 231px;
-        max-width: 856px;
+        grid-template-columns: minmax(260px, 358px) minmax(295px, 380px) 231px;
+        max-width: 891px;
         width: 100%;
         row-gap: 60px;
     }

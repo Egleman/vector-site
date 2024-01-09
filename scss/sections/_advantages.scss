@@ -155,9 +155,11 @@
     .advantages {
         &__card {
             padding: 34px 25px 20px 25px;
+            border-radius: 0 0 16px 16px;
             &-icon {
                 top: -60px;
                 padding: 35px 0 0 25px;
+                border-radius: 16px 16px 0 0;
                 svg {
                     width: 33px;
                     max-height: 34px;
@@ -169,6 +171,9 @@
             }
             &-description {
                 font-size: 14px;
+                .hidden-m {
+                    display: none;
+                }
             }
         }
     }

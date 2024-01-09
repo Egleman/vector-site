@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     // Start range-sliders
+    const priceForOneMeter = document.querySelector('body').dataset.priceForOneMetrInSlidersRange;
     const rangeSliders = document.querySelectorAll('[data-block="calc-slider"]');
     const rangeInputs = document.querySelectorAll('[data-input="calc-slider"]');
     const hiddenSquareInputs = document.querySelectorAll('[data-input="square"]');
@@ -18,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
         slider.noUiSlider.on('update', function (values, handle) {
             rangeInputs[index].value = `${Math.round(values[handle])} м2`;
             hiddenSquareInputs[index].value = `${Math.round(values[handle])}`;
-            summBlocks[index].textContent = Math.round(values[handle]) * 450;
+            summBlocks[index].innerHTML = `${Math.round(values[handle]) * +priceForOneMeter}<span class="valuta">₽</span>`;
         });
         slider.noUiSlider.on('set', function (values, handle) {
             rangeInputs[index].value = `${Math.round(values[handle])} м2`;
@@ -49,7 +50,7 @@ document.addEventListener('DOMContentLoaded', () => {
     noUiSlider.create(calcSlider, calcSliderOptions);
     calcSlider.noUiSlider.on('update', function (values, handle) {
         hiddenSquareInputs[2].value = `${Math.round(values[handle])}`;
-        summBlocks[2].textContent = Math.round(values[handle]) * 450
+        summBlocks[2].textContent = Math.round(values[handle]) * +priceForOneMeter
     });
     // End range-sliders
 
@@ -167,7 +168,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 spaceBetween: 10,
                 slidesPerView: 1,
             },
-            475: {
+            375: {
                 spaceBetween: 10,
                 slidesPerView: 2,
             },
@@ -971,7 +972,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Start Forms
     const forms = document.querySelectorAll('form');
     forms.forEach((form, index) => {
-        form.addEventListener('submit', async (e) => {
+        form.addEventListener('submit', (e) => {
             e.preventDefault();
             const formData = new FormData(form);
             const formBody = {};
@@ -979,18 +980,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 formBody[pair[0]] = pair[1] // где pair - это массив вида [name, value]
             }
             if (Object.values(formBody).every(item => item !== '')) {
-                const response = await fetch('/mail.php', {
-                    method: 'POST',
-                    body: JSON.stringify(formBody)
-                })
                 document.querySelectorAll('.overlay').forEach(modal => {
                     if (modal.classList.contains('active')) {
                         modal.classList.remove('active');
                     }
                 })
                 document.getElementById('thanks').classList.add('active');
-                const result = await response.json();
-
             } else {
                 Toastify({
                     text: "Не все поля заполнены",

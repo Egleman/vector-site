@@ -466,22 +466,32 @@
 @media (max-width: 606px) {
     .sale {
         padding: 19px 0 26px 0;
+        &__calc {
+            &-input {
+                border-radius: 6.5px 6.5px 0 0;
+            }
+        }
     }
 }
 @media (max-width: 475px) {
     .sale {
         &__calc {
-            padding: 25px 20px;
+            padding: 35px 20px;
             border-radius: 0;
             box-sizing: border-box;
             &-title {
-                margin-bottom: 19px;
+                margin-bottom: 7px;
             }
             &-label {
-                color: $BASE_COLOR;
+                color: #fff;
+                font-size: 13px;
+                margin-bottom: 5px;
             }
             &-linear {
-                font-size: 12px;
+                margin-bottom: 12px;
+                span {
+                    font-size: 12px;
+                }
             }
             &-counter {
                 gap: 15px;
@@ -516,13 +526,20 @@
                 }
             }
             &-form {
-                flex-direction: column;
+                // flex-direction: column;
                 .input {
-                    border-radius: 0;
-                    width: 100%;
+                    // border-radius: 0;
+                    // width: 100%;
+                    width: 50%;
+                    padding-left: 12px;
+                    height: 44px;
+                    font-size: 12px;
+                    line-height: normal;
                 }
                 .button {
-                    border-radius: 0px 0px 7px 7px;
+                    // border-radius: 0px 0px 7px 7px;
+                    width: 50%;
+                    height: 44px;
                 }
             }
         }
@@ -540,7 +557,7 @@
     .sale {
         &__grid {
             // grid-template-columns: repeat(2, 1fr);
-            gap: 7.5px;
+            gap: 10px;
         }
     }
 }

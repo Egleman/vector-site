@@ -393,7 +393,7 @@
             }
         }
         &-policy {
-            font-size: 12px;
+            font-size: 13px;
             font-style: normal;
             font-weight: 400;
             line-height: 16px;
@@ -495,7 +495,7 @@
             border-radius: 0;
             &-top {
                 gap: 22px;
-                margin-bottom: 12px;
+                margin-bottom: 5px;
             }
             &-title {
                 font-size: 20px;
@@ -505,7 +505,7 @@
                 max-width: 100%;
             }
             &-price {
-                padding: 20px 0 27px 0;
+                padding: 20px 0 20px 0;
                 gap: 10px;
                 max-width: 437px;
                 .label {
@@ -523,7 +523,8 @@
                 }
             }
             &-controls {
-                gap: 8px;
+                gap: 5px;
+                padding-top: 10px;
             }
             &-bottom {
                 justify-content: space-between;
@@ -551,7 +552,18 @@
     .calc {
         &__form {
             &-bottom {
-                gap: 20px;
+                gap: 35px;
+            }
+            &-inputs {
+                .input {
+                    border-radius: 8px 0 0 8px;
+                    &::placeholder {
+                        color: rgba(29, 40, 58, .3);
+                    }
+                }
+                .button {
+                    border-radius: 0 8px 8px 0;
+                }
             }
         }
     }
@@ -620,10 +632,11 @@
             }
             &-price {
                 display: grid;
-                grid-template-columns: 160px 1fr;
+                grid-template-columns: 125px 1fr;
                 grid-template-rows: repeat(2, auto);
-                padding: 20px 20px 28px 30px;
-                gap: 10px;
+                padding: 20px 20px 20px 30px;
+                row-gap: 5px;
+                column-gap: 10px;
                 max-width: 100%;
                 box-sizing: border-box;
                 border-radius: 8px;
@@ -633,6 +646,7 @@
                     display: flex;
                     align-items: center;
                     gap: 5px;
+                    padding-bottom: 0;
                     br {
                         display: none;
                     }

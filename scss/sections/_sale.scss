@@ -244,7 +244,7 @@
                 font-style: normal;
                 font-weight: 500;
                 line-height: normal;
-                color: $BASE_COLOR;
+                color: #000;
                 border-top: none;
                 border-right: none;
                 &::placeholder {
@@ -424,6 +424,23 @@
         &__grid {
             gap: 27px;
         }
+        &__card {
+            &-icon {
+                max-height: 33px;
+                .first-sale {
+                    width: 22px;
+                    height: 22px;
+                }
+                .second-sale {
+                    width: 22px;
+                    height: 33px;
+                }
+                .third-sale {
+                    width: 24px;
+                    height: 24px;
+                }
+            }
+        }
     }
 }
 @media (max-width: 890px) {
@@ -514,7 +531,24 @@
 @media (max-width: 400px) {
     .sale {
         &__grid {
+            // grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
+    }
+}
+@media (max-width: 375px) {
+    .sale {
+        &__grid {
+            // grid-template-columns: repeat(2, 1fr);
+            gap: 7.5px;
+        }
+    }
+}
+@media (max-width: 355px) {
+    .sale {
+        &__grid {
             grid-template-columns: repeat(2, 1fr);
+            row-gap: 15px;
         }
     }
 }

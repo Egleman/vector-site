@@ -96,6 +96,16 @@
     }
     &__slider {
         grid-column: 2 / span 1;
+        &_top {
+            grid-column: 2 / span 2;
+        }
+    }
+    &__swiper {
+        &_top {
+            .swiper-slide {
+                width: max-content !important;
+            }
+        }
     }
     &__slide {
         &-top {
@@ -193,6 +203,10 @@
                 font-weight: 700;
                 line-height: normal;
             }
+        }
+        &_top {
+            max-width: 319px;
+            width: 100%;
         }
     }
     &__vector {

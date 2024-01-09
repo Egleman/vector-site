@@ -70,6 +70,9 @@
             display: block;
             margin-right: 30px;
         }
+        &-item {
+            margin-right: 10px;
+        }
         &-link {
             display: flex;
             padding: 11px 30px;
@@ -181,10 +184,10 @@
                     display: none;
                 }
             }
-            div{
-                max-width: 352px;
-                width: 100%;
-            }
+            // div{
+            //     max-width: 346px;
+            //     width: 100%;
+            // }
         }
     }
     &__video {
@@ -371,6 +374,9 @@
             &-label {
                 white-space: nowrap;
                 margin-right: 15px;
+            }
+            &-item {
+                margin-right: 0;
             }
         }
     }

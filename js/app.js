@@ -276,37 +276,90 @@ document.addEventListener('DOMContentLoaded', () => {
     const pricePrevButtons = document.querySelectorAll('.prices__button.prev');
     const pricePaginations = document.querySelectorAll('.prices__pagintaion');
     priceSliders.forEach((slider, index) => {
-        slider.classList.add(`prices__swiper_${index}`);
+        // slider.classList.add(`prices__swiper_${index}`);
         priceNextButtons[index].classList.add(`prices__button_${index}`);
         pricePrevButtons[index].classList.add(`prices__button_${index}`);
         pricePaginations[index].classList.add(`prices__pagintaion_${index}`);
-        new Swiper(`.prices__swiper_${index}`, {
-            // loop: true,
-            pagination: {
-                el: `.prices__pagintaion_${index}`,
-            },
-            spaceBetween: 25,
-            slidesPerView: 4,
-            navigation: {
-                nextEl: `.prices__button_${index}.next`,
-                prevEl: `.prices__button_${index}.prev`,
-            },
-            breakpoints: {
-                0: {
-                    spaceBetween: 17,
-                    slidesPerView: 'auto',
-                },
-                798: {
-                    spaceBetween: 30,
-                    slidesPerView: 3,
-                },
-                1230: {
-                    spaceBetween: 25,
-                    slidesPerView: 4,
-                },
-            }
-        });
+        // new Swiper(`.prices__swiper_${index}`, {
+        //     // loop: true,
+        //     pagination: {
+        //         el: `.prices__pagintaion_${index}`,
+        //     },
+        //     spaceBetween: 25,
+        //     slidesPerView: 4,
+        //     navigation: {
+        //         nextEl: `.prices__button_${index}.next`,
+        //         prevEl: `.prices__button_${index}.prev`,
+        //     },
+        //     breakpoints: {
+        //         0: {
+        //             spaceBetween: 17,
+        //             slidesPerView: 'auto',
+        //         },
+        //         798: {
+        //             spaceBetween: 30,
+        //             slidesPerView: 3,
+        //         },
+        //         1230: {
+        //             spaceBetween: 25,
+        //             slidesPerView: 4,
+        //         },
+        //     }
+        // });
     })
+    const pricesSwiper1 = new Swiper(`.prices__swiper_top`, {
+        // loop: true,
+        pagination: {
+            el: `.prices__pagintaion_0`,
+        },
+        spaceBetween: 25,
+        // slidesPerView: 4,
+        navigation: {
+            nextEl: `.prices__button_0.next`,
+            prevEl: `.prices__button_0.prev`,
+        },
+        slidesPerView: 'auto',
+        breakpoints: {
+            0: {
+                spaceBetween: 17,
+                // slidesPerView: 'auto',
+            },
+            798: {
+                spaceBetween: 30,
+                // slidesPerView: 3,
+            },
+            1230: {
+                spaceBetween: 25,
+                // slidesPerView: 4,
+            },
+        }
+    });
+    const pricesSwiper2 = new Swiper(`.prices__swiper_bottom`, {
+        // loop: true,
+        pagination: {
+            el: `.prices__pagintaion_1`,
+        },
+        spaceBetween: 25,
+        slidesPerView: 4,
+        navigation: {
+            nextEl: `.prices__button_1.next`,
+            prevEl: `.prices__button_1.prev`,
+        },
+        breakpoints: {
+            0: {
+                spaceBetween: 17,
+                slidesPerView: 'auto',
+            },
+            798: {
+                spaceBetween: 30,
+                slidesPerView: 3,
+            },
+            1230: {
+                spaceBetween: 25,
+                slidesPerView: 4,
+            },
+        }
+    });
 
     const reviewsSliders = document.querySelectorAll('.reviews__swiper');
     const reviewsNextButtons = document.querySelectorAll('.reviews__button.next.pc');
@@ -476,7 +529,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const audios = document.querySelectorAll(`.reviews__text-audio`);
         const videos = document.querySelectorAll('.reviews__video > iframe');
         audios.forEach(audioBlock => {
-            const audio = audioBlock.querySelector('div').shadowRoot.querySelector('audio');
+            const audio = audioBlock.querySelector('.custom-player > audio');
             const button = audioBlock.querySelector('.play')
             audio.pause();
             if (button.classList.contains('proccessed')) {
@@ -595,75 +648,71 @@ document.addEventListener('DOMContentLoaded', () => {
     // End masked inputs
 
     // Start wave players
-    const waveContainers = document.querySelectorAll('.reviews__text-audio');
-    const playVoiceMessageButtons = document.querySelectorAll('.play');
+    // const btnTestPlay = document.querySelector('[data-button="test-play"]');
+    // const testAudio = document.querySelector('.custom-player__audio');
+    // const testProgress = document.querySelector('.custom-player__progress');
+    // const testRateBlock = document.querySelector('.custom-player');
+    // testRateBlock.addEventListener('click', (e) => {
+    //     let x = e.pageX - testRateBlock.offsetLeft;
+    //     let xPersent = x / testRateBlock.offsetWidth * 100;
+    //     testAudio.currentTime = testAudio.duration * (xPersent / 100);
+    // }, { capture: true })
 
+    // testAudio.addEventListener('timeupdate', () => {
+    //     testProgress.style.width = `${(Number((testAudio.currentTime / testAudio.duration).toFixed(2)) * 100).toFixed(0)}%`
+    // })
+    // btnTestPlay.addEventListener('click', () => {
+    //     if (testAudio.paused) {
+    //         testAudio.play();
+    //     } else {
+    //         testAudio.pause();
+    //     }
+    // })
+    const waveContainers = document.querySelectorAll('.reviews__text-audio');
+    const customWavePlayers = document.querySelectorAll('.custom-player__audio');
+    const playVoiceMessageButtons = document.querySelectorAll('.play');
+    const playerProgress = document.querySelectorAll('.custom-player__progress');
+    const playerParentBlocks = document.querySelectorAll('.custom-player');
+    // const wavePlayerRates = document.querySelectorAll('.custom-player__rate');
+    // wavePlayerRates.forEach((rate, index) => {
+    //     console.log(rate.clientHeight)
+    // })
     waveContainers.forEach((block, index) => {
-        block.classList.add(`reviews__text-audio_${index}`);
-        const waveOptions = {
-            "container": `.reviews__text-audio_${index}`,
-            "height": 76,
-            "width": "",
-            "splitChannels": false,
-            "normalize": false,
-            "waveColor": "rgba(175, 175, 175, .5)",
-            "progressColor": "rgb(215, 69, 53, 1)",
-            "cursorColor": "#ddd5e9",
-            "cursorWidth": 0,
-            "barWidth": 3,
-            "barGap": 5,
-            "barRadius": null,
-            "barHeight": null,
-            "barAlign": "",
-            "minPxPerSec": 1,
-            "fillParent": true,
-            "url": block.dataset.musicUrl,
-            "mediaControls": false,
-            "autoplay": false,
-            "interact": true,
-            "dragToSeek": false,
-            "hideScrollbar": true,
-            "audioRate": 1,
-            "autoScroll": true,
-            "autoCenter": true,
-            "sampleRate": 8000,
-            // backend: 'MediaElement'
-            // xhr: {
-            //     cache: 'default',
-            //     mode: 'cors',
-            //     method: 'GET',
-            //     credentials: 'same-origin',
-            //     redirect: 'follow',
-            //     referrer: 'client',
-            //     headers: [ { key: 'Authorization', value: 'my-token' } ]
-            // }
-        }
-        // const audio = new Audio(block.dataset.musicUrl);
-        // audio.crossOrigin = 'anonymous';
-        const wavesurfer = WaveSurfer.create(waveOptions);
-        // // wavesurfer.load(audio);
-        // wavesurfer.setMediaElement(document.querySelector('.test-audio'))
-        // wavesurfer.load(document.querySelector('.test-audio').src)
-        // console.log(document.querySelector('.test-audio'))
+        customWavePlayers[index].src = block.dataset.musicUrl;
+        customWavePlayers[index].addEventListener('timeupdate', () => {
+            const width = (Number((customWavePlayers[index].currentTime / customWavePlayers[index].duration).toFixed(2)) * 100).toFixed(0);
+            playerProgress[index].style.width = `${width}%`
+            if (+width === 100) {
+                if (playVoiceMessageButtons[index].classList.contains('proccessed')) {
+                    playVoiceMessageButtons[index].classList.remove('proccessed');
+                }
+                playVoiceMessageButtons[index].classList.add('waiting');
+            }
+        })
+        playerParentBlocks[index].addEventListener('click', (e) => {
+            let x = e.pageX - playerParentBlocks[index].getBoundingClientRect().left;
+            let xPersent = (x / playerParentBlocks[index].offsetWidth * 100);
+            console.log(xPersent)
+            customWavePlayers[index].currentTime = customWavePlayers[index].duration * (xPersent / 100);
+        }, { capture: true })
         playVoiceMessageButtons[index].addEventListener('click', () => {
-            const audio = document.querySelector(`.reviews__text-audio_${index} > div`).shadowRoot.querySelector("audio");
             playVoiceMessageButtons.forEach((btn, i) => {
                 if (i !== index) {
-                    document.querySelector(`.reviews__text-audio_${i} > div`).shadowRoot.querySelector("audio").pause();
+                    customWavePlayers[i].pause();
                     if (playVoiceMessageButtons[i].classList.contains('proccessed')) {
                         playVoiceMessageButtons[i].classList.remove('proccessed');
                     }
                     playVoiceMessageButtons[i].classList.add('waiting');
                 }
             })
-            if (audio.paused) {
-                audio.play();
+            if (customWavePlayers[index].paused) {
+                customWavePlayers[index].play();
                 if (playVoiceMessageButtons[index].classList.contains('waiting')) {
                     playVoiceMessageButtons[index].classList.remove('waiting');
                 }
                 playVoiceMessageButtons[index].classList.add('proccessed');
             } else {
-                audio.pause();
+                customWavePlayers[index].pause();
                 if (playVoiceMessageButtons[index].classList.contains('proccessed')) {
                     playVoiceMessageButtons[index].classList.remove('proccessed');
                 }
@@ -671,6 +720,79 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         })
     })
+
+    // waveContainers.forEach((block, index) => {
+    //     block.classList.add(`reviews__text-audio_${index}`);
+    //     const waveOptions = {
+    //         "container": `.reviews__text-audio_${index}`,
+    //         "height": 76,
+    //         "width": "",
+    //         "splitChannels": false,
+    //         "normalize": false,
+    //         "waveColor": "rgba(175, 175, 175, .5)",
+    //         "progressColor": "rgb(215, 69, 53, 1)",
+    //         "cursorColor": "#ddd5e9",
+    //         "cursorWidth": 0,
+    //         "barWidth": 3,
+    //         "barGap": 5,
+    //         "barRadius": null,
+    //         "barHeight": null,
+    //         "barAlign": "",
+    //         "minPxPerSec": 1,
+    //         "fillParent": true,
+    //         "url": block.dataset.musicUrl,
+    //         "mediaControls": false,
+    //         "autoplay": false,
+    //         "interact": true,
+    //         "dragToSeek": false,
+    //         "hideScrollbar": true,
+    //         "audioRate": 1,
+    //         "autoScroll": true,
+    //         "autoCenter": true,
+    //         "sampleRate": 8000,
+    //         backend: 'MediaElement'
+    //         // xhr: {
+    //         //     cache: 'default',
+    //         //     mode: 'cors',
+    //         //     method: 'GET',
+    //         //     credentials: 'same-origin',
+    //         //     redirect: 'follow',
+    //         //     referrer: 'client',
+    //         //     headers: [ { key: 'Authorization', value: 'my-token' } ]
+    //         // }
+    //     }
+    //     // const audio = new Audio(block.dataset.musicUrl);
+    //     // audio.crossOrigin = 'anonymous';
+    //     const wavesurfer = WaveSurfer.create(waveOptions);
+    //     // const audio = new Audio(block.dataset.musicUrl);
+    //     // wavesurfer.loadBlob(audio)
+    //     // const dt  = new DataTransfer();
+    //     // dt.items.add(new File([audio], 'primer.txt', {type: 'audio/x-wav'}));
+    //     // const file_list = dt.files;
+    //     // const file = file_list[0];
+    //     // var reader = new FileReader();
+    //     // reader.onload = function (evt) {
+    //     //     // Create a Blob providing as first argument a typed array with the file buffer
+    //     //     var blob = new window.Blob([new Uint8Array(evt.target.result)]);
+
+    //     //     // Load the blob into Wavesurfer
+    //     //     wavesurfer.loadBlob(blob);
+    //     // };
+
+    //     // reader.onerror = function (evt) {
+    //     //     console.error("An error ocurred reading the file: ", evt);
+    //     // };
+    //     // reader.readAsArrayBuffer(file);
+
+    //     // console.log('Коллекция файлов создана:');
+    //     // console.dir(file_list);
+    //     // wavesurfer.load(block.dataset.musicUrl)
+    //     // const file = new File([blob], 'audio.wav', {type: 'application/pdf'});
+    //     // // wavesurfer.load(audio);
+    //     // wavesurfer.setMediaElement(document.querySelector('.test-audio'))
+    //     // wavesurfer.load(document.querySelector('.test-audio').src)
+    //     // console.log(document.querySelector('.test-audio'))
+
     const playVideoReviewButtons = document.querySelectorAll('.reviews__video-play');
     const videoReviews = document.querySelectorAll('.reviews__video > iframe');
     playVideoReviewButtons.forEach((btn, index) => {
@@ -793,8 +915,12 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     const showMoreFaqButton = document.querySelector('.faq__more');
+    const accordionsSwap = document.querySelectorAll('.faq__accordion-item.second')
     showMoreFaqButton.addEventListener('click', (e) => {
         showMoreFaqButton.style.display = 'none';
+        if (accordionsSwap[0].classList.contains('second')) {
+            accordionsSwap[0].classList.remove('second')
+        }
         document.querySelectorAll('.faq__accordion-item.hidden').forEach(item => {
             item.classList.remove('hidden');
         })

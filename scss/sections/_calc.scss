@@ -353,7 +353,7 @@
                 border-radius: 10px 0px 0px 10px;
                 background:#FFF;
                 height: 67px;
-                color: $BASE_COLOR;
+                color: #000;
                 font-family: 'Inter', sans-serif;
                 font-size: 16px;
                 font-style: normal;
@@ -558,8 +558,10 @@
 }
 @media (max-width: 798px) {
     .calc {
+        
         &__wrapper {
             background: #fff;
+            padding: 0 15px 40px 15px;
         }
         &__title {
             grid-template-rows: 64px auto;
@@ -748,6 +750,11 @@
                 .counter {
                     width: 160px;
                 }
+            }
+        }
+        &__title {
+            &-text {
+                font-size: 20px;
             }
         }
     }

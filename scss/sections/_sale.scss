@@ -459,6 +459,21 @@
             border-radius: 0;
             margin: 0 auto;
             width: 100%;
+            max-width: 70%;
+            &-form {
+                .input {
+                    width: 50%;
+                }
+                .button {
+                    width: 50%;
+                }
+            }
+        }
+    }
+}
+@media (max-width: 665px) {
+    .sale {
+        &__calc {
             max-width: 455px;
         }
     }

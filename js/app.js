@@ -1,6 +1,82 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // Start app properties for calcs
+    const mainBlock = document.querySelector('.start-properties');
+    const heroBlockMainProperties = document.getElementById('hero-section-properties');
+    const saleBlockMainProperties = document.getElementById('sale-section-properties');
+    const calcBlockMainProperties = document.getElementById('calc-section-properties');
+
+    const PRICE_FOR_ONE_METER = {
+        0: +heroBlockMainProperties.dataset.priceForOneMetr,
+        1: +saleBlockMainProperties.dataset.priceForOneMetr,
+        2: +calcBlockMainProperties.dataset.priceForOneMetr,
+    }
+    const PRICE_FOR_ONE_LIGHTING_POINT = {
+        0: +heroBlockMainProperties.dataset.priceForOneLightingPoint,
+        1: +saleBlockMainProperties.dataset.priceForOneLightingPoint,
+    }
+    // const PRICE_FOR_ONE_CORNER = {
+    //     0: +calcBlockMainProperties.dataset.priceForOneCorner,
+    // }
+    // const PRICE_FOR_ONE_METER = +mainBlock.dataset.priceForOneMetr;
+    // const PRICE_FOR_ONE_LIGHTING_POINT = +mainBlock.dataset.priceForOneLightingPoint;
+    const PRICE_FOR_ONE_CORNER = +calcBlockMainProperties.dataset.priceForOneCorner;
+    const PRICE_FOR_ONE_LAMP = +calcBlockMainProperties.dataset.priceForOneLamp;
+    const PRICE_FOR_ONE_CHANDELIER = +calcBlockMainProperties.dataset.priceForOneChandelier;
+    // End app properties for calcs
+
+    // Start counters
+    const plusButtons = document.querySelectorAll('[data-button="count+"]');
+    const minusButtons = document.querySelectorAll('[data-button="count-"]');
+    const counters = document.querySelectorAll('[data-block="result"]');
+    const hiddenCountInputs = document.querySelectorAll('[data-input="count"]');
+
+    const getCornerSumm = () => {
+        return Number(document.querySelector('[data-count="corner"]').textContent) * PRICE_FOR_ONE_CORNER;
+    }
+    const getLampSumm = () => {
+        return Number(document.querySelector('[data-count="lamp"]').textContent) * PRICE_FOR_ONE_LAMP;
+    }
+    const getChandelierSumm = () => {
+        return Number(document.querySelector('[data-count="chandelier"]').textContent) * PRICE_FOR_ONE_CHANDELIER;
+    }
+
+    plusButtons.forEach((btn, index) => {
+        btn.addEventListener('click', () => {
+            counters[index].textContent = Number(counters[index].textContent) + 1;
+            hiddenCountInputs[index].value = `${Number(counters[index].textContent)}`;
+            if (index < 2) {
+                document.querySelectorAll('[data-block="summ"]')[index].innerHTML = `
+                ${String(Number(document.querySelectorAll('[data-input="calc-slider"]')[index].value.split(' ')[0]) * 
+                PRICE_FOR_ONE_METER[index] + (Number(counters[index].textContent) * PRICE_FOR_ONE_LIGHTING_POINT[index])).trim()}<span class="valuta">₽</span>`
+            }
+            if (index > 1) {
+                document.querySelectorAll('[data-block="summ"]')[2].textContent = `
+                ${Number(document.querySelector('.noUi-tooltip').textContent.split(' ')[0]) * PRICE_FOR_ONE_METER[2] + getCornerSumm() + getLampSumm() + getChandelierSumm()}
+                `
+            }
+        })
+    })
+    minusButtons.forEach((btn, index) => {
+        btn.addEventListener('click', () => {
+            if (Number(counters[index].textContent) !== 1) {
+                counters[index].textContent = Number(counters[index].textContent) - 1;
+                hiddenCountInputs[index].value = `${Number(counters[index].textContent)}`;
+                if (index < 2) {
+                    document.querySelectorAll('[data-block="summ"]')[index].innerHTML = `
+                    ${String(Number(document.querySelectorAll('[data-input="calc-slider"]')[index].value.split(' ')[0]) * 
+                    PRICE_FOR_ONE_METER[index] + (Number(counters[index].textContent) * PRICE_FOR_ONE_LIGHTING_POINT[index])).trim()}<span class="valuta">₽</span>`
+                }
+                if (index > 1) {
+                    document.querySelectorAll('[data-block="summ"]')[2].textContent = `
+                    ${Number(document.querySelector('.noUi-tooltip').textContent.split(' ')[0]) * PRICE_FOR_ONE_METER[2] + getCornerSumm() + getLampSumm() + getChandelierSumm()}
+                    `
+                }
+            }
+        })
+    })
+    // End counters
+
     // Start range-sliders
-    const priceForOneMeter = document.querySelector('body').dataset.priceForOneMetrInSlidersRange;
     const rangeSliders = document.querySelectorAll('[data-block="calc-slider"]');
     const rangeInputs = document.querySelectorAll('[data-input="calc-slider"]');
     const hiddenSquareInputs = document.querySelectorAll('[data-input="square"]');
@@ -19,7 +95,7 @@ document.addEventListener('DOMContentLoaded', () => {
         slider.noUiSlider.on('update', function (values, handle) {
             rangeInputs[index].value = `${Math.round(values[handle])} м2`;
             hiddenSquareInputs[index].value = `${Math.round(values[handle])}`;
-            summBlocks[index].innerHTML = `${Math.round(values[handle]) * +priceForOneMeter}<span class="valuta">₽</span>`;
+            summBlocks[index].innerHTML = `${(Math.round(values[handle]) * PRICE_FOR_ONE_METER[index]) + Number(document.querySelectorAll('[data-block="result"]')[index].textContent) * PRICE_FOR_ONE_LIGHTING_POINT[index]}<span class="valuta">₽</span>`;
         });
         slider.noUiSlider.on('set', function (values, handle) {
             rangeInputs[index].value = `${Math.round(values[handle])} м2`;
@@ -50,31 +126,9 @@ document.addEventListener('DOMContentLoaded', () => {
     noUiSlider.create(calcSlider, calcSliderOptions);
     calcSlider.noUiSlider.on('update', function (values, handle) {
         hiddenSquareInputs[2].value = `${Math.round(values[handle])}`;
-        summBlocks[2].textContent = Math.round(values[handle]) * +priceForOneMeter
+        summBlocks[2].textContent = (Math.round(values[handle]) * PRICE_FOR_ONE_METER[2]) + getCornerSumm() + getLampSumm() + getChandelierSumm();
     });
     // End range-sliders
-
-    // Start counters
-    const plusButtons = document.querySelectorAll('[data-button="count+"]');
-    const minusButtons = document.querySelectorAll('[data-button="count-"]');
-    const counters = document.querySelectorAll('[data-block="result"]');
-    const hiddenCountInputs = document.querySelectorAll('[data-input="count"]');
-
-    plusButtons.forEach((btn, index) => {
-        btn.addEventListener('click', () => {
-            counters[index].textContent = Number(counters[index].textContent) + 1;
-            hiddenCountInputs[index].value = `${Number(counters[index].textContent)}`;
-        })
-    })
-    minusButtons.forEach((btn, index) => {
-        btn.addEventListener('click', () => {
-            if (Number(counters[index].textContent) !== 1) {
-                counters[index].textContent = Number(counters[index].textContent) - 1;
-                hiddenCountInputs[index].value = `${Number(counters[index].textContent)}`;
-            }
-        })
-    })
-    // End counters
 
     // Start sliders
     // helpers function for sliders
@@ -277,44 +331,16 @@ document.addEventListener('DOMContentLoaded', () => {
     const pricePrevButtons = document.querySelectorAll('.prices__button.prev');
     const pricePaginations = document.querySelectorAll('.prices__pagintaion');
     priceSliders.forEach((slider, index) => {
-        // slider.classList.add(`prices__swiper_${index}`);
         priceNextButtons[index].classList.add(`prices__button_${index}`);
         pricePrevButtons[index].classList.add(`prices__button_${index}`);
         pricePaginations[index].classList.add(`prices__pagintaion_${index}`);
-        // new Swiper(`.prices__swiper_${index}`, {
-        //     // loop: true,
-        //     pagination: {
-        //         el: `.prices__pagintaion_${index}`,
-        //     },
-        //     spaceBetween: 25,
-        //     slidesPerView: 4,
-        //     navigation: {
-        //         nextEl: `.prices__button_${index}.next`,
-        //         prevEl: `.prices__button_${index}.prev`,
-        //     },
-        //     breakpoints: {
-        //         0: {
-        //             spaceBetween: 17,
-        //             slidesPerView: 'auto',
-        //         },
-        //         798: {
-        //             spaceBetween: 30,
-        //             slidesPerView: 3,
-        //         },
-        //         1230: {
-        //             spaceBetween: 25,
-        //             slidesPerView: 4,
-        //         },
-        //     }
-        // });
     })
+    let isPricesSwiper1End = false;
     const pricesSwiper1 = new Swiper(`.prices__swiper_top`, {
-        // loop: true,
         pagination: {
             el: `.prices__pagintaion_0`,
         },
         spaceBetween: 25,
-        // slidesPerView: 4,
         navigation: {
             nextEl: `.prices__button_0.next`,
             prevEl: `.prices__button_0.prev`,
@@ -323,20 +349,29 @@ document.addEventListener('DOMContentLoaded', () => {
         breakpoints: {
             0: {
                 spaceBetween: 17,
-                // slidesPerView: 'auto',
             },
             798: {
                 spaceBetween: 30,
-                // slidesPerView: 3,
             },
             1230: {
                 spaceBetween: 25,
-                // slidesPerView: 4,
             },
+        },
+        on: {
+            progress: function () {
+                if (this.isEnd) {
+                    setTimeout(() => {
+                        document.querySelector('.prices__slider_top').style.paddingRight = '15px';
+                    }, 290)
+                } else {
+                    setTimeout(() => {
+                        document.querySelector('.prices__slider_top').style.paddingRight = '0px';
+                    }, 290)
+                }
+            }
         }
     });
     const pricesSwiper2 = new Swiper(`.prices__swiper_bottom`, {
-        // loop: true,
         pagination: {
             el: `.prices__pagintaion_1`,
         },
@@ -404,14 +439,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 `
                 }
             },
+            autoHeight: true,
             breakpoints: {
                 0: {
                     spaceBetween: 0,
                     slidesPerView: 1,
-                    // navigation: {
-                    //     nextEl: `.reviews__button_${index}.next.mobile`,
-                    //     prevEl: `.reviews__button_${index}.prev.mobile`,
-                    // },
                     pagination: {
                         el: `.reviews__pagination_${index}.mobile`,
                     },
@@ -419,10 +451,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 606: {
                     spaceBetween: 15,
                     slidesPerView: 'auto',
-                    // navigation: {
-                    //     nextEl: `.reviews__button_${index}.next.pc`,
-                    //     prevEl: `.reviews__button_${index}.prev.pc`,
-                    // },
                     pagination: {
                         el: `.reviews__pagination_${index}.pc`,
                     },
@@ -430,10 +458,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 1022: {
                     spaceBetween: 25,
                     slidesPerView: 'auto',
-                    // navigation: {
-                    //     nextEl: `.reviews__button_${index}.next.pc`,
-                    //     prevEl: `.reviews__button_${index}.prev.pc`,
-                    // },
                     pagination: {
                         el: `.reviews__pagination_${index}.pc`,
                     },
@@ -722,89 +746,24 @@ document.addEventListener('DOMContentLoaded', () => {
         })
     })
 
-    // waveContainers.forEach((block, index) => {
-    //     block.classList.add(`reviews__text-audio_${index}`);
-    //     const waveOptions = {
-    //         "container": `.reviews__text-audio_${index}`,
-    //         "height": 76,
-    //         "width": "",
-    //         "splitChannels": false,
-    //         "normalize": false,
-    //         "waveColor": "rgba(175, 175, 175, .5)",
-    //         "progressColor": "rgb(215, 69, 53, 1)",
-    //         "cursorColor": "#ddd5e9",
-    //         "cursorWidth": 0,
-    //         "barWidth": 3,
-    //         "barGap": 5,
-    //         "barRadius": null,
-    //         "barHeight": null,
-    //         "barAlign": "",
-    //         "minPxPerSec": 1,
-    //         "fillParent": true,
-    //         "url": block.dataset.musicUrl,
-    //         "mediaControls": false,
-    //         "autoplay": false,
-    //         "interact": true,
-    //         "dragToSeek": false,
-    //         "hideScrollbar": true,
-    //         "audioRate": 1,
-    //         "autoScroll": true,
-    //         "autoCenter": true,
-    //         "sampleRate": 8000,
-    //         backend: 'MediaElement'
-    //         // xhr: {
-    //         //     cache: 'default',
-    //         //     mode: 'cors',
-    //         //     method: 'GET',
-    //         //     credentials: 'same-origin',
-    //         //     redirect: 'follow',
-    //         //     referrer: 'client',
-    //         //     headers: [ { key: 'Authorization', value: 'my-token' } ]
-    //         // }
-    //     }
-    //     // const audio = new Audio(block.dataset.musicUrl);
-    //     // audio.crossOrigin = 'anonymous';
-    //     const wavesurfer = WaveSurfer.create(waveOptions);
-    //     // const audio = new Audio(block.dataset.musicUrl);
-    //     // wavesurfer.loadBlob(audio)
-    //     // const dt  = new DataTransfer();
-    //     // dt.items.add(new File([audio], 'primer.txt', {type: 'audio/x-wav'}));
-    //     // const file_list = dt.files;
-    //     // const file = file_list[0];
-    //     // var reader = new FileReader();
-    //     // reader.onload = function (evt) {
-    //     //     // Create a Blob providing as first argument a typed array with the file buffer
-    //     //     var blob = new window.Blob([new Uint8Array(evt.target.result)]);
-
-    //     //     // Load the blob into Wavesurfer
-    //     //     wavesurfer.loadBlob(blob);
-    //     // };
-
-    //     // reader.onerror = function (evt) {
-    //     //     console.error("An error ocurred reading the file: ", evt);
-    //     // };
-    //     // reader.readAsArrayBuffer(file);
-
-    //     // console.log('Коллекция файлов создана:');
-    //     // console.dir(file_list);
-    //     // wavesurfer.load(block.dataset.musicUrl)
-    //     // const file = new File([blob], 'audio.wav', {type: 'application/pdf'});
-    //     // // wavesurfer.load(audio);
-    //     // wavesurfer.setMediaElement(document.querySelector('.test-audio'))
-    //     // wavesurfer.load(document.querySelector('.test-audio').src)
-    //     // console.log(document.querySelector('.test-audio'))
-
     const playVideoReviewButtons = document.querySelectorAll('.reviews__video-play');
     const videoReviews = document.querySelectorAll('.reviews__video > iframe');
     playVideoReviewButtons.forEach((btn, index) => {
+        const id = new URL(btn.href).searchParams.get('v');
+        btn.setAttribute('data-youtube', id);
+        btn.setAttribute('role', 'button');
+        btn.style.background = `url(https://img.youtube.com/vi/${id}/maxresdefault.jpg) center/cover no-repeat`;
         btn.addEventListener('click', (e) => {
-            e.preventDefault();
+            e.preventDefault()
+            videoReviews[index].src = videoReviews[index].dataset.src
             videoReviews.forEach((video, i) => {
                 video.contentWindow.postMessage('{"event":"command","func":"stopVideo","args":""}', '*');
                 playVideoReviewButtons[i].style.display = 'flex';
             })
             btn.style.display = 'none';
-            videoReviews[index].contentWindow.postMessage('{"event":"command","func":"playVideo","args":""}', '*');
+            setTimeout(() => {
+                videoReviews[index].contentWindow.postMessage('{"event":"command","func":"playVideo","args":""}', '*');
+            }, 500)
         })
     })
     // End wave players

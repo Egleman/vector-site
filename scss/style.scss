@@ -26,6 +26,7 @@ body {
     color: #110D0E;
     min-width: 303px;
     background: #F6F6F6;
+    overflow-x: hidden;
 }
 ol, ul { 
     list-style: none; 
@@ -33,6 +34,15 @@ ol, ul {
 
 label, button {
     cursor: pointer;
+}
+.start-properties {
+    position: absolute;
+    left: -10000px;
+}
+@media (max-width: 1230px) {
+    body {
+        background: #fff;
+    }
 }
 
 

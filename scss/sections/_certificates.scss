@@ -46,6 +46,7 @@
             width: 5px;
             height: 5px;
             background: #AFAFAF;
+            opacity: 1;
         }
         .swiper-pagination-bullet-active {
             width: 10px;
@@ -195,9 +196,23 @@
         &__button {
             width: 43px;
             height: 43px;
+            svg {
+                width: 12px;
+            }
         }
-        #certificates_paginatio {
+        #certificates_pagination {
             gap: 10px;
+            .swiper-pagination-bullet {
+                width: 3.05px;
+                height: 3.05px;
+                background: #AFAFAF;
+                opacity: 1;
+            }
+            .swiper-pagination-bullet-active {
+                width: 6.119px;
+                height: 6.119px;
+                background:#D74535;
+            }
         }
         &__main {
             grid-template-columns: minmax(150px, 230px) minmax(200px, 1027px) minmax(15px, 1fr);

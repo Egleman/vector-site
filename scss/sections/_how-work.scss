@@ -301,6 +301,7 @@
         }
         &__form {
             margin: -35px auto 0 auto;
+            max-width: 90%;
             &-list {
                 padding: 15px 25px;
             }
@@ -310,6 +311,13 @@
             &-bottom {
                 padding: 20px 25px;
             }
+        }
+    }
+}
+@media (max-width: 435px) {
+    .how-work {
+        &__form {
+            max-width: 350px;
         }
     }
 }

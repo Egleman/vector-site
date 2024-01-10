@@ -462,7 +462,7 @@
                     font-size: 13px;
                     font-style: normal;
                     font-weight: 400;
-                    line-height: 19.608px;
+                    line-height: normal;
                 }
             }
             &-slider {
@@ -566,6 +566,20 @@
                 }
             }
         }
+        &__range {
+            &-slider {
+                .noUi-handle {
+                    width: 38px;
+                    height: 14px;
+                    border-radius: 35.294px;
+                    top: -4px;
+                }
+                .noUi-tooltip {
+                    font-size: 13px;
+                    top: 30px;
+                }
+            }
+        }
     }
 }
 @media (max-width: 798px) {
@@ -578,6 +592,8 @@
         &__title {
             grid-template-rows: 64px auto;
             row-gap: 23px;
+            column-gap: 20px;
+            margin-bottom: 20px;
             &-icon {
                 grid-row: 1 / span 1;
             }
@@ -683,7 +699,7 @@
                 align-self: flex-start;
                 align-items: center;
                 gap: 14px;
-                margin-bottom: 28px;
+                margin-bottom: 25px;
             }
             &-slider {
                 margin-bottom: 80px;

@@ -10,7 +10,24 @@
     <link rel="stylesheet" href="./css/style.css">
     <title>Vector</title>
 </head>
-<body data-price-for-one-metr-in-sliders-range="450">
+<body >
+    <div class="start-properties"
+        id="hero-section-properties"
+        data-price-for-one-metr="450"
+        data-price-for-one-lighting-point="50"
+    ></div>
+    <div class="start-properties"
+        id="sale-section-properties"
+        data-price-for-one-metr="450"
+        data-price-for-one-lighting-point="50"
+    ></div>
+    <div class="start-properties"
+        id="calc-section-properties"
+        data-price-for-one-metr="450"
+        data-price-for-one-corner="70"
+        data-price-for-one-lamp="80"
+        data-price-for-one-chandelier="90"
+    ></div>
     <div class="anchor" id="header"></div>
     <header class="header">
         <div class="container">
@@ -1709,28 +1726,28 @@
                             <div class="swiper calc__types-slider">
                                 <div class="swiper-wrapper">
                                     <div class="swiper-slide">
-                                        <div class="calc__types-slide" data-calc-button="Глянцевый потолок">
+                                        <div class="calc__types-slide" data-calc-button="Глянцевый потолок" data-calc-price="489">
                                             <img src="./img/sections/calc-section/type-1.jpg" alt="type-1">
                                             <p class="calc__types-text">Глянцевый потолок</p>
                                             <div class="calc__types-blur"></div>
                                         </div>
                                     </div>
                                     <div class="swiper-slide">
-                                        <div class="calc__types-slide" data-calc-button="Тканевый потолок">
+                                        <div class="calc__types-slide" data-calc-button="Тканевый потолок" data-calc-price="1190">
                                             <img src="./img/sections/calc-section/type-2.jpg" alt="type-2">
                                             <p class="calc__types-text">Тканевый потолок</p>
                                             <div class="calc__types-blur"></div>
                                         </div>
                                     </div>
                                     <div class="swiper-slide">
-                                        <div class="calc__types-slide" data-calc-button="Матовый потолок">
+                                        <div class="calc__types-slide" data-calc-button="Матовый потолок" data-calc-price="489">
                                             <img src="./img/sections/calc-section/type-3.jpg" alt="type-3">
                                             <p class="calc__types-text">Матовый потолок</p>
                                             <div class="calc__types-blur"></div>
                                         </div>
                                     </div>
                                     <div class="swiper-slide">
-                                        <div class="calc__types-slide" data-calc-button="Сатиновый потолок">
+                                        <div class="calc__types-slide" data-calc-button="Сатиновый потолок" data-calc-price="489">
                                             <img src="./img/sections/calc-section/type-4.jpg" alt="type-4">
                                             <p class="calc__types-text">Сатиновый потолок</p>
                                             <div class="calc__types-blur"></div>
@@ -1786,7 +1803,7 @@
                             <div class="label">Углы, шт</div>
                             <div class="counter">
                                 <button class="plus calc-block-hover" data-button="count+">+</button>
-                                <span class="count" data-block="result">1</span>
+                                <span class="count" data-block="result" data-count="corner">1</span>
                                 <button class="minus calc-block-hover" data-button="count-">-</button>
                             </div>
                         </div>
@@ -1800,7 +1817,7 @@
                             <div class="label">Светильники, шт</div>
                             <div class="counter">
                                 <button class="plus calc-block-hover" data-button="count+">+</button>
-                                <span class="count" data-block="result">1</span>
+                                <span class="count" data-block="result" data-count="lamp">1</span>
                                 <button class="minus calc-block-hover" data-button="count-">-</button>
                             </div>
                         </div>
@@ -1808,7 +1825,7 @@
                             <div class="label">Люстры, шт</div>
                             <div class="counter">
                                 <button class="plus calc-block-hover" data-button="count+">+</button>
-                                <span class="count" data-block="result">1</span>
+                                <span class="count" data-block="result" data-count="chandelier">1</span>
                                 <button class="minus calc-block-hover" data-button="count-">-</button>
                             </div>
                         </div>
@@ -2910,7 +2927,15 @@
                                         </div>
                                     </div>
                                     <div class="reviews__text-description">
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+                                        sed do eiusmod tempor incididunt ut labore et dolore magna 
+                                        aliqua. Ut enim ad minim veniam, quis nostrud exercitation 
+                                        ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+                                        Duis aute irure dolor in Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+                                        sed do eiusmod tempor incididunt ut labore et dolore magna 
+                                        aliqua. Ut enim ad minim veniam, quis nostrud exercitation 
+                                        ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+                                        Duis aute irure dolor in
                                     </div>
                                 </div>
                             </div>
@@ -3447,12 +3472,12 @@
                 </div>
             </div>
             <div class="reviews__container">
-                <div class="reviews__slider">
+                <div class="reviews__slider reviews__slider_video">
                     <div class="swiper reviews__swiper">
                         <div class="swiper-wrapper">
                             <div class="swiper-slide">
                                 <div class="reviews__video">
-                                    <a href="#" class="reviews__video-play">
+                                    <a data-youtube href="https://www.youtube.com/watch?v=Km8n0zmJ0r0" class="reviews__video-play">
                                         <button class="play-video">
                                             <svg width="23" height="26" viewBox="0 0 23 26" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                 <path d="M23 13L0.500001 25.9904L0.500002 0.00961778L23 13Z" fill="white"/>
@@ -3462,12 +3487,12 @@
                                     <div class="reviews__video-name">
                                         Марина Петрова
                                     </div>
-                                    <iframe width="100%" loading="lazy" height="100%" src="https://www.youtube.com/embed/Km8n0zmJ0r0?si=e4FqVUF-cArg-n4n&amp;controls=0&enablejsapi=1&wmode=transparent" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                                    <iframe width="100%" loading="lazy" height="100%" data-src="https://www.youtube.com/embed/Km8n0zmJ0r0?si=e4FqVUF-cArg-n4n&amp;controls=0&enablejsapi=1&wmode=transparent" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                                 </div>
                             </div>
                             <div class="swiper-slide">
                                 <div class="reviews__video">
-                                    <a href="#" class="reviews__video-play">
+                                    <a data-youtube href="https://www.youtube.com/watch?v=Km8n0zmJ0r0" class="reviews__video-play">
                                         <button class="play-video">
                                             <svg width="23" height="26" viewBox="0 0 23 26" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                 <path d="M23 13L0.500001 25.9904L0.500002 0.00961778L23 13Z" fill="white"/>
@@ -3477,12 +3502,12 @@
                                     <div class="reviews__video-name">
                                         Марина Петрова
                                     </div>
-                                    <iframe width="100%" loading="lazy" height="100%" src="https://www.youtube.com/embed/Km8n0zmJ0r0?si=e4FqVUF-cArg-n4n&amp;controls=0&enablejsapi=1&wmode=transparent" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                                    <iframe width="100%" loading="lazy" height="100%" data-src="https://www.youtube.com/embed/Km8n0zmJ0r0?si=e4FqVUF-cArg-n4n&amp;controls=0&enablejsapi=1&wmode=transparent" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                                 </div>
                             </div>
                             <div class="swiper-slide">
                                 <div class="reviews__video">
-                                    <a href="#" class="reviews__video-play">
+                                    <a data-youtube href="https://www.youtube.com/watch?v=Km8n0zmJ0r0" class="reviews__video-play">
                                         <button class="play-video">
                                             <svg width="23" height="26" viewBox="0 0 23 26" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                 <path d="M23 13L0.500001 25.9904L0.500002 0.00961778L23 13Z" fill="white"/>
@@ -3492,12 +3517,12 @@
                                     <div class="reviews__video-name">
                                         Марина Петрова
                                     </div>
-                                    <iframe width="100%" loading="lazy" height="100%" src="https://www.youtube.com/embed/Km8n0zmJ0r0?si=e4FqVUF-cArg-n4n&amp;controls=0&enablejsapi=1&wmode=transparent" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                                    <iframe width="100%" loading="lazy" height="100%" data-src="https://www.youtube.com/embed/Km8n0zmJ0r0?si=e4FqVUF-cArg-n4n&amp;controls=0&enablejsapi=1&wmode=transparent" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                                 </div>
                             </div>
                             <div class="swiper-slide">
                                 <div class="reviews__video">
-                                    <a href="#" class="reviews__video-play">
+                                    <a data-youtube href="https://www.youtube.com/watch?v=Km8n0zmJ0r0" class="reviews__video-play">
                                         <button class="play-video">
                                             <svg width="23" height="26" viewBox="0 0 23 26" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                 <path d="M23 13L0.500001 25.9904L0.500002 0.00961778L23 13Z" fill="white"/>
@@ -3507,12 +3532,12 @@
                                     <div class="reviews__video-name">
                                         Марина Петрова
                                     </div>
-                                    <iframe width="100%" loading="lazy" height="100%" src="https://www.youtube.com/embed/Km8n0zmJ0r0?si=e4FqVUF-cArg-n4n&amp;controls=0&enablejsapi=1&wmode=transparent" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                                    <iframe width="100%" loading="lazy" height="100%" data-src="https://www.youtube.com/embed/Km8n0zmJ0r0?si=e4FqVUF-cArg-n4n&amp;controls=0&enablejsapi=1&wmode=transparent" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                                 </div>
                             </div>
                             <div class="swiper-slide">
                                 <div class="reviews__video">
-                                    <a href="#" class="reviews__video-play">
+                                    <a data-youtube href="https://www.youtube.com/watch?v=Km8n0zmJ0r0" class="reviews__video-play">
                                         <button class="play-video">
                                             <svg width="23" height="26" viewBox="0 0 23 26" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                 <path d="M23 13L0.500001 25.9904L0.500002 0.00961778L23 13Z" fill="white"/>
@@ -3522,7 +3547,7 @@
                                     <div class="reviews__video-name">
                                         Марина Петрова
                                     </div>
-                                    <iframe width="100%" loading="lazy" height="100%" src="https://www.youtube.com/embed/Km8n0zmJ0r0?si=e4FqVUF-cArg-n4n&amp;controls=0&enablejsapi=1&wmode=transparent" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                                    <iframe width="100%" loading="lazy" height="100%" data-src="https://www.youtube.com/embed/Km8n0zmJ0r0?si=e4FqVUF-cArg-n4n&amp;controls=0&enablejsapi=1&wmode=transparent" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                                 </div>
                             </div>
                         </div>
@@ -4416,7 +4441,7 @@
                                 <p class="contacts__card-text">
                                     Контактный телефон
                                 </p>
-                                <a href="tel:84959700003" class="contacts__card-description">
+                                <a href="tel:84959700003" class="contacts__card-description header-link-hover">
                                     8 495 970-00-03
                                 </a>
                             </div>
@@ -4442,7 +4467,7 @@
                                 <p class="contacts__card-text">
                                     E-mail
                                 </p>
-                                <a href="mailto:vectorpotolok@yandex.ru" class="contacts__card-description">
+                                <a href="mailto:vectorpotolok@yandex.ru" class="contacts__card-description header-link-hover">
                                     vectorpotolok@yandex.ru
                                 </a>
                             </div>

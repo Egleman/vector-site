@@ -186,6 +186,8 @@
             width: 5px;
             height: 5px;
             background: #AFAFAF;
+            opacity: 1;
+            margin: 0;
         }
         .swiper-pagination-bullet-active {
             width: 10px;
@@ -311,6 +313,9 @@
         &__button {
             width: 43px;
             height: 43px;
+            svg {
+                width: 12px;
+            }
         }
         &__pagintaion {
             gap: 10px;
@@ -390,6 +395,27 @@
         &__content {
             &-subtitle {
                 line-height: normal;
+            }
+        }
+        #implementation__pagintaion {
+            width: max-content;
+            position: static;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            span {
+                margin: 0;
+            }
+            .swiper-pagination-bullet {
+                width: 3.05px;
+                height: 3.05px;
+                background: #AFAFAF;
+                opacity: 1;
+            }
+            .swiper-pagination-bullet-active {
+                width: 6.119px;
+height: 6.119px;
+                background:#D74535;
             }
         }
     }

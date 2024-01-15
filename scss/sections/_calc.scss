@@ -80,7 +80,6 @@
         }
         &-slide.active {
             .calc__types-blur {
-                // display: block;
                 opacity: 1;
             }
             .calc__types-text {
@@ -441,6 +440,24 @@
             &-text {
                 font-size: 13px;
             }
+            &-slide {
+                &:hover {
+                    .calc__types-blur {
+                        opacity: 0;
+                    }
+                    .calc__types-text {
+                        color: #110D0E;
+                    }
+                } 
+            }
+            &-slide.active {
+                .calc__types-blur {
+                    opacity: 1;
+                }
+                .calc__types-text {
+                    color: #fff;
+                }
+            }
         }
         &__manufacturer {
             gap: 45px;
@@ -450,6 +467,12 @@
                 font-style: normal;
                 font-weight: 700;
                 line-height: 27.451px;
+                &:hover {
+                    color: #110D0E;
+                }
+            }
+            &-tab.active {
+                color: #D74535;
             }
         }
         &__range {
@@ -578,6 +601,13 @@
                     font-size: 13px;
                     top: 30px;
                 }
+                .noUi-touch-area {
+                    height: 40px;
+                    width: 60px;
+                    position: absolute;
+                    left: -10px;
+                    top: -12px;
+                }
             }
         }
     }
@@ -654,7 +684,7 @@
                 row-gap: 5px;
                 column-gap: 10px;
                 max-width: 100%;
-                box-sizing: border-box;
+                box-sizing: border-box; 
                 border-radius: 8px;
                 .label {
                     grid-column: 1 / span 2;

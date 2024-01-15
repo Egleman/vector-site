@@ -672,36 +672,11 @@ document.addEventListener('DOMContentLoaded', () => {
     })
     // End masked inputs
 
-    // Start wave players
-    // const btnTestPlay = document.querySelector('[data-button="test-play"]');
-    // const testAudio = document.querySelector('.custom-player__audio');
-    // const testProgress = document.querySelector('.custom-player__progress');
-    // const testRateBlock = document.querySelector('.custom-player');
-    // testRateBlock.addEventListener('click', (e) => {
-    //     let x = e.pageX - testRateBlock.offsetLeft;
-    //     let xPersent = x / testRateBlock.offsetWidth * 100;
-    //     testAudio.currentTime = testAudio.duration * (xPersent / 100);
-    // }, { capture: true })
-
-    // testAudio.addEventListener('timeupdate', () => {
-    //     testProgress.style.width = `${(Number((testAudio.currentTime / testAudio.duration).toFixed(2)) * 100).toFixed(0)}%`
-    // })
-    // btnTestPlay.addEventListener('click', () => {
-    //     if (testAudio.paused) {
-    //         testAudio.play();
-    //     } else {
-    //         testAudio.pause();
-    //     }
-    // })
     const waveContainers = document.querySelectorAll('.reviews__text-audio');
     const customWavePlayers = document.querySelectorAll('.custom-player__audio');
     const playVoiceMessageButtons = document.querySelectorAll('.play');
     const playerProgress = document.querySelectorAll('.custom-player__progress');
     const playerParentBlocks = document.querySelectorAll('.custom-player');
-    // const wavePlayerRates = document.querySelectorAll('.custom-player__rate');
-    // wavePlayerRates.forEach((rate, index) => {
-    //     console.log(rate.clientHeight)
-    // })
     waveContainers.forEach((block, index) => {
         customWavePlayers[index].src = block.dataset.musicUrl;
         customWavePlayers[index].addEventListener('timeupdate', () => {
@@ -900,12 +875,42 @@ document.addEventListener('DOMContentLoaded', () => {
     // End about
 
     //Start modal
+    const calcScroll = () => {
+        let div = document.createElement('div');
+        div.style.width = '500px';
+        div.style.height = '500px';
+        div.style.overflowY = 'scroll';
+        div.style.visibility = 'hidden';
+        document.body.appendChild(div);
+        let scrollWidth = div.offsetWidth - div.clientWidth;
+        div.remove();
+        return scrollWidth;
+    }
+    const blockBody = () => {
+        const body = document.body;
+        body.style.overflowY = 'hidden';
+        body.style.touchAction = 'none';
+        const bodyScroll = calcScroll();
+        body.style.paddingRight = `${bodyScroll}px`;
+    }
+    const unBlockBody = () => {
+        const body = document.body;
+        body.style.overflowY = 'auto';
+        body.style.touchAction = 'auto';
+        body.style.paddingRight = `0`;
+    }
+
     const modalLinks = document.querySelectorAll('[toggle]');
     modalLinks.forEach(link => {
         link.addEventListener('click', (e) => {
             e.preventDefault();
             const blockId = link.getAttribute('toggle');
             document.querySelector(blockId).classList.toggle('active');
+            if (document.querySelector(blockId).classList.contains('active')) {
+                blockBody();
+            } else {
+                unBlockBody();
+            }
         })
     })
     // End modals

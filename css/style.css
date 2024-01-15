@@ -301,7 +301,7 @@ label, button {
   top: 0;
   z-index: 99;
   width: 100%;
-  height: 100vh;
+  height: 100%;
   background: #fff;
   overflow-y: auto;
   display: none;
@@ -4448,6 +4448,18 @@ label, button {
   .calc__types-text {
     font-size: 13px;
   }
+  .calc__types-slide:hover .calc__types-blur {
+    opacity: 0;
+  }
+  .calc__types-slide:hover .calc__types-text {
+    color: #110D0E;
+  }
+  .calc__types-slide.active .calc__types-blur {
+    opacity: 1;
+  }
+  .calc__types-slide.active .calc__types-text {
+    color: #fff;
+  }
   .calc__manufacturer {
     gap: 45px;
     padding: 26px 0;
@@ -4457,6 +4469,12 @@ label, button {
     font-style: normal;
     font-weight: 700;
     line-height: 27.451px;
+  }
+  .calc__manufacturer-tab:hover {
+    color: #110D0E;
+  }
+  .calc__manufacturer-tab.active {
+    color: #D74535;
   }
   .calc__range {
     padding: 20px 0 40px 0;
@@ -4588,6 +4606,13 @@ label, button {
   .calc__range-slider .noUi-tooltip {
     font-size: 13px;
     top: 30px;
+  }
+  .calc__range-slider .noUi-touch-area {
+    height: 40px;
+    width: 60px;
+    position: absolute;
+    left: -10px;
+    top: -12px;
   }
 }
 @media (max-width: 798px) {
@@ -7140,6 +7165,7 @@ label, button {
   z-index: 1;
   border-radius: 10px;
   background: transparent;
+  color: #110D0E;
 }
 .director__quote {
   position: absolute;

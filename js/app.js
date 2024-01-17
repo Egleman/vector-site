@@ -661,7 +661,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Start masked inputs
     const phoneInputs = document.querySelectorAll('[data-input="masked"]');
     const im = new Inputmask({
-        mask: '+7 (999) 999-99-99',
+        mask: '(+7|8) (999) 999-99-99',
         showMaskOnHover: false,
         showMaskOnFocus: false,
         jitMasking: true,

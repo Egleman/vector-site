@@ -63,12 +63,18 @@
         br {
             display: none;
         }
+        &_mobile {
+            display: none;
+        }
     }
     &__description {
         font-size: 25px;
         font-style: normal;
         font-weight: 300;
         max-width: 670px;
+        &_mobile {
+            display: none;
+        }
     }
     &__calc {
         border-radius: 25px;
@@ -482,10 +488,24 @@
         }
         &__tagline {
             margin-bottom: 25px;
+            display: none;
+            &_mobile {
+                display: block;
+            }
+        }
+        &__description {
+            display: none;
+            &_mobile {
+                display: block;
+            }
+        }
+        &__wrapper {
+            gap: 0;
         }
         &__calc {
             width: 100%;
             max-width: 455px;
+            margin-bottom: 20px;
         }
     }
 }

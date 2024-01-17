@@ -913,6 +913,14 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         })
     })
+    const resizeObserver = new ResizeObserver((entries, observer) => {
+        for(let entry of entries){
+            if (entry.contentRect.width === 0) {
+                unBlockBody();
+            }
+        }
+    })
+    resizeObserver.observe(document.querySelector('#mobile-menu'));
     // End modals
 
     // Start scroll-links
@@ -924,6 +932,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const blockId = link.getAttribute('href');
             if (mobileMenu.classList.contains('active')) {
                 mobileMenu.classList.remove('active');
+                unBlockBody();
             }
             document.querySelector(blockId).scrollIntoView({
                 behavior: 'smooth',
